@@ -1,0 +1,155 @@
+$col_list = json('../../data.json', {hash: true})['photo-card']
+
+.photo-card
+{
+  position: relative;
+
+  transition: margin 1s ease-out, transform 1s ease-in-out;
+
+  color: #fff;
+  background-color: #fff;
+  box-shadow: 0 0 59px 18px rgba(0, 0, 0, .05);
+}
+
+figure
+{
+  margin: 0;
+}
+
+set_transform($value)
+  transform: perspective(500px) rotateY($value * 1deg * (10 + round(($col - 1) * (25 / (length($col_list) - 2))))) translateZ(-90px);
+
+set_margin($value, $shiftSide)
+  margin-{$shiftSide}: $value * 1px;
+
+
+for $col in range(1, length($col_list) - 1)
+{
+  for $i in range(1, $col)
+  {
+    .input-{$i - 1}:checked ~ .gallery .photo-card:nth-of-type({$i - $col + length($col_list)})
+    {
+      set_transform(-1)
+    }
+    .input-{length($col_list) - $col + $i - 1}:checked ~ .gallery .photo-card:nth-of-type({$i})
+    {
+      set_transform(1)
+    }
+  }
+  for $i in range(1, length($col_list) - $col)
+  {
+    .input-{$i - 1}:checked ~ .gallery .photo-card:nth-of-type({$col + $i}),
+    .input-{$i + $col - 1}:checked ~ .gallery .photo-card:nth-of-type({$i})
+    {
+      z-index: length($col_list) - $col;
+    }
+  }
+  .input-{$col}:checked ~ .gallery .photo-card:nth-of-type({$col})
+  {
+    set_margin(-110, left)
+  }
+  .input-{$col - 1}:checked ~ .gallery .photo-card:nth-of-type({$col + 1})
+  {
+    set_margin(-110, right)
+  }
+}
+
+for $col in range(1, (length($col_list)))
+{
+  .input-{$col - 1}:checked ~ .gallery .photo-card:nth-of-type({$col})
+  {
+    transform: perspective(500px) translateZ(0);
+    margin: 0 -100px;
+    z-index: 7;
+  }
+}
+
+for $col in range(1, (length($col_list) - 2))
+{
+  for $i in range(1, $col)
+  {
+    .input-{$col + 1}:checked ~ .gallery .photo-card:nth-of-type({$i})
+    {
+      set_margin(-130, left)
+    }
+  }
+  for $i in range($col + 2, length($col_list))
+  {
+    .input-{$col - 1}:checked ~ .gallery .photo-card:nth-of-type({$i})
+    {
+      set_margin(-130, right)
+    }
+  }
+}
+
+for $col in range(0, (length($col_list)) - 1)
+{
+  .open-input-{$col}:checked ~ .gallery .photo-card:nth-of-type({$col + 1})
+  {
+    animation: rotationOpenFirstPart 2s linear;
+  }
+  .close-input-{$col}:checked ~ .gallery .photo-card:nth-of-type({$col + 1})
+  {
+    position: relative;
+    top: 0;
+    animation: rotationClose 1s linear;
+  }
+}
+
+set_transform_opacity($deg, $rotate)
+  opacity: 1;
+  if $rotate == 'perspective'
+    transform: perspective(500px) rotateX(1deg * $deg);
+  else
+    transform: rotateX(1deg * $deg);
+
+set_position_top($top)
+  position: relative;
+  top: $top * 1px;
+
+@keyframes rotationClose
+{
+  0%
+  {
+    set_transform_opacity(-360, 'perspective')
+  }
+  30%
+  {
+    set_transform_opacity(-180, 'perspective')
+    position: relative;
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  51%
+  {
+    set_transform_opacity(-90, 'perspective')
+    set_position_top(-200)
+  }
+  100%
+  {
+    set_position_top(0)
+  }
+}
+
+@keyframes rotationOpenFirstPart
+{
+  0%
+  {
+    display: block;
+    set_position_top(0)
+  }
+  50%
+  {
+    display: block;
+    set_position_top(-200)
+    set_transform_opacity(-110, '')
+  }
+  100%
+  {
+    display: block;
+    set_position_top(0)
+    set_transform_opacity(-360, '')
+  }
+}

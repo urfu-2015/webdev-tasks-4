@@ -1,0 +1,34 @@
+$col_list = json('../../../data.json', {hash: true})['photo-card']
+
+.photo-card
+  &__content
+  {
+    overflow: auto;
+
+    padding: 40px;
+
+    user-select: text;
+
+    color: #373737;
+  }
+
+for $col in range(0, (length($col_list)) - 1)
+{
+  .open-input-{$col}:checked ~ .gallery figure.image-{$col} .photo-card__content
+  {
+    position: absolute;
+    z-index: 1000;
+    top: 20vh;
+    right: 25vw;
+    bottom: 20vh;
+    left: 25vw;
+
+    display: block;
+
+    min-width: 500px;
+    min-height: 300px;
+
+    border: 1px solid rgba(0, 0, 0, .1);
+    background-color: #f5f7f8;
+  }
+}
