@@ -206,47 +206,47 @@
 }
 #seventh:checked ~ .slider > .slider__photo_first {
   margin-right: -6.7%;
-  transform: perspective(350px) rotateY(-35deg) translateZ(-40px);
+  transform: perspective(350px) rotateY(35deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_second {
   margin-right: -6.6%;
-  transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
+  transform: perspective(350px) rotateY(36deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_third {
   margin-right: -6.5%;
-  transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+  transform: perspective(350px) rotateY(37deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_fourth {
   margin-right: -6.4%;
-  transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+  transform: perspective(350px) rotateY(38deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_fifth {
   margin-right: -6.3%;
-  transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+  transform: perspective(350px) rotateY(39deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_sixth {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
-#first:check ~ .slider > .slider__photo_first {
+#first:checked ~ .slider > .slider__photo_first {
   z-index: 5;
 }
-#second:check ~ .slider > .slider__photo_second {
+#second:checked ~ .slider > .slider__photo_second {
   z-index: 5;
 }
-#third:check ~ .slider > .slider__photo_third {
+#third:checked ~ .slider > .slider__photo_third {
   z-index: 5;
 }
-#fourth:check ~ .slider > .slider__photo_fourth {
+#fourth:checked ~ .slider > .slider__photo_fourth {
   z-index: 5;
 }
-#fifth:check ~ .slider > .slider__photo_fifth {
+#fifth:checked ~ .slider > .slider__photo_fifth {
   z-index: 5;
 }
-#sixth:check ~ .slider > .slider__photo_sixth {
+#sixth:checked ~ .slider > .slider__photo_sixth {
   z-index: 5;
 }
-#seventh:check ~ .slider > .slider__photo_seventh {
+#seventh:checked ~ .slider > .slider__photo_seventh {
   z-index: 5;
 }
 /*# sourceMappingURL=index.css.map */

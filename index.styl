@@ -119,12 +119,12 @@ for $n in (0 1 2 3 4 6)
 
 //7
 for $n in (0..5)
-    $degr = -35 - $n deg
+    $degr = 35 + $n deg
     #seventh:checked ~ .slider > .slider__photo_{$ids[$n]}
         properties(generateMargin(- $n + 3), right, $degr)
 
 
 for $n in (first second third fourth fifth sixth seventh)
-    #{$n}:check ~ .slider > .slider__photo_{$n}
+    #{$n}:checked ~ .slider > .slider__photo_{$n}
       z-index 5
       
