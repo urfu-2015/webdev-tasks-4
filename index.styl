@@ -1,0 +1,130 @@
+$body-background = #ccc
+
+.page
+    background-color $body-background
+    overflow-x hidden
+
+.photo-input
+    display none
+
+.slider
+    transform-style preserve-3d
+    width 99%
+    margin-top 200px
+    text-align center
+    transition all 1s ease-out
+
+$images = {
+    first: '1.jpg',
+    second: '2.jpg',
+    third: '3.jpg',
+    fourth: '4.jpg',
+    fifth: '5.jpg',
+    sixth: '6.jpg',
+    seventh: '7.jpg'
+}
+
+for $number, $bg_img in $images
+    .slider__photo_{$number}
+        background url($bg_img)
+
+.slider__photo
+    background-size 100%
+    display inline-block
+    height 160px
+    display inline-block
+    width 14%
+    transition all 1s ease-out
+    position relative
+
+$translateXValues = {
+    first: 20%,
+    second: 15%,
+    third: 8%,
+    fifth: -9%,
+    sixth: -17%,
+    seventh: -19%
+}
+
+for $id, $value in $translateXValues
+    #{$id}:checked ~ .slider
+        transform translateX($value %)
+
+$ids = (first second third fourth fifth sixth seventh)
+
+properties($mrgn, $type, $dgrs)
+  margin-{$type} ($mrgn)%
+  transform perspective(350px) rotateY($dgrs) translateZ(-40px)
+
+generateMargin($n)
+    -6 - (($n + 4) / 10)
+//1
+for $n in (1..6)
+    $degr = -41 + $n deg
+    #first:checked ~ .slider > .slider__photo_{$ids[$n]}
+        properties(generateMargin($n - 3), left, $degr)
+
+for $n in (0 2 3 4 5 6)
+   if $n < 1
+       #second:checked ~ .slider > .slider__photo_{$ids[$n]}
+           properties(-6.2, right, 40deg)
+   else
+       $degr = -42 + $n deg
+       #second:checked ~ .slider > .slider__photo_{$ids[$n]}
+           properties(generateMargin($n - 4), left, $degr)
+
+//3
+for $n in (0 1 3 4 5 6)
+    if $n < 2
+        $degr = 39 + $n deg
+        #third:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 2), right, $degr)
+    else 
+        $degr = -43 + $n deg
+        #third:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 4), left, $degr)
+
+//4
+for $n in (0 1 2 4 5 6)
+    if $n < 3
+        $degr = 38 + $n deg
+        #fourth:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 3), right, $degr)
+    else 
+        $degr = -44 + $n deg
+        #fourth:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 5), left, $degr)
+
+//5
+for $n in (0 1 2 3 5 6)
+    if $n < 4
+        $degr = 37 + $n deg
+        #fifth:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 4), right, $degr)
+    else 
+        $degr = -45 + $n deg
+        #fifth:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 6), left, $degr)
+
+//6
+for $n in (0 1 2 3 4 6)
+    if $n < 5
+        $degr = 36 + $n deg
+        #sixth:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 4), right, $degr)
+    else 
+        $degr = -46 + $n deg
+        #sixth:checked ~ .slider > .slider__photo_{$ids[$n]}
+            properties(generateMargin($n - 7), left, $degr)
+
+//7
+for $n in (0..5)
+    $degr = -35 - $n deg
+    #seventh:checked ~ .slider > .slider__photo_{$ids[$n]}
+        properties(generateMargin(- $n + 3), right, $degr)
+
+
+for $n in (first second third fourth fifth sixth seventh)
+    #{$n}:check ~ .slider > .slider__photo_{$n}
+      z-index 5
+      
