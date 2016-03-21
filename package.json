@@ -21,6 +21,8 @@
     "css-declaration-sorter": "^1.2.1",
     "cssnano": "^3.5.2",
     "postcss": "^5.0.19",
+    "postcss-color-gray": "^3.0.0",
+    "postcss-hidden": "^1.0.7",
     "postcss-sprites": "^3.1.0",
     "stylus": "^0.54.2"
   }
