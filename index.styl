@@ -1,0 +1,56 @@
+$number_of_item = 7
+$scale = 80
+
+.gallery
+{
+    transform-style: preserve-3d
+    display: flex
+    margin-top: 200px
+    perspective: 500px
+
+    &__item {
+        for $num1 in (1..$number_of_item) {
+            &_{$num1} {
+                background: #fff
+                height: 200px
+                width: 350px
+                overflow: hidden
+                transition-property: all
+                transition-duration: 1s
+                -webkit-box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)
+                -moz-box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)
+                box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)
+            }
+
+            &__radio_{$num1} {
+                display: none
+            }
+
+            for $num2 in (1..$number_of_item) {
+                $translate = ($number_of_item - $num1 - $num2 + 1) * $scale
+                &__radio_{$num1}:checked ~ &_{$num2} {
+                    if $num2 < $num1 {
+                        transform: translateX($translate px) rotateY(50deg)
+                    } else if $num2 > $num1 {
+                        transform: translateX($translate px) rotateY(-50deg)
+                    } else {
+                        transform: translateX($translate px) rotateY(0) translateZ(60px);
+                    }
+                }
+            }
+        }
+
+        &__img {
+            width: 100%;
+        }
+
+        &__lable: after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
