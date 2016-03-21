@@ -1,0 +1,127 @@
+$bg_color = gray(200);
+
+body
+{
+  background: $bg_color;
+  text-align: center;
+}
+
+main
+{
+  padding: 50px;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+
+article
+{
+  display: inline-block;
+  width: 75px;
+  transition: all 1s ease;
+}
+
+img
+{
+  width: 300px;
+  transform: translateX(-40%);
+  box-shadow: 0 0 5px #000;
+}
+
+input
+{
+  display: disappear;
+}
+
+set_photo($name, $translationX, $translationZ, $rotation) {
+  &__{$name}-photo
+  {
+    transform: translateX($translationX) translateZ($translationZ) rotateY($rotation);
+  }
+}
+
+#one:checked ~ main .gallery-photos
+{
+  set_photo('first', 225px, 70px, 0);
+
+  $photos = 'second' 'third' 'forth' 'fifth' 'sixth' 'seventh'
+  for $photo in $photos {
+    set_photo($photo, 225px, 0, -30deg);
+  }
+}
+
+#two:checked ~ main .gallery-photos
+{
+  set_photo('first', 150px, 0, 30deg);
+  set_photo('second', 150px, 70px, 0);
+
+  $photos = 'third' 'forth' 'fifth' 'sixth' 'seventh'
+  for $photo in $photos {
+    set_photo($photo, 150px, 0, -30deg);
+  }
+}
+
+#three:checked ~ main .gallery-photos
+{
+  $photos = 'first' 'second'
+  for $photo in $photos {
+    set_photo($photo, 75px, 0, 30deg);
+  }
+
+  set_photo('third', 75px, 70px, 0);
+
+  $photos = 'forth' 'fifth' 'sixth' 'seventh'
+  for $photo in $photos {
+    set_photo($photo, 75px, 0, -30deg);
+  }
+}
+
+#four:checked ~ main .gallery-photos
+{
+  $photos = 'first' 'second' 'third'
+  for $photo in $photos {
+    set_photo($photo, 0, 0, 30deg);
+  }
+
+  set_photo('forth', 0, 70px, 0);
+
+  $photos = 'fifth' 'sixth' 'seventh'
+  for $photo in $photos {
+    set_photo($photo, 0, 0, -30deg);
+  }
+}
+
+#five:checked ~ main .gallery-photos
+{
+  $photos = 'first' 'second' 'third' 'forth'
+  for $photo in $photos {
+    set_photo($photo, -75px, 0, 30deg);
+  }
+
+  set_photo('fifth', -75px, 70px, 0);
+
+  $photos = 'sixth' 'seventh'
+  for $photo in $photos {
+    set_photo($photo, -75px, 0, -30deg);
+  }
+}
+
+#six:checked ~ main .gallery-photos
+{
+  $photos = 'first' 'second' 'third' 'forth' 'fifth'
+  for $photo in $photos {
+    set_photo($photo, -150px, 0, 30deg);
+  }
+
+  set_photo('sixth', -150px, 70px, 0);
+  set_photo('seventh', -150px, 0, -30deg);
+}
+
+#seven:checked ~ main .gallery-photos
+{
+  $photos = 'first' 'second' 'third' 'forth' 'fifth' 'sixth'
+  for $photo in $photos {
+    set_photo($photo, -225px, 0, 30deg);
+  }
+
+  set_photo('seventh', -225px, 70px, 0);
+}
