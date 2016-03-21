@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "dependencies": {
+    "jscs": "2.2.1"
+  },
+  "scripts": {
+    "lint": "jscs ."
+  },
+  "devDependencies": {
+    "nib": "^1.1.0",
+    "stylus": "^0.54.2"
+  }
+}

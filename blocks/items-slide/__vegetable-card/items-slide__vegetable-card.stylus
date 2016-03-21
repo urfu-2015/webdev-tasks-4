@@ -1,0 +1,33 @@
+translation(mult)
+  transform translateX(mult * 100px)
+
+.items-slide
+  &__vegetable-card
+    position relative
+    height 100%
+    max-width 100px
+    perspective 400px
+    transform translateX(0)
+    transition-property transform
+    transition-timing-function linear
+    transition-duration 1s
+  &__input
+    &#photo-1:checked ~ .items-slide .items-slide__vegetable-card
+      translation(3)
+    &#photo-2:checked ~ .items-slide .items-slide__vegetable-card
+      translation(2)
+    &#photo-3:checked ~ .items-slide .items-slide__vegetable-card
+      translation(1)
+    &#photo-5:checked ~ .items-slide .items-slide__vegetable-card
+      translation(-1)
+    &#photo-6:checked ~ .items-slide .items-slide__vegetable-card
+      translation(-2)
+    &#photo-7:checked ~ .items-slide .items-slide__vegetable-card
+      translation(-3)
+
+for $z in (1 .. 7)
+  for $num in (1 .. $z)
+    $sum = 7 - $z + $num
+    .items-slide__input#photo-{$num}:checked ~ .items-slide .items-slide__vegetable-card:nth-of-type({$sum})
+      z-index $z
+
