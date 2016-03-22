@@ -1,0 +1,26 @@
+$num_of_veg = 7
+
+// Готовим translateX позиции
+$tr_x_step = 200 // Смещение translateX при выборе определенной картинки
+$left_x_pos = floor($num_of_veg / 2) * $tr_x_step // Крайняя левая позиция фрукта
+$tx_x_step_left = 100 // Смещение от крайней левой позиции фрукта
+$tr_z = 50px
+
+set_transform($trX, $rotY, $trZ = 0px)
+    transform: translateX($trX) rotateY($rotY) translateZ($trZ);
+
+for $checked_veg_id in (0...$num_of_veg)
+    $curr_x_pos = $left_x_pos - $checked_veg_id * 100
+    for $veg_id in (0...$num_of_veg)
+        $curr_x_rel_pos = $curr_x_pos - $veg_id * 100
+        #veg-{$checked_veg_id + 1}:checked ~ .veg-slider .veg-card_veg-num_{$veg_id + 1}
+            if $veg_id == $checked_veg_id
+                set_transform(s('%spx', $curr_x_rel_pos), 0deg, $tr_z)
+            else
+                if $veg_id > $checked_veg_id
+                    set_transform(s('%spx', $curr_x_rel_pos), -50deg)
+                else
+                    set_transform(s('%spx', $curr_x_rel_pos), 50deg)
+
+body
+    background-color: #eaeaea;
