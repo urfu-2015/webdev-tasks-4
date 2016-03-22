@@ -1,0 +1,10 @@
+{
+  "name": "webdev-tasks-4",
+  "scripts": {
+    "cc": "stylus index.styl --out ./compiled --compress",
+    "c": "stylus index.styl --out ./compiled"
+  },
+  "dependencies": {
+    "stylus": "^0.54.2"
+  }
+}
