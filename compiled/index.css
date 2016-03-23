@@ -1,0 +1,244 @@
+body,
+html,
+.gallery {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+}
+.gallery__wrapper {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+}
+.input {
+  display: none;
+}
+.gallery__wrapper[for="pic1"] {
+  background: url("http://udacaca.ru/images/stories/ovosh/luk2.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.gallery__wrapper[for="pic2"] {
+  background: url("http://www.diuretiki.ru/userfiles/mochegonnye-ovoshchi-svekla.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.gallery__wrapper[for="pic3"] {
+  background: url("http://img-fotki.yandex.ru/get/6721/121244854.85/0_b6194_e7036184_L.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.gallery__wrapper[for="pic4"] {
+  background: url("http://img0.liveinternet.ru/images/attach/c/2//72/716/72716929_92_1.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.gallery__wrapper[for="pic5"] {
+  background: url("http://irecommend.ru/sites/default/files/product-images/12233/1271824378_tomatoes-01.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.gallery__wrapper[for="pic6"] {
+  background: url("http://atmagro.ru/wp-content/uploads/2013/04/ogurec_kurazh.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.gallery__wrapper[for="pic7"] {
+  background: url("http://pixelbrush.ru/uploads/posts/2013-01/1359083518_03-31.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(300%) scale(1.1);
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(300%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -10;
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(300%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -20;
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(300%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -30;
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(300%) translate3D(-210%, 0, -160px) rotateY(-55deg);
+  z-index: -40;
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(300%) translate3D(-270%, 0, -200px) rotateY(-50deg);
+  z-index: -50;
+}
+#pic1:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(300%) translate3D(-330%, 0, -240px) rotateY(-45deg);
+  z-index: -60;
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(200%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -10;
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(200%) scale(1.1);
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(200%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -10;
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(200%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -20;
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(200%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -30;
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(200%) translate3D(-210%, 0, -160px) rotateY(-55deg);
+  z-index: -40;
+}
+#pic2:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(200%) translate3D(-270%, 0, -200px) rotateY(-50deg);
+  z-index: -50;
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(100%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -20;
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(100%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -10;
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(100%) scale(1.1);
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(100%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -10;
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(100%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -20;
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(100%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -30;
+}
+#pic3:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(100%) translate3D(-210%, 0, -160px) rotateY(-55deg);
+  z-index: -40;
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(0%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -30;
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(0%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -20;
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(0%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -10;
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(0%) scale(1.1);
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(0%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -10;
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(0%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -20;
+}
+#pic4:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(0%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -30;
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(-100%) translate3D(210%, 0, -160px) rotateY(55deg);
+  z-index: -40;
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(-100%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -30;
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(-100%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -20;
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(-100%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -10;
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(-100%) scale(1.1);
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(-100%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -10;
+}
+#pic5:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(-100%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -20;
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(-200%) translate3D(270%, 0, -200px) rotateY(50deg);
+  z-index: -50;
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(-200%) translate3D(210%, 0, -160px) rotateY(55deg);
+  z-index: -40;
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(-200%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -30;
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(-200%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -20;
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(-200%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -10;
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(-200%) scale(1.1);
+}
+#pic6:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(-200%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -10;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+  transform: translateX(-300%) translate3D(330%, 0, -240px) rotateY(45deg);
+  z-index: -60;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+  transform: translateX(-300%) translate3D(270%, 0, -200px) rotateY(50deg);
+  z-index: -50;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+  transform: translateX(-300%) translate3D(210%, 0, -160px) rotateY(55deg);
+  z-index: -40;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+  transform: translateX(-300%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -30;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+  transform: translateX(-300%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -20;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+  transform: translateX(-300%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -10;
+}
+#pic7:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+  transform: translateX(-300%) scale(1.1);
+}

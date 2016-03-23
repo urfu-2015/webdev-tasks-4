@@ -5,6 +5,7 @@
     "c": "stylus index.styl --out ./compiled"
   },
   "dependencies": {
+    "npm-run-all": "^1.6.0",
     "stylus": "^0.54.2"
   }
 }
