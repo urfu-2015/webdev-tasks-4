@@ -1,0 +1,97 @@
+$margin_percent_delta = 5%
+$count_veg = 7
+$background_gallery = #e7e7e7
+
+vendor(prop, args) {
+    // -webkit-{prop}: args
+    {prop}: args
+}
+
+transform() {
+    vendor('transform', arguments)
+}
+
+html,
+body {
+    background: $background_gallery
+    font-family: 'Helvetica', sans-serif
+    height: 100%
+    line-height: 1.3em
+    margin: 0
+    overflow: hidden
+    padding: 0
+    width: 100%
+}
+
+.gallery {
+    &__veg {
+        display: inline
+        height: 200px
+        margin-left: 5%
+        margin-top: 100px
+        transition: all 1s ease-out
+        vendor('transform-style', preserve-3d)
+        width: 100%
+
+        &__label {
+            for $num in (1..$count_veg) {
+                &_{$num} {
+                    cursor: pointer
+                    display: inline-flex
+                    margin-left: -4%
+                    margin-right: -4%
+                    margin-top: 15%
+                    max-width: 17%
+                    position: relative
+                    vendor('transition-duration', .5s)
+                    vendor('transition-property', transform)
+                    vendor('transition-timing-function', ease-in-out)
+                    z-index: 10
+                }
+            }
+        }
+
+        &__img {
+            box-shadow: 0 10px 10px rgba(0, 0, 0, .5)
+            max-height: 150px
+            width: 100%
+        }
+    }
+
+    for $num in (1..$count_veg) {
+        &__input {
+            &_{$num} {
+                display: none
+                &:checked ~ div {
+                    $shift = $margin_percent_delta * ($count_veg + 1 - $num)
+                    margin-left: $shift
+                }
+            }
+        }
+
+        &__input_{$num}:checked ~ div &__veg {
+            $shift = $margin_percent_delta * ($count_veg + 1 - $num)
+            margin-left: $shift
+
+            &__label {
+                for $next_num in (1..$count_veg) {
+                    $sub = $num - $next_num
+                    $sign = $sub > 0 ? 1 : -1
+                    $diff = $sign * $sub
+                    $z_index = $count_veg - $diff
+                    $persp = 200 + 50 * $diff
+                    $transl = -1 * ($count_veg - $diff) * 10
+                    if $diff == 0 {
+                        $persp = 0
+                        $transl = 0
+                    }
+                    $rot = -1 * $transl * $sign
+                    &_{$next_num} {
+                        z-index: $z_index
+                        transform: perspective($persp px) rotateY($rot deg) translateZ($transl px)
+                    }
+                }
+            }
+        }
+    }
+}

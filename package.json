@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "npm run test-html && npm run test-css",
+    "test-html": "mocha ./node_modules/html-tests/task-stub/test",
+    "test-css": "stylelint *.css"
+  },
+  "dependencies": {
+    "html-tests": "https://github.com/urfu-2015/html-test-suite.git#stable",
+    "mocha": "2.3.3",
+    "should": "7.1.0",
+    "stylelint": "2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "css-declaration-sorter": "^1.2.1",
+    "postcss": "^5.0.19",
+    "stylus": "^0.54.2"
+  }
+}
