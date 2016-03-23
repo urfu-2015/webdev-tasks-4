@@ -10,13 +10,13 @@
   box-shadow: 0 5px 30px #808080;
   transition: transform 1.5s ease 0s, left 1.5s ease 0s;
 }
-.gallery-item__control_invisible {
-  display: none;
-}
-.veg-img {
+.gallery-item__img {
   width: 160px;
   height: 180px;
   background-color: #fff;
+}
+.gallery-item__control_invisible {
+  display: none;
 }
 [id=first]:checked ~ .first {
   transform: scaleY(1) rotateY(0deg);
