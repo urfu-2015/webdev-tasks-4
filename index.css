@@ -1,0 +1,223 @@
+.gallery-block {
+  margin: 200px auto;
+  width: 1150px;
+  min-width: 1150px;
+  perspective: 200px;
+}
+.gallery-item {
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 5px 30px #808080;
+  transition: transform 1.5s ease 0s, left 1.5s ease 0s;
+}
+.gallery-item__control_invisible {
+  display: none;
+}
+.veg-img {
+  width: 160px;
+  height: 180px;
+  background-color: #fff;
+}
+[id=first]:checked ~ .first {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: 45%;
+}
+[id=first]:checked ~ .second {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 40%;
+}
+[id=first]:checked ~ .third {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 35%;
+}
+[id=first]:checked ~ .fourth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 30%;
+}
+[id=first]:checked ~ .fifth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 25%;
+}
+[id=first]:checked ~ .sixth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 20%;
+}
+[id=first]:checked ~ .seventh {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 15%;
+}
+[id=second]:checked ~ .first {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 35%;
+}
+[id=second]:checked ~ .second {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: 30%;
+}
+[id=second]:checked ~ .third {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 25%;
+}
+[id=second]:checked ~ .fourth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 20%;
+}
+[id=second]:checked ~ .fifth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 15%;
+}
+[id=second]:checked ~ .sixth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 10%;
+}
+[id=second]:checked ~ .seventh {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 5%;
+}
+[id=third]:checked ~ .first {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 25%;
+}
+[id=third]:checked ~ .second {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 20%;
+}
+[id=third]:checked ~ .third {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: 15%;
+}
+[id=third]:checked ~ .fourth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 10%;
+}
+[id=third]:checked ~ .fifth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 5%;
+}
+[id=third]:checked ~ .sixth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: 0%;
+}
+[id=third]:checked ~ .seventh {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -5%;
+}
+[id=fourth]:checked ~ .first {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 15%;
+}
+[id=fourth]:checked ~ .second {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 10%;
+}
+[id=fourth]:checked ~ .third {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 5%;
+}
+[id=fourth]:checked ~ .fourth {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: 0%;
+}
+[id=fourth]:checked ~ .fifth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -5%;
+}
+[id=fourth]:checked ~ .sixth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -10%;
+}
+[id=fourth]:checked ~ .seventh {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -15%;
+}
+[id=fifth]:checked ~ .first {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 5%;
+}
+[id=fifth]:checked ~ .second {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: 0%;
+}
+[id=fifth]:checked ~ .third {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -5%;
+}
+[id=fifth]:checked ~ .fourth {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -10%;
+}
+[id=fifth]:checked ~ .fifth {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: -15%;
+}
+[id=fifth]:checked ~ .sixth {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -20%;
+}
+[id=fifth]:checked ~ .seventh {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -25%;
+}
+[id=sixth]:checked ~ .first {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -5%;
+}
+[id=sixth]:checked ~ .second {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -10%;
+}
+[id=sixth]:checked ~ .third {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -15%;
+}
+[id=sixth]:checked ~ .fourth {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -20%;
+}
+[id=sixth]:checked ~ .fifth {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -25%;
+}
+[id=sixth]:checked ~ .sixth {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: -30%;
+}
+[id=sixth]:checked ~ .seventh {
+  transform: scaleY(0.7) rotateY(-30deg);
+  left: -35%;
+}
+[id=seventh]:checked ~ .first {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -15%;
+}
+[id=seventh]:checked ~ .second {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -20%;
+}
+[id=seventh]:checked ~ .third {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -25%;
+}
+[id=seventh]:checked ~ .fourth {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -30%;
+}
+[id=seventh]:checked ~ .fifth {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -35%;
+}
+[id=seventh]:checked ~ .sixth {
+  transform: scaleY(0.7) rotateY(30deg);
+  left: -40%;
+}
+[id=seventh]:checked ~ .seventh {
+  transform: scaleY(1) rotateY(0deg);
+  z-index: 1;
+  left: -45%;
+}

@@ -1,0 +1,58 @@
+.gallery-block
+{
+    margin: 200px auto;
+    width: 1150px;
+    min-width: 1150px;
+    perspective: 200px;
+}
+
+.gallery-item
+{
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 5px 30px #808080;
+    transition: transform 1.5s ease 0s, left 1.5s ease 0s;
+}
+.gallery-item__control_invisible
+{
+    display: none;
+}
+.veg-img
+{
+    width: 160px;
+    height: 180px;
+    background-color: #fff;
+}
+
+$veg_names = {
+    'first': 1,
+    'second': 2,
+    'third': 3,
+    'fourth': 4,
+    'fifth': 5,
+    'sixth': 6,
+    'seventh': 7
+}
+
+$start_position = $location = 45%;
+$counter_middle = 1;
+
+for $veg_name_out_word, $veg_name_out_num in $veg_names
+    $fuck_this = 0;
+    for $veg_name_in_word, $veg_name_in_num in $veg_names
+        if $veg_name_in_num == $counter_middle
+            $fuck_this += 1
+        [id={$veg_name_out_word}]:checked ~ .{$veg_name_in_word}
+            if $veg_name_in_num == $counter_middle
+                transform: scaleY(1) rotateY(0deg)
+                z-index: 1
+            else
+                if $fuck_this != 0
+                    transform: scaleY(.7) rotateY(-30deg)
+                else
+                    transform: scaleY(.7) rotateY(30deg)
+            left: $location
+        $location -= 5%
+    $counter_middle += 1
+    $start_position -= 10%
+    $location = $start_position
