@@ -1,0 +1,247 @@
+html,
+body
+{
+  height: 100%;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ddd;
+  perspective: 1000px;
+  font-family: arial;
+  overflow: hidden;
+}
+
+input
+{
+  display: none;
+}
+
+.item
+{
+  height: 250px;
+  width: 250px;
+  background: #fff;
+  box-shadow: #555 0 0 25px;
+  transition-duration: .5s;
+
+  &__img
+  {
+    max-height: 250px;
+    max-width: 250px;
+  }
+
+  &__receipt-label
+  {
+    display: none;
+    position: relative;
+    margin-top: -250px;
+    height: 250px;
+    width: 250px;
+  }
+
+  &__onhover-bg
+  {
+   height: 250px;
+   width: 250px;
+   background-color: #000;
+   opacity: .3;
+  }
+  &__receipt
+  {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: 130px;
+    width: 130px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__receipt-title
+  {
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+
+}
+
+.item__img-label,
+.receipt__close
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+}
+
+$item_count = 7
+$center = 680px;
+
+for $checked_item in (1..$item_count) {
+  for $item in (1..$item_count) {
+    $diff = $checked_item - $item;
+    $middle = 4
+    if ($diff == 0) {
+      #in{$item}:checked ~ #pic{$item} {
+        transform: translateX(250px * ($middle - $item))
+        z-index: 14;
+      }
+    } else {
+      #in{$checked_item}:checked ~ #pic{$item} {
+        $middle_diff = $middle - $item;
+        if ($diff > 0) {
+          $translateX = 250 * ($middle - $item + 1 - $diff) + $diff * 150 - 100
+          transform: rotateY((40 - 5 * ($diff - 1))deg) translate3d(($translateX)px, 0, -300px);
+          z-index: 14 - $diff;
+        } else {
+          transform: rotateY((-40 + 5 * ($diff + 1))deg) translate3d((250 * ($middle - $item) - 50)px, 0, -300px);
+          z-index: 14 + $diff;
+        }
+      }
+    }
+  }
+}
+
+
+.shadow
+{
+  display: none;
+  height: 10000000px;
+  width: 1000000px;
+  position: absolute;
+  margin-top: -500000px;
+  margin-left: -500000px;
+  background: #000;
+  opacity: .5;
+  z-index: 13;
+}
+
+.receipt
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 500px;
+  width: 500px;
+  background: #fff;
+  z-index: 15;
+  transform: scale(0) rotateX(180deg);
+
+  &__text
+  {
+    position: absolute;
+    height: 450px;
+    width: 450px;
+    padding: 25px;
+    font-size: 16px;
+  }
+
+  &__close
+  {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 15px;
+    width: 15px;
+    background: url('http://www.pubzi.com/f/lg-Cross-icon.png');
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+
+  &__receipt_title
+  {
+    font-size: 50px;
+    color: #999;
+    border-bottom: 5px solid #888;
+  }
+}
+
+.component
+{
+  display: inline-block;
+  width: 190px;
+  margin-top: 10px;
+  vertical-align: top;
+
+  &__name
+  {
+    font-weight: bold;
+  }
+
+  &__count:after
+  {
+    content: ')';
+  }
+
+  &__count:before
+  {
+    content: '(';
+  }
+}
+
+.instruction
+{
+  display: inline-block;
+  width: 190px;
+  margin-left: 20px;
+
+  &:before
+  {
+    content: 'Инструкция:';
+    display: block;
+    margin-top: 10px;
+    margin-left: -25px;
+    color: #f00;
+  }
+}
+
+.rem
+{
+  display: inline-block;
+  position: absolute;
+  width: 220px;
+  bottom: 25px;
+  right: 25px;
+  font-size: 15px;
+  font-style: italic;
+  color: #999;
+  border-top: 1px solid #000;
+}
+
+for $item in (1..$item_count) {
+  #in{$item}:checked ~ #pic{$item}:hover .item__receipt-label,
+  #receipt{$item}In:checked ~ .shadow
+  {
+    display: block;
+  }
+  #receipt{$item}In:checked ~ #receipt{$item}
+  {
+    display: block;
+    transform: scale(1) rotateX(360deg);
+    transition-duration: .5s;
+  }
+  #receipt{$item}In:checked ~ #pic{$item}
+  {
+    transform: translateZ(500px) rotateX(180deg);
+  }
+  #receipt{$item}In:checked ~ #pic{$item}
+  {
+    transform: translateX(250px * ($middle - $item))
+  }
+}
