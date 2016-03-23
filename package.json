@@ -1,0 +1,23 @@
+{
+  "name": "webdev-tasks-4",
+  "version": "1.0.0",
+  "description": "bem & preprocessors",
+  "main": ".bemjson",
+  "dependencies": {
+    "stylus": "^0.54.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v-samoylov/webdev-tasks-4.git"
+  },
+  "author": "v-samoylov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v-samoylov/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/v-samoylov/webdev-tasks-4#readme"
+}

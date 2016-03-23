@@ -1,0 +1,232 @@
+
+body
+{
+    background-color: #ddd;
+}
+
+.radio-control
+{
+    display: none;
+}
+
+$card_width = 16vw;
+$card_height = 16vw;
+$card_skew = 5deg;
+$card_transition_duration = .7s;
+$card_rotate_x = 180deg;
+$card_rotate_y = 20deg;
+$card_hover_font_size = 2vw;
+$card_transition_timing_func = linear;
+$distance_between_cards = 6vw;
+$card_numbers = first second third fourth fifth sixth seventh;
+
+.gallery
+{
+    margin-top: 35vh;
+    position: relative;
+    perspective: 600px;
+    -webkit-perspective: 600px;
+
+    &__background
+    {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: .8;
+        visibility: hidden;
+        position: fixed;
+        top: -35vh;
+        transition-property: visibility;
+        transition-delay: $card_transition_duration;
+        z-index: -1;
+    }
+}
+
+.image-box
+{
+    display: block;
+    top: 0;
+    width: $card_width;
+    height: $card_height;
+    position: absolute;
+}
+
+.gallery-card
+{
+    display: inline-block;
+    width: $card_width;
+    height: $card_height;
+    position: absolute;
+    background-color: #fff;
+    transform: rotateY($card_rotate_y) skew(0, $card_skew);
+    -webkit-transform: rotateY($card_rotate_y) skew(0, $card_skew);
+    box-shadow: 1px 1px 15px 2px #888;
+    transition-property: left, transform, -webkit-transform;
+    transition-timing-function: $card_transition_timing_func;
+    transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
+
+    &__image
+    {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    &__background
+    {
+        position: absolute;
+        width: $card_width;
+        height: $card_height;
+        background-color: black;
+        opacity: .5;
+        top: 0;
+        z-index: 8;
+    }
+
+    &__circle
+    {
+        position: absolute;
+        top: ($card_width / 16);
+        left: ($card_width / 16);
+        width: $card_width * 0.75;
+        height: $card_height * 0.75;
+        border: ($card_width / 16) solid white;
+        border-radius: 100vw;
+        z-index: 9;
+    }
+
+    $card_hover_padding = ($card_height - $card_hover_font_size) / 2;
+    &__hover-text
+    {
+        position: absolute;
+        top: 0;
+        color: white;
+        font-size: $card_hover_font_size;
+        text-align: center;
+        width: $card_width;
+        z-index: 10;
+        padding: $card_hover_padding 0 $card_hover_padding 0;
+    }
+
+    &__recipe
+    {
+        position: absolute;
+        top: 0;
+        width: $card_width;
+        height: $card_height;
+        background-color: white;
+        transform: rotateX($card_rotate_x);
+        -webkit-transform: rotateX($card_rotate_x);
+        visibility: hidden;
+        transition-property: visibility;
+        transition-delay: $card_transition_duration * 0.5;
+        z-index: 20;
+    }
+
+    &__close-button
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10%;
+    }
+
+    &_hover
+    {
+        display: none;
+        transition-property: z-index;
+        transition-timing-function: $card_transition_timing_func;
+        transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
+    }
+
+    for $card_number in $card_numbers {
+        #{$card_number}-card:checked ~ .gallery &.{$card_number} ~ &
+        {
+            transform: rotateY(-1 * $card_rotate_y) skew(0, -1 * $card_skew);
+            -webkit-transform: rotateY(-1 * $card_rotate_y) skew(0, -1 * $card_skew);
+        }
+    }
+
+    $chosen_card_left = 50vw - $card_width / 2;
+    for $card_number in $card_numbers {
+        #{$card_number}-card:checked ~ .gallery &.{$card_number}
+        {
+            transform: rotateY(0) skew(0, 0);
+            -webkit-transform: rotateY(0) skew(0, 0);
+            z-index: 7;
+            left: $chosen_card_left;
+        }
+    }
+
+    for $card_number1, $i1 in $card_numbers {
+        $_z_index = 6;
+        $_left = $chosen_card_left + $distance_between_cards;
+        for $card_number2, $i2 in $card_numbers {
+            if $i2 > $i1 {
+                #{$card_number1}-card:checked ~ .gallery &.{$card_number2}
+                {
+                    z-index: $_z_index;
+                    left: $_left;
+                }
+                $_z_index -= 1;
+                $_left += $distance_between_cards;
+            }
+        }
+    }
+
+    for $card_number1, $i1 in $card_numbers {
+        for $card_number2, $i2 in $card_numbers {
+            if $i2 < $i1 {
+                $_left = $chosen_card_left - ($i1 - $i2) * $distance_between_cards;
+                #{$card_number1}-card:checked ~ .gallery &.{$card_number2}
+                {
+                    left: $_left;
+                }
+            }
+        }
+    }
+
+    for $card_number in $card_numbers {
+        #none-recipe:checked ~ #{$card_number}-card:checked ~ .gallery &.{$card_number}:hover &_hover
+        {
+            display: block;
+        }
+    }
+
+    for $card_number in $card_numbers {
+        #{$card_number}-recipe:checked ~ .gallery &__recipe.{$card_number},
+        {
+            visibility: visible;
+            transition-delay: $card_transition_duration * 0.5;
+        }
+    }
+
+    .gallery & > :not(&__recipe)
+    {
+        transition-property: visibility, z-index;
+        transition-delay: $card_transition_duration;
+    }
+
+    for $card_number in $card_numbers {
+        #{$card_number}-recipe:checked ~ .gallery &.{$card_number} > :not(&__recipe)
+        {
+            visibility: hidden;
+        }
+    }
+
+    for $card_number in $card_numbers {
+        #{$card_number}-recipe:checked ~ .gallery &.{$card_number}
+        {
+            transform: translate(0, -100%) rotateX($card_rotate_x) scale(2) translate(0, -50%) rotateZ(0) !important;
+            -webkit-transform: translate(0, -100%) rotateX($card_rotate_x) scale(2) translate(0, -50%) rotateZ(0) !important;
+            transition-property: transform, -webkit-transform;
+            transition-timing-function: $card_transition_timing_func;
+            transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
+        }
+    }
+}
+
+#none-recipe:not(:checked) ~ .gallery .gallery__background
+{
+    visibility: visible;
+    z-index: 6;
+}
