@@ -24,9 +24,9 @@ makeTransformScale($scale, $z)
     display flex
     align-items center;
     justify-content center;
-
-input
-    display none
+    for $index in (1..$slidesCount)
+        &__input{$index}
+            display none
 
 .slides
     width 1500px
