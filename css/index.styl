@@ -1,0 +1,57 @@
+$photos = 1 2 3 4 5 6 7;
+$z_translation_start = -20px;
+$z_translation_step = 5;
+$z_index_start = 80;
+$z_index_step = 10;
+$x_translation_step = -50%;
+$x_translation_curr = 390%;
+
+body
+    background-color: #e9ebeb;
+
+.gallery
+    margin-top: 15%;
+
+    &__photos
+        display: flex;
+        perspective: 350px;
+
+        &_label
+            width: 12%;
+            transform-style: preserve-3d;
+            transition: transform 1.2s ease;
+            margin: 0 -3%;
+            box-shadow: 0 1px 10px #000;
+        &_photo
+        &_photo-wrapper
+            width: 100%;
+            height: 180px;
+
+.input_undisplayable
+    display: none;
+
+for $photo_checked in $photos {
+    for $photo in $photos {
+        if $photo_checked == $photo {
+            .input-photo-{$photo_checked}:checked ~ .gallery__photos .gallery__photos_label-{$photo} {
+                z-index: $z_index_start;
+                transform: translateX($x_translation_curr) translateZ(50px);
+            }
+        } else {
+            if ($photo_checked > $photo) {
+                $z_index_curr = $z_index_start - ($photo_checked - $photo) * $z_index_step;
+                $y_rotation = 25deg;
+                $z_translation_curr = $z_translation_start - ($photo_checked - $photo) * $z_translation_step;
+            } else {
+                $z_index_curr = $z_index_start - ($photo - $photo_checked) * $z_index_step;
+                $y_rotation = -25deg;
+                $z_translation_curr = $z_translation_start + ($photo_checked - $photo) * $z_translation_step;
+            }
+            .input-photo-{$photo_checked}:checked ~ .gallery__photos .gallery__photos_label-{$photo} {
+                transform: translateX($x_translation_curr) rotateY($y_rotation) translateZ($z_translation_curr);
+                z-index: $z_index_curr;
+            }
+        }
+    }
+    $x_translation_curr = $x_translation_curr + $x_translation_step;
+}
