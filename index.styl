@@ -1,0 +1,71 @@
+$bg_color = #ccc;
+$count_photos = 7;
+
+body
+{
+    background-color: $bg_color;
+    margin: 0;
+}
+
+header
+{
+    text-align: center;
+}
+
+
+.shop-window 
+{
+    height: 100%;
+    
+    &__photos {
+        &_center {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 40%;
+            transform-style: preserve-3d;
+            perspective: 600px;
+        }
+    }
+    
+    &__img {
+        width: 100%;
+        transform: scale(1.5);
+        box-shadow: 0 0 20px #aaa;
+    }
+    
+    for $num in (1..$count_photos) {
+        &__photo-{$num} {
+            display: inline-block;
+            width: 100px;
+            transition: all .8s ease;
+            
+            if $num > 4 {
+                img {
+                    transform: scale(1.6);
+                }
+            }
+        }
+    }
+    
+    &__input {
+        display: none;
+    }
+    
+    for $num1 in (1..$count_photos) {
+        for $num2 in (1..$count_photos) {
+            .input_checked_{$num1}:checked ~ &__article &__photo-{$num2} {
+                $move = $count_photos * 40 - $num1 * 60 - $num2 * 10
+                if $num1 > $num2 {
+                    transform: translateX($move px) rotateY(50deg);
+                }
+                if $num1 < $num2 {
+                    transform: translateX($move px) rotateY(-50deg);
+                }
+                if $num1 == $num2 {
+                    transform: translateX($move px) translateZ(50px);
+                }
+            }
+        }
+    }
+}
