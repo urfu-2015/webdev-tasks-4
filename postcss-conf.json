@@ -1,0 +1,10 @@
+{
+    "use": [
+        "postcss-merge-rules",
+        "autoprefixer",
+        "cssnano"
+    ],
+    "input": "./css/pre-index.css",
+    "output": "./css/index.css",
+    "local-plugins": true
+}

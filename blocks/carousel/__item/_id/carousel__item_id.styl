@@ -1,0 +1,28 @@
+$offset_start = $carousel__item_width / 2;
+$offset_step = $carousel_width / $carousel__item_width * 10;
+$rotate_max = 60deg;
+$rotate_step = 5deg;
+
+for $checked_id in (1..$carousel_number_of_items) {
+    for $item_id in (1..$carousel_number_of_items) {
+        $step = $checked_id - $item_id;
+        #carousel__radio_id_{$checked_id}:checked ~ .carousel .carousel__item_id_{$item_id} {
+            if $step == 0 {
+                transform: scale(1.2);
+                z-index: $carousel_number_of_items;
+            } else {
+                if $step > 0 {
+                    $offset = $offset_start + $offset_step * $step;
+                    $angle = - $rotate_max + $rotate_step * $step;
+                } else {
+                    $step = - $step;
+                    $offset = - $offset_start - $offset_step * $step;
+                    $angle = $rotate_max - $rotate_step * $step;
+                }
+                $z_index = $carousel_number_of_items - $step;
+                transform: translateX($offset) rotateY($angle);
+                z-index: $z_index;
+            }
+        }
+    };
+};
