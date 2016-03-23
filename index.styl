@@ -1,0 +1,63 @@
+.box-3d
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    perspective: 300px;
+}
+
+input
+{
+    display: none;
+}
+
+$count = 7
+$center = ($count / 2) + 1
+
+makeShift($left, $deg, $z) {
+    left: ($left)%;
+    transform: rotateY($deg);
+    z-index: $z;
+}
+
+.products
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 10em;
+    margin: auto;
+
+    &__block {
+        width: 14%;
+        height: 100%;
+        position: relative;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .7);
+        transition: transform 2s ease-in-out, left 1.5s ease-in-out;
+
+        &__img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    for $i in (1..$count) {
+        $leftCenter = ($center - $i) * 14
+        for $j in (1..$count) {
+            $left = $leftCenter + ($i - $j) * 5
+            $z = $count - abs($i - $j)
+            &__photo_{$i}:checked ~ &__block_{$j} {
+                if $j > $i {
+                    makeShift($left, -50deg, $z)
+                } else if $j < $i {
+                    makeShift($left, 50deg, $z)
+                } else {
+                    makeShift($left, 0, $z)
+                }
+            }
+        }
+    }
+}
