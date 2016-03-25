@@ -38,16 +38,16 @@ $start_position = $location = 45%;
 $counter_middle = 1;
 
 for $veg_name_out_word, $veg_name_out_num in $veg_names
-    $fuck_this = 0;
+    $love_this = 0;
     for $veg_name_in_word, $veg_name_in_num in $veg_names
         if $veg_name_in_num == $counter_middle
-            $fuck_this += 1
+            $love_this += 1
         [id={$veg_name_out_word}]:checked ~ .{$veg_name_in_word}
             if $veg_name_in_num == $counter_middle
                 transform: scaleY(1) rotateY(0deg)
                 z-index: 1
             else
-                if $fuck_this != 0
+                if $love_this != 0
                     transform: scaleY(.7) rotateY(-30deg)
                 else
                     transform: scaleY(.7) rotateY(30deg)
