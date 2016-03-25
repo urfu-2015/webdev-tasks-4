@@ -6,10 +6,15 @@
   display: none;
 }
 .slider {
-  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: transform;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   width: 99%;
   margin-top: 200px;
   text-align: center;
+  -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
 .slider__photo_first {
@@ -39,194 +44,277 @@
   height: 160px;
   display: inline-block;
   width: 14%;
+  -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   position: relative;
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+}
+.slider__photo:hover {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 #first:checked ~ .slider {
-  transform: translateX(20%);
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
 }
 #second:checked ~ .slider {
-  transform: translateX(15%);
+  -webkit-transform: translateX(15%);
+          transform: translateX(15%);
 }
 #third:checked ~ .slider {
-  transform: translateX(8%);
+  -webkit-transform: translateX(8%);
+          transform: translateX(8%);
 }
 #fifth:checked ~ .slider {
-  transform: translateX(-9%);
+  -webkit-transform: translateX(-9%);
+          transform: translateX(-9%);
 }
 #sixth:checked ~ .slider {
-  transform: translateX(-17%);
+  -webkit-transform: translateX(-17%);
+          transform: translateX(-17%);
 }
 #seventh:checked ~ .slider {
-  transform: translateX(-19%);
+  -webkit-transform: translateX(-19%);
+          transform: translateX(-19%);
+}
+#first:checked ~ .slider > .slider__photo_first {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#second:checked ~ .slider > .slider__photo_second {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#third:checked ~ .slider > .slider__photo_third {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#fourth:checked ~ .slider > .slider__photo_fourth {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#fifth:checked ~ .slider > .slider__photo_fifth {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#sixth:checked ~ .slider > .slider__photo_sixth {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#seventh:checked ~ .slider > .slider__photo_seventh {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 #first:checked ~ .slider > .slider__photo_second {
   margin-left: -6.2%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
 }
 #first:checked ~ .slider > .slider__photo_third {
   margin-left: -6.3%;
-  transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
 }
 #first:checked ~ .slider > .slider__photo_fourth {
   margin-left: -6.4%;
-  transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
 }
 #first:checked ~ .slider > .slider__photo_fifth {
   margin-left: -6.5%;
-  transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
 }
 #first:checked ~ .slider > .slider__photo_sixth {
   margin-left: -6.6%;
-  transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
 }
 #first:checked ~ .slider > .slider__photo_seventh {
   margin-left: -6.7%;
-  transform: perspective(350px) rotateY(-35deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-35deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-35deg) translateZ(-40px);
 }
 #second:checked ~ .slider > .slider__photo_first {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
 #second:checked ~ .slider > .slider__photo_third {
   margin-left: -6.2%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
 }
 #second:checked ~ .slider > .slider__photo_fourth {
   margin-left: -6.3%;
-  transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
 }
 #second:checked ~ .slider > .slider__photo_fifth {
   margin-left: -6.4%;
-  transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
 }
 #second:checked ~ .slider > .slider__photo_sixth {
   margin-left: -6.5%;
-  transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
 }
 #second:checked ~ .slider > .slider__photo_seventh {
   margin-left: -6.6%;
-  transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-36deg) translateZ(-40px);
 }
 #third:checked ~ .slider > .slider__photo_first {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(39deg) translateZ(-40px);
 }
 #third:checked ~ .slider > .slider__photo_second {
   margin-right: -6.3%;
-  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
 #third:checked ~ .slider > .slider__photo_fourth {
   margin-left: -6.3%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
 }
 #third:checked ~ .slider > .slider__photo_fifth {
   margin-left: -6.4%;
-  transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
 }
 #third:checked ~ .slider > .slider__photo_sixth {
   margin-left: -6.5%;
-  transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
 }
 #third:checked ~ .slider > .slider__photo_seventh {
   margin-left: -6.6%;
-  transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-37deg) translateZ(-40px);
 }
 #fourth:checked ~ .slider > .slider__photo_first {
   margin-right: -6.1%;
-  transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(38deg) translateZ(-40px);
 }
 #fourth:checked ~ .slider > .slider__photo_second {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(39deg) translateZ(-40px);
 }
 #fourth:checked ~ .slider > .slider__photo_third {
   margin-right: -6.3%;
-  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
 #fourth:checked ~ .slider > .slider__photo_fifth {
   margin-left: -6.3%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
 }
 #fourth:checked ~ .slider > .slider__photo_sixth {
   margin-left: -6.4%;
-  transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
 }
 #fourth:checked ~ .slider > .slider__photo_seventh {
   margin-left: -6.5%;
-  transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-38deg) translateZ(-40px);
 }
 #fifth:checked ~ .slider > .slider__photo_first {
   margin-right: -6%;
-  transform: perspective(350px) rotateY(37deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(37deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(37deg) translateZ(-40px);
 }
 #fifth:checked ~ .slider > .slider__photo_second {
   margin-right: -6.1%;
-  transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(38deg) translateZ(-40px);
 }
 #fifth:checked ~ .slider > .slider__photo_third {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(39deg) translateZ(-40px);
 }
 #fifth:checked ~ .slider > .slider__photo_fourth {
   margin-right: -6.3%;
-  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
 #fifth:checked ~ .slider > .slider__photo_sixth {
   margin-left: -6.3%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
 }
 #fifth:checked ~ .slider > .slider__photo_seventh {
   margin-left: -6.4%;
-  transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-39deg) translateZ(-40px);
 }
 #sixth:checked ~ .slider > .slider__photo_first {
   margin-right: -6%;
-  transform: perspective(350px) rotateY(36deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(36deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(36deg) translateZ(-40px);
 }
 #sixth:checked ~ .slider > .slider__photo_second {
   margin-right: -6.1%;
-  transform: perspective(350px) rotateY(37deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(37deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(37deg) translateZ(-40px);
 }
 #sixth:checked ~ .slider > .slider__photo_third {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(38deg) translateZ(-40px);
 }
 #sixth:checked ~ .slider > .slider__photo_fourth {
   margin-right: -6.3%;
-  transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(39deg) translateZ(-40px);
 }
 #sixth:checked ~ .slider > .slider__photo_fifth {
   margin-right: -6.4%;
-  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
 #sixth:checked ~ .slider > .slider__photo_seventh {
   margin-left: -6.3%;
-  transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(-40deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_first {
   margin-right: -6.7%;
-  transform: perspective(350px) rotateY(35deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(35deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(35deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_second {
   margin-right: -6.6%;
-  transform: perspective(350px) rotateY(36deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(36deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(36deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_third {
   margin-right: -6.5%;
-  transform: perspective(350px) rotateY(37deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(37deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(37deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_fourth {
   margin-right: -6.4%;
-  transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(38deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(38deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_fifth {
   margin-right: -6.3%;
-  transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(39deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(39deg) translateZ(-40px);
 }
 #seventh:checked ~ .slider > .slider__photo_sixth {
   margin-right: -6.2%;
-  transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+  -webkit-transform: perspective(350px) rotateY(40deg) translateZ(-40px);
+          transform: perspective(350px) rotateY(40deg) translateZ(-40px);
 }
 #first:checked ~ .slider > .slider__photo_first {
   z-index: 5;
@@ -249,4 +337,3 @@
 #seventh:checked ~ .slider > .slider__photo_seventh {
   z-index: 5;
 }
-/*# sourceMappingURL=index.css.map */

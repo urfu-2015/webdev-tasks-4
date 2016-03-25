@@ -8,6 +8,7 @@ $body-background = #ccc
     display none
 
 .slider
+    will-change transform
     transform-style preserve-3d
     width 99%
     margin-top 200px
@@ -36,6 +37,10 @@ for $number, $bg_img in $images
     width 14%
     transition all 1s ease-out
     position relative
+    opacity .85
+    &:hover
+        opacity 1
+
 
 $translateXValues = {
     first: 20%,
@@ -51,6 +56,10 @@ for $id, $value in $translateXValues
         transform translateX($value)
 
 $ids = (first second third fourth fifth sixth seventh)
+
+for $id in $ids
+    #{$id}:checked ~ .slider > .slider__photo_{$id}
+        opacity 1
 
 properties($mrgn, $type, $dgrs)
   margin-{$type} ($mrgn)%

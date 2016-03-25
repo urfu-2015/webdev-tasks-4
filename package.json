@@ -6,10 +6,17 @@
     "test-css": "stylelint *.css"
   },
   "dependencies": {
-    "stylus": "^0.54.2",
+    "autoprefixer": "^6.3.4",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-stylus": "^2.3.1",
     "html-tests": "https://github.com/urfu-2015/html-test-suite.git#stable",
     "mocha": "2.3.3",
+    "postcss-opacity": "^3.0.0",
+    "postcss-will-change": "^1.1.0",
     "should": "7.1.0",
-    "stylelint": "2.0.0"
+    "stylelint": "2.0.0",
+    "stylus": "^0.54.2"
   }
 }
