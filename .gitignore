@@ -2,3 +2,8 @@
 .idea
 node_modules
 npm-debug.log
+blocks/slider/*.css
+blocks/slider/**/*.css
+blocks/slider/**/**/*.css
+blocks/**/**/*.css
+test.*

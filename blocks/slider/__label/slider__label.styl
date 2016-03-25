@@ -1,4 +1,4 @@
-.items-slide__label
+.slider__label
   display block
   position relative
   height 100%
@@ -11,12 +11,12 @@
   cursor pointer
 
 $num-of-photos = 7
-$color = #c8c8c8
+$shadow-color = #c8c8c8
 for $num in (1 .. $num-of-photos)
   $photo = 'photo-' + $num
-  #photo-{$num}:checked ~ .items-slide .items-slide__label[for=\'{$photo}\']
+  #photo-{$num}:checked ~ .slider .slider__label[for=\'{$photo}\']
     transform translateZ(50px)
-    box-shadow 2px 2px 5px $color, -2px 0 5px $color
+    box-shadow 2px 2px 5px $shadow-color, -2px 0 5px $shadow-color
 
 $angles = {}
 for $key in (1 .. 7)
@@ -48,5 +48,5 @@ for $i in (1 .. $num-of-photos)
   for $j in (1 .. $num-of-photos)
     $photo = 'photo-' + $j
     if $i != $j
-      #photo-{$i}:checked ~ .items-slide .items-slide__label[for=\'{$photo}\']
+      #photo-{$i}:checked ~ .slider .slider__label[for=\'{$photo}\']
         transform: rotateY(unit($angles[$i][$j], deg))

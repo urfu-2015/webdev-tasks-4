@@ -1,0 +1,34 @@
+translation(mult)
+  transform translateX(mult * 100px)
+
+.slider
+  &__item
+    position relative
+    height 100%
+    max-width 100px
+    perspective 400px
+    transform translateX(0)
+    transition-property transform
+    transition-timing-function linear
+    transition-duration 1s
+
+.input
+    &#photo-1:checked ~ .slider .slider__item
+      translation(3)
+    &#photo-2:checked ~ .slider .slider__item
+      translation(2)
+    &#photo-3:checked ~ .slider .slider__item
+      translation(1)
+    &#photo-5:checked ~ .slider .slider__item
+      translation(-1)
+    &#photo-6:checked ~ .slider .slider__item
+      translation(-2)
+    &#photo-7:checked ~ .slider .slider__item
+      translation(-3)
+
+for $z in (1 .. 7)
+  for $num in (1 .. $z)
+    $sum = 7 - $z + $num
+    .input#photo-{$num}:checked ~ .slider .slider__item:nth-of-type({$sum})
+      z-index $z
+
