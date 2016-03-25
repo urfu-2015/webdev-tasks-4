@@ -35,9 +35,15 @@ $card_numbers = first second third fourth fifth sixth seventh;
         visibility: hidden;
         position: fixed;
         top: -35vh;
+        z-index: -1;
+    }
+
+    .none-recipe:not(:checked) ~ & &__background
+    {
         transition-property: visibility;
         transition-delay: $card_transition_duration;
-        z-index: -1;
+        visibility: visible;
+        z-index: 6;
     }
 }
 
@@ -130,9 +136,6 @@ $card_numbers = first second third fourth fifth sixth seventh;
     &_hover
     {
         display: none;
-        transition-property: z-index;
-        transition-timing-function: $card_transition_timing_func;
-        transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
     }
 
     for $card_number in $card_numbers {
@@ -195,15 +198,11 @@ $card_numbers = first second third fourth fifth sixth seventh;
         }
     }
 
-    .gallery & > :not(&__recipe)
-    {
-        transition-property: visibility, z-index;
-        transition-delay: $card_transition_duration;
-    }
-
     for $card_number in $card_numbers {
-        .{$card_number}-recipe:checked ~ .gallery &.{$card_number} > :not(&__recipe)
+        .{$card_number}-recipe:checked ~ .gallery &.{$card_number} .gallery-card__image-box
         {
+            transition-property: visibility, z-index;
+            transition-delay: $card_transition_duration;
             visibility: hidden;
         }
     }
@@ -217,10 +216,4 @@ $card_numbers = first second third fourth fifth sixth seventh;
             transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
         }
     }
-}
-
-.none-recipe:not(:checked) ~ .gallery .gallery__background
-{
-    visibility: visible;
-    z-index: 6;
 }

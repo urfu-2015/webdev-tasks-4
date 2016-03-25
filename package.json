@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "stylus index.styl && postcss --use css-declaration-sorter --use autoprefixer --use postcss-opacity --use cssnano -c options.json -o index.css index.css"
+    "build": "stylus index.styl && postcss -c options.json -o index.css index.css"
   },
   "repository": {
     "type": "git",
