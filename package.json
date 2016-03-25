@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "contributors": [
+    {
+      "name": "Savi",
+      "email": "savichev95@gmail.com"
+    }
+  ],
+  "devDependencies": {
+    "stylus": "^0.54.2"
+  },
+  "scripts": {
+    "stylus": "stylus index.styl --out index.css",
+    "stylus-watch": "stylus --watch index.styl"
+  }
+}
