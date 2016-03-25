@@ -25,7 +25,6 @@ $card_numbers = first second third fourth fifth sixth seventh;
     margin-top: 35vh;
     position: relative;
     perspective: 600px;
-    -webkit-perspective: 600px;
 
     &__background
     {
@@ -42,15 +41,6 @@ $card_numbers = first second third fourth fifth sixth seventh;
     }
 }
 
-.image-box
-{
-    display: block;
-    top: 0;
-    width: $card_width;
-    height: $card_height;
-    position: absolute;
-}
-
 .gallery-card
 {
     display: inline-block;
@@ -59,11 +49,19 @@ $card_numbers = first second third fourth fifth sixth seventh;
     position: absolute;
     background-color: #fff;
     transform: rotateY($card_rotate_y) skew(0, $card_skew);
-    -webkit-transform: rotateY($card_rotate_y) skew(0, $card_skew);
     box-shadow: 1px 1px 15px 2px #888;
     transition-property: left, transform, -webkit-transform;
     transition-timing-function: $card_transition_timing_func;
     transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
+
+    &__image-box
+    {
+        display: block;
+        top: 0;
+        width: $card_width;
+        height: $card_height;
+        position: absolute;
+    }
 
     &__image
     {
@@ -115,7 +113,6 @@ $card_numbers = first second third fourth fifth sixth seventh;
         height: $card_height;
         background-color: white;
         transform: rotateX($card_rotate_x);
-        -webkit-transform: rotateX($card_rotate_x);
         visibility: hidden;
         transition-property: visibility;
         transition-delay: $card_transition_duration * 0.5;
@@ -139,19 +136,17 @@ $card_numbers = first second third fourth fifth sixth seventh;
     }
 
     for $card_number in $card_numbers {
-        #{$card_number}-card:checked ~ .gallery &.{$card_number} ~ &
+        .{$card_number}-card:checked ~ .gallery &.{$card_number} ~ &
         {
             transform: rotateY(-1 * $card_rotate_y) skew(0, -1 * $card_skew);
-            -webkit-transform: rotateY(-1 * $card_rotate_y) skew(0, -1 * $card_skew);
         }
     }
 
     $chosen_card_left = 50vw - $card_width / 2;
     for $card_number in $card_numbers {
-        #{$card_number}-card:checked ~ .gallery &.{$card_number}
+        .{$card_number}-card:checked ~ .gallery &.{$card_number}
         {
             transform: rotateY(0) skew(0, 0);
-            -webkit-transform: rotateY(0) skew(0, 0);
             z-index: 7;
             left: $chosen_card_left;
         }
@@ -162,7 +157,7 @@ $card_numbers = first second third fourth fifth sixth seventh;
         $_left = $chosen_card_left + $distance_between_cards;
         for $card_number2, $i2 in $card_numbers {
             if $i2 > $i1 {
-                #{$card_number1}-card:checked ~ .gallery &.{$card_number2}
+                .{$card_number1}-card:checked ~ .gallery &.{$card_number2}
                 {
                     z-index: $_z_index;
                     left: $_left;
@@ -177,7 +172,7 @@ $card_numbers = first second third fourth fifth sixth seventh;
         for $card_number2, $i2 in $card_numbers {
             if $i2 < $i1 {
                 $_left = $chosen_card_left - ($i1 - $i2) * $distance_between_cards;
-                #{$card_number1}-card:checked ~ .gallery &.{$card_number2}
+                .{$card_number1}-card:checked ~ .gallery &.{$card_number2}
                 {
                     left: $_left;
                 }
@@ -186,14 +181,14 @@ $card_numbers = first second third fourth fifth sixth seventh;
     }
 
     for $card_number in $card_numbers {
-        #none-recipe:checked ~ #{$card_number}-card:checked ~ .gallery &.{$card_number}:hover &_hover
+        .none-recipe:checked ~ .{$card_number}-card:checked ~ .gallery &.{$card_number}:hover &_hover
         {
             display: block;
         }
     }
 
     for $card_number in $card_numbers {
-        #{$card_number}-recipe:checked ~ .gallery &__recipe.{$card_number},
+        .{$card_number}-recipe:checked ~ .gallery &__recipe.{$card_number},
         {
             visibility: visible;
             transition-delay: $card_transition_duration * 0.5;
@@ -207,17 +202,16 @@ $card_numbers = first second third fourth fifth sixth seventh;
     }
 
     for $card_number in $card_numbers {
-        #{$card_number}-recipe:checked ~ .gallery &.{$card_number} > :not(&__recipe)
+        .{$card_number}-recipe:checked ~ .gallery &.{$card_number} > :not(&__recipe)
         {
             visibility: hidden;
         }
     }
 
     for $card_number in $card_numbers {
-        #{$card_number}-recipe:checked ~ .gallery &.{$card_number}
+        .{$card_number}-recipe:checked ~ .gallery &.{$card_number}
         {
             transform: translate(0, -100%) rotateX($card_rotate_x) scale(2) translate(0, -50%) rotateZ(0) !important;
-            -webkit-transform: translate(0, -100%) rotateX($card_rotate_x) scale(2) translate(0, -50%) rotateZ(0) !important;
             transition-property: transform, -webkit-transform;
             transition-timing-function: $card_transition_timing_func;
             transition-duration: $card_transition_duration, $card_transition_duration, $card_transition_duration;
@@ -225,7 +219,7 @@ $card_numbers = first second third fourth fifth sixth seventh;
     }
 }
 
-#none-recipe:not(:checked) ~ .gallery .gallery__background
+.none-recipe:not(:checked) ~ .gallery .gallery__background
 {
     visibility: visible;
     z-index: 6;
