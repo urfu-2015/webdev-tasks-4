@@ -1,0 +1,30 @@
+{
+  "name": "webdev-tasks-4",
+  "version": "1.0.0",
+  "description": "bem & processors",
+  "main": ".bemjson",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "css-declaration-sorter": "^1.2.1",
+    "cssnano": "^3.5.2",
+    "postcss": "^5.0.19",
+    "postcss-cli-simple": "^1.0.1",
+    "postcss-opacity": "^3.0.0",
+    "stylus": "^0.54.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "stylus index.styl && postcss -c options.json -o index.css index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v-samoylov/webdev-tasks-4.git"
+  },
+  "author": "v-samoylov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v-samoylov/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/v-samoylov/webdev-tasks-4#readme"
+}

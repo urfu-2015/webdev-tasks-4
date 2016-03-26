@@ -1,0 +1,11 @@
+{
+    "use": [
+        "css-declaration-sorter",
+        "autoprefixer",
+        "postcss-opacity",
+        "cssnano"
+    ],
+    "autoprefixer": {
+        "browsers": "> 5%"
+    }
+}
