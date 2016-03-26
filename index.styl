@@ -1,0 +1,72 @@
+$bg_color = gray(0, 30%);
+$count_photos = 7;
+
+body
+{
+    background-color: $bg_color;
+    margin: 0;
+}
+
+header
+{
+    text-align: center;
+}
+
+
+.shop-window 
+{
+    height: 100%;
+    
+    &__photos {
+        width: 100%;
+        position: absolute;
+        top: 40%;
+        transform-style: preserve-3d;
+        perspective: 600px;
+
+        &_center {
+            text-align: center;
+        }
+    }
+    
+    &__img {
+        width: 100%;
+        transform: scale(1.5);
+        box-shadow: 0 0 20px #aaa;
+    }
+    
+    &__photo {
+        display: inline-block;
+        width: 100px;
+        transition: all .8s ease;
+
+        for $num in (4..$count_photos) {
+            &_pos_{$num} {
+                img {
+                    transform: scale(1.6);
+                }
+            }
+        }
+    }
+    
+    &__input {
+        display: disappear;
+        
+        for $num1 in (1..$count_photos) {
+            for $num2 in (1..$count_photos) {
+                &_pos_{$num1}:checked ~ .shop-window__photos .shop-window__photo_pos_{$num2} {
+                    $move = $count_photos * 40 - $num1 * 50 - $num2 * 20;
+                    if $num1 > $num2 {
+                        transform: translateX($move px) rotateY(50deg);
+                    }
+                    if $num1 < $num2 {
+                        transform: translateX($move px) rotateY(-50deg);
+                    }
+                    if $num1 == $num2 {
+                        transform: translateX($move px) translateZ(50px);
+                    }
+                }
+            }
+        }
+    }
+}
