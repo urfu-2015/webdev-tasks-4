@@ -14,26 +14,26 @@
 
     &__wrapper {
         margin: 0 auto;
-        display: flex;
-        align-content: center;
         width: 90%;
         height: 100vh;
+        display: flex;
+        align-content: center;
     }
 
     &__all {
-        perspective-origin: 50% 50%;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
         align-content: center;
         justify-content: center;
         vertical-align: middle;
-        transform-style: preserve-3d;
         flex-direction: row;
         align-items: center;
         text-align: center;
-        margin: 0 auto;
-        display: flex;
-        width: 100%;
+        transform-style: preserve-3d;
+        perspective-origin: 50% 50%;
         perspective: 500px;
-        height: 100%;
     }
 }
 
@@ -51,18 +51,19 @@
     $amount_elements = 7
 
     for $id in (1..$amount_elements) {
-        #radio{$id} ~ &_order_{$id} {
+        .radio{$id} ~ &_order_{$id} {
             box-shadow: 5px 5px 5px rgba(0,0,0,.1);
         }
     }
 
     for $id in (1..$amount_elements) {
-        #radio{$id}:checked ~ &_order_{$id} {
+        .radio{$id}:checked ~ &_order_{$id} {
             //transition-duration: 1s;
             background: white;
         }
     }
 
+    //задержка и время движения выбранного элемента
     set_delay($id) {
         if $id >= $min_delay {
             transition-delay: ($id - 1) * .1s;
@@ -73,6 +74,8 @@
         }
     }
 
+    //данная магия каждой карточке позволяет увеличиваться в размере, за счет трансляции по z и выпадать ровно на
+    //пользователя, а не в сторону(т е редактировка координаты относительно координаты x)
     set_translation($id) {
         transform: translateX(0% + ($amount_elements - $id - $half_of_amount + 1)*100) translateZ($translate_z);
     }
@@ -82,47 +85,61 @@
     $translate_z = 200px
 
     for $id in (1..$amount_elements) {
-        #radio{$id}:checked ~ &_order_{$id} {
+        .radio{$id}:checked ~ &_order_{$id} {
             set_delay($id)
             set_translation($id)
         }
+    };
+
+    //для каждой карточки определена ее позиция по отношения к другим карточкам
+    //$other - относительно какой карточки
+    //$value - вычисляется по формуле ниже(в зависимости от $other и карточки для которой вычисляется)
+    //$relative_number - разница по модулю, между номерами карточки
+    //$deg_of_rotate - угол поворота
+    //$direction имеет два значение 'left' и 'right', обозначает, в какой стороне от карточки $other находится
+    //карточка,к которой этот класс будет прикреплен(текуща карточка, номер = $id)
+    //как формируется имя модификатора в классе:
+    //{c какой стороны от выбранной карточки}{номер от карточки в этой стороне}-в-отношениие-к-{карточке с номером $other}
+    set_transform_and_trans_duration($other, $relative_number, $id, $deg_of_rotate, $value, $direction) {
+        .radio{$other}:checked ~ &_pos_{$direction}{$relative_number}-in-relation-to-{$other} {
+            transform: translateX($value) rotateY($deg_of_rotate);
+            set_delay($id, $other)
+            transition-duration: 1s;
+        }
     }
 
+    //определние карточек относительно других
+    //если $other = $id, то не рассматриваем, т к рассматриватся только одна карточка относительно другой
     set_relative_movement($id, $other) {
         $relative_number = $other - $id
         if $relative_number == 0 {
         } else {
             if $relative_number < 0 {
-                $value = (0% + $amount_elements + 2 - ($other + $id))*50
-                #radio{$other}:checked ~ &_pos-about_num-{$other}-pos-right-{0 - $relative_number} {
-                    transform: translateX($value) rotateY(-50deg);
-                    set_delay($id, $other)
-                    transition-duration: 1s;
-                }
+                $value = (0% + $amount_elements + 2 - ($other + $id)) * 50
+                set_transform_and_trans_duration($other, 0 - $relative_number, $id, -50deg, $value, 'right')
             } else {
-                $value = (0% + $amount_elements - ($other + $id))*50
-                #radio{$other}:checked ~ &_pos-about_num-{$other}-pos-left-{$relative_number} {
-                    transform: translateX($value) rotateY(50deg);
-                    set_delay($id, $other)
-                    transition-duration: 1s;
-                }
+                $value = (0% + $amount_elements - ($other + $id)) * 50
+                set_transform_and_trans_duration($other, $relative_number, $id, 50deg, $value, 'left')
             }
         }
     }
 
+    //установка задержки относительно другой карточки
     set_delay($id, $other) {
         if $other <= 4 {
             transition-delay: .1s * ($amount_elements - $id);
         } else {
             transition-delay: .1s * ($id - 1);
         }
-
     }
 
+    //перебор карточек, и далее перебор других карточек, вычисление их задержек
+    //и координат движения относительно текущей(отвечает на вопрос, как будет двигаться $id,
+    //если пользователь выбрал карточку с $other)
     for $id in (1..$amount_elements) {
         for $other in (1..$amount_elements) {
             set_relative_movement($id, $other)
         }
     }
-
 }
+
