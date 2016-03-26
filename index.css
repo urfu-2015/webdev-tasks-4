@@ -8,210 +8,185 @@ header {
 .shop-window {
   height: 100%;
 }
-.shop-window__photos_center {
-  text-align: center;
+.shop-window__photos {
   width: 100%;
   position: absolute;
   top: 40%;
   transform-style: preserve-3d;
   perspective: 600px;
 }
+.shop-window__photos_center {
+  text-align: center;
+}
 .shop-window__img {
   width: 100%;
   transform: scale(1.5);
   box-shadow: 0 0 20px #aaa;
 }
-.shop-window__photo-1 {
+.shop-window__photo {
   display: inline-block;
   width: 100px;
   transition: all 0.8s ease;
 }
-.shop-window__photo-2 {
-  display: inline-block;
-  width: 100px;
-  transition: all 0.8s ease;
-}
-.shop-window__photo-3 {
-  display: inline-block;
-  width: 100px;
-  transition: all 0.8s ease;
-}
-.shop-window__photo-4 {
-  display: inline-block;
-  width: 100px;
-  transition: all 0.8s ease;
-}
-.shop-window__photo-5 {
-  display: inline-block;
-  width: 100px;
-  transition: all 0.8s ease;
-}
-.shop-window__photo-5 img {
+.shop-window__photo_pos_4 img {
   transform: scale(1.6);
 }
-.shop-window__photo-6 {
-  display: inline-block;
-  width: 100px;
-  transition: all 0.8s ease;
-}
-.shop-window__photo-6 img {
+.shop-window__photo_pos_5 img {
   transform: scale(1.6);
 }
-.shop-window__photo-7 {
-  display: inline-block;
-  width: 100px;
-  transition: all 0.8s ease;
+.shop-window__photo_pos_6 img {
+  transform: scale(1.6);
 }
-.shop-window__photo-7 img {
+.shop-window__photo_pos_7 img {
   transform: scale(1.6);
 }
 .shop-window__input {
   display: none;
 }
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-1 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
   transform: translateX(210px) translateZ(50px);
 }
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-2 {
-  transform: translateX(200px) rotateY(-50deg);
-}
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-3 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
   transform: translateX(190px) rotateY(-50deg);
 }
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-4 {
-  transform: translateX(180px) rotateY(-50deg);
-}
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-5 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
   transform: translateX(170px) rotateY(-50deg);
 }
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-6 {
-  transform: translateX(160px) rotateY(-50deg);
-}
-.input_checked_1:checked ~ .shop-window__article .shop-window__photo-7 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
   transform: translateX(150px) rotateY(-50deg);
 }
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-1 {
-  transform: translateX(150px) rotateY(50deg);
-}
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-2 {
-  transform: translateX(140px) translateZ(50px);
-}
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-3 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
   transform: translateX(130px) rotateY(-50deg);
 }
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-4 {
-  transform: translateX(120px) rotateY(-50deg);
-}
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-5 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
   transform: translateX(110px) rotateY(-50deg);
 }
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-6 {
-  transform: translateX(100px) rotateY(-50deg);
-}
-.input_checked_2:checked ~ .shop-window__article .shop-window__photo-7 {
+.shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
   transform: translateX(90px) rotateY(-50deg);
 }
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-1 {
-  transform: translateX(90px) rotateY(50deg);
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
+  transform: translateX(160px) rotateY(50deg);
 }
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-2 {
-  transform: translateX(80px) rotateY(50deg);
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
+  transform: translateX(140px) translateZ(50px);
 }
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-3 {
-  transform: translateX(70px) translateZ(50px);
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
+  transform: translateX(120px) rotateY(-50deg);
 }
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-4 {
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
+  transform: translateX(100px) rotateY(-50deg);
+}
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
+  transform: translateX(80px) rotateY(-50deg);
+}
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
   transform: translateX(60px) rotateY(-50deg);
 }
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-5 {
-  transform: translateX(50px) rotateY(-50deg);
-}
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-6 {
+.shop-window__input_pos_2:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
   transform: translateX(40px) rotateY(-50deg);
 }
-.input_checked_3:checked ~ .shop-window__article .shop-window__photo-7 {
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
+  transform: translateX(110px) rotateY(50deg);
+}
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
+  transform: translateX(90px) rotateY(50deg);
+}
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
+  transform: translateX(70px) translateZ(50px);
+}
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
+  transform: translateX(50px) rotateY(-50deg);
+}
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
   transform: translateX(30px) rotateY(-50deg);
 }
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-1 {
-  transform: translateX(30px) rotateY(50deg);
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
+  transform: translateX(10px) rotateY(-50deg);
 }
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-2 {
-  transform: translateX(20px) rotateY(50deg);
-}
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-3 {
-  transform: translateX(10px) rotateY(50deg);
-}
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-4 {
-  transform: translateX(0px) translateZ(50px);
-}
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-5 {
+.shop-window__input_pos_3:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
   transform: translateX(-10px) rotateY(-50deg);
 }
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-6 {
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
+  transform: translateX(60px) rotateY(50deg);
+}
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
+  transform: translateX(40px) rotateY(50deg);
+}
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
+  transform: translateX(20px) rotateY(50deg);
+}
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
+  transform: translateX(0px) translateZ(50px);
+}
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
   transform: translateX(-20px) rotateY(-50deg);
 }
-.input_checked_4:checked ~ .shop-window__article .shop-window__photo-7 {
-  transform: translateX(-30px) rotateY(-50deg);
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
+  transform: translateX(-40px) rotateY(-50deg);
 }
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-1 {
+.shop-window__input_pos_4:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
+  transform: translateX(-60px) rotateY(-50deg);
+}
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
+  transform: translateX(10px) rotateY(50deg);
+}
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
+  transform: translateX(-10px) rotateY(50deg);
+}
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
   transform: translateX(-30px) rotateY(50deg);
 }
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-2 {
-  transform: translateX(-40px) rotateY(50deg);
-}
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-3 {
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
   transform: translateX(-50px) rotateY(50deg);
 }
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-4 {
-  transform: translateX(-60px) rotateY(50deg);
-}
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-5 {
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
   transform: translateX(-70px) translateZ(50px);
 }
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-6 {
-  transform: translateX(-80px) rotateY(-50deg);
-}
-.input_checked_5:checked ~ .shop-window__article .shop-window__photo-7 {
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
   transform: translateX(-90px) rotateY(-50deg);
 }
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-1 {
-  transform: translateX(-90px) rotateY(50deg);
+.shop-window__input_pos_5:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
+  transform: translateX(-110px) rotateY(-50deg);
 }
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-2 {
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
+  transform: translateX(-40px) rotateY(50deg);
+}
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
+  transform: translateX(-60px) rotateY(50deg);
+}
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
+  transform: translateX(-80px) rotateY(50deg);
+}
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
   transform: translateX(-100px) rotateY(50deg);
 }
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-3 {
-  transform: translateX(-110px) rotateY(50deg);
-}
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-4 {
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
   transform: translateX(-120px) rotateY(50deg);
 }
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-5 {
-  transform: translateX(-130px) rotateY(50deg);
-}
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-6 {
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
   transform: translateX(-140px) translateZ(50px);
 }
-.input_checked_6:checked ~ .shop-window__article .shop-window__photo-7 {
-  transform: translateX(-150px) rotateY(-50deg);
+.shop-window__input_pos_6:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
+  transform: translateX(-160px) rotateY(-50deg);
 }
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-1 {
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
+  transform: translateX(-90px) rotateY(50deg);
+}
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_2 {
+  transform: translateX(-110px) rotateY(50deg);
+}
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_3 {
+  transform: translateX(-130px) rotateY(50deg);
+}
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_4 {
   transform: translateX(-150px) rotateY(50deg);
 }
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-2 {
-  transform: translateX(-160px) rotateY(50deg);
-}
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-3 {
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_5 {
   transform: translateX(-170px) rotateY(50deg);
 }
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-4 {
-  transform: translateX(-180px) rotateY(50deg);
-}
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-5 {
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_6 {
   transform: translateX(-190px) rotateY(50deg);
 }
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-6 {
-  transform: translateX(-200px) rotateY(50deg);
-}
-.input_checked_7:checked ~ .shop-window__article .shop-window__photo-7 {
+.shop-window__input_pos_7:checked ~ .shop-window__photos .shop-window__photo_pos_7 {
   transform: translateX(-210px) translateZ(50px);
 }
