@@ -1,5 +1,5 @@
 body {
-  background-color: #ccc;
+  background-color: gray(0, 30%);
   margin: 0;
 }
 header {
@@ -41,7 +41,7 @@ header {
   transform: scale(1.6);
 }
 .shop-window__input {
-  display: none;
+  display: disappear;
 }
 .shop-window__input_pos_1:checked ~ .shop-window__photos .shop-window__photo_pos_1 {
   transform: translateX(210px) translateZ(50px);
