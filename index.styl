@@ -1,8 +1,6 @@
-$bg_color = gray(200);
-
 body
 {
-  background: $bg_color;
+  background: gray(200);
   text-align: center;
 }
 
@@ -35,93 +33,119 @@ input
 set_photo($name, $translationX, $translationZ, $rotation) {
   &__{$name}-photo
   {
-    transform: translateX($translationX) translateZ($translationZ) rotateY($rotation);
+    transform: translateX($translationX px) translateZ($translationZ) rotateY($rotation);
   }
 }
 
-#one:checked ~ main .gallery-photos
-{
-  set_photo('first', 225px, 70px, 0);
+$photos = { 'first': 0px,
+'second': 1px,
+'third': 2px,
+'fourth': 3px,
+'fifth' : 4px,
+'sixth': 5px,
+'seventh': 6px};
 
-  $photos = 'second' 'third' 'forth' 'fifth' 'sixth' 'seventh'
-  for $photo in $photos {
-    set_photo($photo, 225px, 0, -30deg);
-  }
+for $photo, $count in $photos {
+  $left_from_current = true;
+  #{$photo}:checked ~ main .gallery-photos {
+     for $another_photo in $photos {
+       if $left_from_current {
+         if $photo != $another_photo {
+           set_photo($another_photo,  225px - 75px * $count, 0, 30deg);
+         } else {
+           $left_from_current = false;
+           set_photo($another_photo, 225px - 75px * $count, 70px, 0);
+         }
+       } else {
+         set_photo($another_photo, 225px - 75px * $count, 0, -30deg);
+       }
+     }
+   }
 }
 
-#two:checked ~ main .gallery-photos
-{
-  set_photo('first', 150px, 0, 30deg);
-  set_photo('second', 150px, 70px, 0);
-
-  $photos = 'third' 'forth' 'fifth' 'sixth' 'seventh'
-  for $photo in $photos {
-    set_photo($photo, 150px, 0, -30deg);
-  }
-}
-
-#three:checked ~ main .gallery-photos
-{
-  $photos = 'first' 'second'
-  for $photo in $photos {
-    set_photo($photo, 75px, 0, 30deg);
-  }
-
-  set_photo('third', 75px, 70px, 0);
-
-  $photos = 'forth' 'fifth' 'sixth' 'seventh'
-  for $photo in $photos {
-    set_photo($photo, 75px, 0, -30deg);
-  }
-}
-
-#four:checked ~ main .gallery-photos
-{
-  $photos = 'first' 'second' 'third'
-  for $photo in $photos {
-    set_photo($photo, 0, 0, 30deg);
-  }
-
-  set_photo('forth', 0, 70px, 0);
-
-  $photos = 'fifth' 'sixth' 'seventh'
-  for $photo in $photos {
-    set_photo($photo, 0, 0, -30deg);
-  }
-}
-
-#five:checked ~ main .gallery-photos
-{
-  $photos = 'first' 'second' 'third' 'forth'
-  for $photo in $photos {
-    set_photo($photo, -75px, 0, 30deg);
-  }
-
-  set_photo('fifth', -75px, 70px, 0);
-
-  $photos = 'sixth' 'seventh'
-  for $photo in $photos {
-    set_photo($photo, -75px, 0, -30deg);
-  }
-}
-
-#six:checked ~ main .gallery-photos
-{
-  $photos = 'first' 'second' 'third' 'forth' 'fifth'
-  for $photo in $photos {
-    set_photo($photo, -150px, 0, 30deg);
-  }
-
-  set_photo('sixth', -150px, 70px, 0);
-  set_photo('seventh', -150px, 0, -30deg);
-}
-
-#seven:checked ~ main .gallery-photos
-{
-  $photos = 'first' 'second' 'third' 'forth' 'fifth' 'sixth'
-  for $photo in $photos {
-    set_photo($photo, -225px, 0, 30deg);
-  }
-
-  set_photo('seventh', -225px, 70px, 0);
-}
+//#first:checked ~ main .gallery-photos
+//{
+//  set_photo('first', 225px, 70px, 0);
+//
+//  $photos = 'second' 'third' 'forth' 'fifth' 'sixth' 'seventh'
+//  for $photo in $photos {
+//    set_photo($photo, 225px, 0, -30deg);
+//  }
+//}
+//
+//#second:checked ~ main .gallery-photos
+//{
+//  set_photo('first', 150px, 0, 30deg);
+//  set_photo('second', 150px, 70px, 0);
+//
+//  $photos = 'third' 'fourth' 'fifth' 'sixth' 'seventh'
+//  for $photo in $photos {
+//    set_photo($photo, 150px, 0, -30deg);
+//  }
+//}
+//
+//#third:checked ~ main .gallery-photos
+//{
+//  $photos = 'first' 'second'
+//  for $photo in $photos {
+//    set_photo($photo, 75px, 0, 30deg);
+//  }
+//
+//  set_photo('third', 75px, 70px, 0);
+//
+//  $photos = 'forth' 'fifth' 'sixth' 'seventh'
+//  for $photo in $photos {
+//    set_photo($photo, 75px, 0, -30deg);
+//  }
+//}
+//
+//#fourth:checked ~ main .gallery-photos
+//{
+//  $photos = 'first' 'second' 'third'
+//  for $photo in $photos {
+//    set_photo($photo, 0, 0, 30deg);
+//  }
+//
+//  set_photo('forth', 0, 70px, 0);
+//
+//  $photos = 'fifth' 'sixth' 'seventh'
+//  for $photo in $photos {
+//    set_photo($photo, 0, 0, -30deg);
+//  }
+//}
+//
+//#fifth:checked ~ main .gallery-photos
+//{
+//  $photos = 'first' 'second' 'third' 'forth'
+//  for $photo in $photos {
+//    set_photo($photo, -75px, 0, 30deg);
+//  }
+//
+//  set_photo('fifth', -75px, 70px, 0);
+//
+//  $photos = 'sixth' 'seventh'
+//  for $photo in $photos {
+//    set_photo($photo, -75px, 0, -30deg);
+//  }
+//}
+//
+//#sixth:checked ~ main .gallery-photos
+//{
+//  $photos = 'first' 'second' 'third' 'forth' 'fifth'
+//  for $photo in $photos {
+//    set_photo($photo, -150px, 0, 30deg);
+//  }
+//
+//  set_photo('sixth', -150px, 70px, 0);
+//  set_photo('seventh', -150px, 0, -30deg);
+//}
+//
+//#seventh:checked ~ main .gallery-photos
+//{
+//  $photos = 'first' 'second' 'third' 'forth' 'fifth' 'sixth'
+//  for $photo in $photos {
+//    set_photo($photo, -225px, 0, 30deg);
+//  }
+//
+//  set_photo('seventh', -225px, 70px, 0);
+//}

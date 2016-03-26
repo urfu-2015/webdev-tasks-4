@@ -20,150 +20,150 @@ img {
 input {
   display: disappear;
 }
-#one:checked ~ main .gallery-photos__first-photo {
+#first:checked ~ main .gallery-photos__first-photo {
   transform: translateX(225px) translateZ(70px) rotateY(0);
 }
-#one:checked ~ main .gallery-photos__second-photo {
+#first:checked ~ main .gallery-photos__second-photo {
   transform: translateX(225px) translateZ(0) rotateY(-30deg);
 }
-#one:checked ~ main .gallery-photos__third-photo {
+#first:checked ~ main .gallery-photos__third-photo {
   transform: translateX(225px) translateZ(0) rotateY(-30deg);
 }
-#one:checked ~ main .gallery-photos__forth-photo {
+#first:checked ~ main .gallery-photos__fourth-photo {
   transform: translateX(225px) translateZ(0) rotateY(-30deg);
 }
-#one:checked ~ main .gallery-photos__fifth-photo {
+#first:checked ~ main .gallery-photos__fifth-photo {
   transform: translateX(225px) translateZ(0) rotateY(-30deg);
 }
-#one:checked ~ main .gallery-photos__sixth-photo {
+#first:checked ~ main .gallery-photos__sixth-photo {
   transform: translateX(225px) translateZ(0) rotateY(-30deg);
 }
-#one:checked ~ main .gallery-photos__seventh-photo {
+#first:checked ~ main .gallery-photos__seventh-photo {
   transform: translateX(225px) translateZ(0) rotateY(-30deg);
 }
-#two:checked ~ main .gallery-photos__first-photo {
+#second:checked ~ main .gallery-photos__first-photo {
   transform: translateX(150px) translateZ(0) rotateY(30deg);
 }
-#two:checked ~ main .gallery-photos__second-photo {
+#second:checked ~ main .gallery-photos__second-photo {
   transform: translateX(150px) translateZ(70px) rotateY(0);
 }
-#two:checked ~ main .gallery-photos__third-photo {
+#second:checked ~ main .gallery-photos__third-photo {
   transform: translateX(150px) translateZ(0) rotateY(-30deg);
 }
-#two:checked ~ main .gallery-photos__forth-photo {
+#second:checked ~ main .gallery-photos__fourth-photo {
   transform: translateX(150px) translateZ(0) rotateY(-30deg);
 }
-#two:checked ~ main .gallery-photos__fifth-photo {
+#second:checked ~ main .gallery-photos__fifth-photo {
   transform: translateX(150px) translateZ(0) rotateY(-30deg);
 }
-#two:checked ~ main .gallery-photos__sixth-photo {
+#second:checked ~ main .gallery-photos__sixth-photo {
   transform: translateX(150px) translateZ(0) rotateY(-30deg);
 }
-#two:checked ~ main .gallery-photos__seventh-photo {
+#second:checked ~ main .gallery-photos__seventh-photo {
   transform: translateX(150px) translateZ(0) rotateY(-30deg);
 }
-#three:checked ~ main .gallery-photos__first-photo {
+#third:checked ~ main .gallery-photos__first-photo {
   transform: translateX(75px) translateZ(0) rotateY(30deg);
 }
-#three:checked ~ main .gallery-photos__second-photo {
+#third:checked ~ main .gallery-photos__second-photo {
   transform: translateX(75px) translateZ(0) rotateY(30deg);
 }
-#three:checked ~ main .gallery-photos__third-photo {
+#third:checked ~ main .gallery-photos__third-photo {
   transform: translateX(75px) translateZ(70px) rotateY(0);
 }
-#three:checked ~ main .gallery-photos__forth-photo {
+#third:checked ~ main .gallery-photos__fourth-photo {
   transform: translateX(75px) translateZ(0) rotateY(-30deg);
 }
-#three:checked ~ main .gallery-photos__fifth-photo {
+#third:checked ~ main .gallery-photos__fifth-photo {
   transform: translateX(75px) translateZ(0) rotateY(-30deg);
 }
-#three:checked ~ main .gallery-photos__sixth-photo {
+#third:checked ~ main .gallery-photos__sixth-photo {
   transform: translateX(75px) translateZ(0) rotateY(-30deg);
 }
-#three:checked ~ main .gallery-photos__seventh-photo {
+#third:checked ~ main .gallery-photos__seventh-photo {
   transform: translateX(75px) translateZ(0) rotateY(-30deg);
 }
-#four:checked ~ main .gallery-photos__first-photo {
-  transform: translateX(0) translateZ(0) rotateY(30deg);
+#fourth:checked ~ main .gallery-photos__first-photo {
+  transform: translateX(0px) translateZ(0) rotateY(30deg);
 }
-#four:checked ~ main .gallery-photos__second-photo {
-  transform: translateX(0) translateZ(0) rotateY(30deg);
+#fourth:checked ~ main .gallery-photos__second-photo {
+  transform: translateX(0px) translateZ(0) rotateY(30deg);
 }
-#four:checked ~ main .gallery-photos__third-photo {
-  transform: translateX(0) translateZ(0) rotateY(30deg);
+#fourth:checked ~ main .gallery-photos__third-photo {
+  transform: translateX(0px) translateZ(0) rotateY(30deg);
 }
-#four:checked ~ main .gallery-photos__forth-photo {
-  transform: translateX(0) translateZ(70px) rotateY(0);
+#fourth:checked ~ main .gallery-photos__fourth-photo {
+  transform: translateX(0px) translateZ(70px) rotateY(0);
 }
-#four:checked ~ main .gallery-photos__fifth-photo {
-  transform: translateX(0) translateZ(0) rotateY(-30deg);
+#fourth:checked ~ main .gallery-photos__fifth-photo {
+  transform: translateX(0px) translateZ(0) rotateY(-30deg);
 }
-#four:checked ~ main .gallery-photos__sixth-photo {
-  transform: translateX(0) translateZ(0) rotateY(-30deg);
+#fourth:checked ~ main .gallery-photos__sixth-photo {
+  transform: translateX(0px) translateZ(0) rotateY(-30deg);
 }
-#four:checked ~ main .gallery-photos__seventh-photo {
-  transform: translateX(0) translateZ(0) rotateY(-30deg);
+#fourth:checked ~ main .gallery-photos__seventh-photo {
+  transform: translateX(0px) translateZ(0) rotateY(-30deg);
 }
-#five:checked ~ main .gallery-photos__first-photo {
+#fifth:checked ~ main .gallery-photos__first-photo {
   transform: translateX(-75px) translateZ(0) rotateY(30deg);
 }
-#five:checked ~ main .gallery-photos__second-photo {
+#fifth:checked ~ main .gallery-photos__second-photo {
   transform: translateX(-75px) translateZ(0) rotateY(30deg);
 }
-#five:checked ~ main .gallery-photos__third-photo {
+#fifth:checked ~ main .gallery-photos__third-photo {
   transform: translateX(-75px) translateZ(0) rotateY(30deg);
 }
-#five:checked ~ main .gallery-photos__forth-photo {
+#fifth:checked ~ main .gallery-photos__fourth-photo {
   transform: translateX(-75px) translateZ(0) rotateY(30deg);
 }
-#five:checked ~ main .gallery-photos__fifth-photo {
+#fifth:checked ~ main .gallery-photos__fifth-photo {
   transform: translateX(-75px) translateZ(70px) rotateY(0);
 }
-#five:checked ~ main .gallery-photos__sixth-photo {
+#fifth:checked ~ main .gallery-photos__sixth-photo {
   transform: translateX(-75px) translateZ(0) rotateY(-30deg);
 }
-#five:checked ~ main .gallery-photos__seventh-photo {
+#fifth:checked ~ main .gallery-photos__seventh-photo {
   transform: translateX(-75px) translateZ(0) rotateY(-30deg);
 }
-#six:checked ~ main .gallery-photos__first-photo {
+#sixth:checked ~ main .gallery-photos__first-photo {
   transform: translateX(-150px) translateZ(0) rotateY(30deg);
 }
-#six:checked ~ main .gallery-photos__second-photo {
+#sixth:checked ~ main .gallery-photos__second-photo {
   transform: translateX(-150px) translateZ(0) rotateY(30deg);
 }
-#six:checked ~ main .gallery-photos__third-photo {
+#sixth:checked ~ main .gallery-photos__third-photo {
   transform: translateX(-150px) translateZ(0) rotateY(30deg);
 }
-#six:checked ~ main .gallery-photos__forth-photo {
+#sixth:checked ~ main .gallery-photos__fourth-photo {
   transform: translateX(-150px) translateZ(0) rotateY(30deg);
 }
-#six:checked ~ main .gallery-photos__fifth-photo {
+#sixth:checked ~ main .gallery-photos__fifth-photo {
   transform: translateX(-150px) translateZ(0) rotateY(30deg);
 }
-#six:checked ~ main .gallery-photos__sixth-photo {
+#sixth:checked ~ main .gallery-photos__sixth-photo {
   transform: translateX(-150px) translateZ(70px) rotateY(0);
 }
-#six:checked ~ main .gallery-photos__seventh-photo {
+#sixth:checked ~ main .gallery-photos__seventh-photo {
   transform: translateX(-150px) translateZ(0) rotateY(-30deg);
 }
-#seven:checked ~ main .gallery-photos__first-photo {
+#seventh:checked ~ main .gallery-photos__first-photo {
   transform: translateX(-225px) translateZ(0) rotateY(30deg);
 }
-#seven:checked ~ main .gallery-photos__second-photo {
+#seventh:checked ~ main .gallery-photos__second-photo {
   transform: translateX(-225px) translateZ(0) rotateY(30deg);
 }
-#seven:checked ~ main .gallery-photos__third-photo {
+#seventh:checked ~ main .gallery-photos__third-photo {
   transform: translateX(-225px) translateZ(0) rotateY(30deg);
 }
-#seven:checked ~ main .gallery-photos__forth-photo {
+#seventh:checked ~ main .gallery-photos__fourth-photo {
   transform: translateX(-225px) translateZ(0) rotateY(30deg);
 }
-#seven:checked ~ main .gallery-photos__fifth-photo {
+#seventh:checked ~ main .gallery-photos__fifth-photo {
   transform: translateX(-225px) translateZ(0) rotateY(30deg);
 }
-#seven:checked ~ main .gallery-photos__sixth-photo {
+#seventh:checked ~ main .gallery-photos__sixth-photo {
   transform: translateX(-225px) translateZ(0) rotateY(30deg);
 }
-#seven:checked ~ main .gallery-photos__seventh-photo {
+#seventh:checked ~ main .gallery-photos__seventh-photo {
   transform: translateX(-225px) translateZ(70px) rotateY(0);
 }
