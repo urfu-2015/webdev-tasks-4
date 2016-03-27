@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "npm run test-html && npm run test-css",
+    "test-html": "mocha ./node_modules/html-tests/task-stub/test",
+    "test-css": "stylelint *.css",
+    "stylus": "./node_modules/.bin/stylus index.styl --out index.css",
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "dependencies": {
+    "autoprefixer": "6.3.5",
+    "csso": "1.8.0",
+    "gulp": "3.9.1",
+    "gulp-csscomb": "3.0.7",
+    "gulp-csso": "1.1.0",
+    "gulp-postcss": "6.1.0",
+    "gulp-sourcemaps": "1.6.0",
+    "html-tests": "https://github.com/urfu-2015/html-test-suite.git#stable",
+    "mocha": "2.3.3",
+    "stylelint": "2.0.0",
+    "stylus": "0.54.2"
+  }
+}
