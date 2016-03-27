@@ -10,14 +10,14 @@ body
     perspective: 200px;
     transform-style: preserve-3d;
 
-.img-container
+.images_container
     transition-property: transform;
     transition-duration: 2s;
 
 .image
     border: 2px solid #666;
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
 
 $fruit = {
     first: 1,
@@ -30,92 +30,37 @@ $fruit = {
 }
 $count = 7
 
-get_tr3d_left($start, $step, $nom, $curr)
-    translate3d($start + $step * ($curr - $nom - 1), 0, -100px)
-
-get_tr3d_right($start, $step, $nom, $curr)
-    translate3d($start + $step * ($nom - $curr - 1), 0, -100px)
-
-get_rotY_left($start, $step, $nom, $curr)
-    rotateY($start + $step * ($curr - $nom - 1))
-
-get_rotY_right($start, $step, $nom, $curr)
-    rotateY($start + $step * ($nom - $curr - 1))
-
-get_tr3d($start-l, $start-r, $step-l, $step-r, $nom, $curr)
+get_tr3d($start, $step, $nom, $curr)
     if $nom < $curr
-        get_tr3d_left($start-l, $step-l, $nom, $curr)
+        translate3d($start + $step * ($curr - $nom - 1), 0, -100px)    
     else
-        get_tr3d_right($start-r, $step-r, $nom, $curr)
+        translate3d($start + $step * ($nom - $curr - 1), 0, -100px)
 
-get_rotY($start-l, $start-r, $step-l, $step-r, $nom, $curr)
+get_rotY($start, $step, $nom, $curr)
     if $nom < $curr
-        get_rotY_left($start-l, $step-l, $nom, $curr)
+        rotateY($start - $step * ($curr - $nom - 1))
     else
-        get_rotY_right($start-r, $step-r, $nom, $curr)
+        rotateY(-1 * $start + $step * ($nom - $curr - 1))
+        
 get_z-index($nom, $curr)
     if $curr <= $nom
         $count - $nom + 1
-/*Выбрана первая картинка*/
-$curr = 1
-for $name, $nom in $fruit
-    #first-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr
-            transform: translate3d(300%, 0, 50px) rotateY(0)
-        else
-            transform: get_tr3d_right(300%, -50, $nom, $curr) get_rotY_right(-30deg, 5, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
-/*Выбрана вторая картинка*/   
-$curr = 2
-for $name, $nom in $fruit
-    #second-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr
-            transform: translate3d(170%, 0, 50px) rotateY(0)
-        else
-            transform: get_tr3d(150%, 150%, -50, -50, $nom, $curr) get_rotY(85deg, -85deg, 0, 15, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
-/*Выбрана третья картинка*/
-$curr = 3
-for $name, $nom in $fruit
-    #third-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr    
-            transform: translate3d(100%, 0, 50px) rotateY(0)
-        else
-            transform: get_tr3d(100%, 100%, -20, -20, $nom, $curr) get_rotY(45deg, -45deg, -10, 10, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
-/*Выбрана четвертая картинка*/
-$curr = 4
-for $name, $nom in $fruit
-    #fourth-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr    
-            transform: translateZ(50px) rotateY(0)
-        else
-            transform: get_tr3d(50px, -50px, 0, 0, $nom, $curr) get_rotY(50deg, -50deg, -10, 10, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
-/*Выбрана пятая картинка*/
-$curr = 5
-for $name, $nom in $fruit
-    #fifth-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr
-            transform: translate3d(-100%, 0%, 50px) rotateY(0)
-        else
-            transform: get_tr3d(-100%, -100%, 20, 20, $nom, $curr) get_rotY(60deg, -60deg, -20, 20, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
-/*Выбрана шестая картинка*/ 
-$curr = 6
-for $name, $nom in $fruit
-    #sixth-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr
-            transform: translate3d(-225%, 0%, 50px) rotateY(0)
-        else
-            transform: get_tr3d(-225%, -225%, 40, -40, $nom, $curr) get_rotY(60deg, -60deg, 20, -20, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
-/*Выбрана седьмая картинка*/ 
-$curr = 7
-for $name, $nom in $fruit
-    #seventh-fruit:checked ~ .{$name}-fruit
-        if $nom == $curr    
-            transform: translate3d(-300%, 0%, 50px) rotateY(0)
-        else
-            transform: get_tr3d(-275%, -275%, 40, -40, $nom, $curr) get_rotY(65deg, -65deg, -10, -10, $nom, $curr)
-        z-index: get_z-index($nom, $curr)
+    else
+        0
+
+$tr3d_val = 300%
+$tr3d_step = -45
+$rotY_val = 60deg
+$rotY_step = 10 
+
+for $name1, $nom1 in $fruit
+    for $name2, $nom2 in $fruit
+        .{$name1}-fruit-radio:checked ~ .images_{$name2}-fruit
+            if $nom2 == $nom1
+                transform: translate3d($tr3d_val, 0, 50px) rotateY(0)
+            else
+                transform: get_tr3d($tr3d_val, $tr3d_step, $nom2, $nom1) get_rotY($rotY_val, $rotY_step, $nom2, $nom1)
+            z-index: get_z-index($nom2, $nom1)
+    $tr3d_val = $tr3d_val - 100
+    $tr3d_step = $tr3d_step + 15
+    $rotY_val = $rotY_val + 5
