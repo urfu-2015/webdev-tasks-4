@@ -1,24 +1,12 @@
-pics =  "http://udacaca.ru/images/stories/ovosh/luk2.jpg",
-        "http://www.diuretiki.ru/userfiles/mochegonnye-ovoshchi-svekla.jpg",
-        "http://img-fotki.yandex.ru/get/6721/121244854.85/0_b6194_e7036184_L.jpg",
-        "http://img0.liveinternet.ru/images/attach/c/2//72/716/72716929_92_1.jpg",
-        "http://irecommend.ru/sites/default/files/product-images/12233/1271824378_tomatoes-01.jpg",
-        "http://atmagro.ru/wp-content/uploads/2013/04/ogurec_kurazh.jpg",
-        "http://pixelbrush.ru/uploads/posts/2013-01/1359083518_03-31.jpg"
-        //, "http://udacaca.ru/images/stories/ovosh/luk2.jpg",
-        //"http://www.diuretiki.ru/userfiles/mochegonnye-ovoshchi-svekla.jpg",
-        //"http://img-fotki.yandex.ru/get/6721/121244854.85/0_b6194_e7036184_L.jpg",
-        //"http://img0.liveinternet.ru/images/attach/c/2//72/716/72716929_92_1.jpg",
-        //"http://irecommend.ru/sites/default/files/product-images/12233/1271824378_tomatoes-01.jpg",
-        //"http://atmagro.ru/wp-content/uploads/2013/04/ogurec_kurazh.jpg",
-        //"http://pixelbrush.ru/uploads/posts/2013-01/1359083518_03-31.jpg",
-        //"http://udacaca.ru/images/stories/ovosh/luk2.jpg",
-        //"http://www.diuretiki.ru/userfiles/mochegonnye-ovoshchi-svekla.jpg",
-        //"http://img-fotki.yandex.ru/get/6721/121244854.85/0_b6194_e7036184_L.jpg",
-        //"http://img0.liveinternet.ru/images/attach/c/2//72/716/72716929_92_1.jpg",
-        //"http://irecommend.ru/sites/default/files/product-images/12233/1271824378_tomatoes-01.jpg",
-        //"http://atmagro.ru/wp-content/uploads/2013/04/ogurec_kurazh.jpg"
-body
+pics =  "./pictures/luk.jpg",
+        "./pictures/svekla.jpg",
+        "./pictures/tikva.jpg",
+        "./pictures/kabachok.jpg",
+        "./pictures/pomidor.jpg",
+        "./pictures/ogurec.jpg",
+        "./pictures/perec.jpg"
+
+body,
 html {
     height: 100%;
     width: 100%;
@@ -31,62 +19,68 @@ html {
     align-items: center;
     justify-content: center;
     perspective: 800px;
-}
-.gallery__wrapper {
-    height: 200px;
-    width: 250px;
-    min-width: 250px;
-    display: block;
-    perspective: 200px;
-    box-shadow: 0 10px 25px -5px rgba(50, 50, 50, .75);
-    transition-property: z-index, transform;
-    transition-duration: .3s, 1.5s;
-}
-.input {
-    display: none;
-}
-for i in range(0, length(pics) - 1)
-    f = '"pic' + (i + 1) + '"'
-    .gallery__wrapper[for={f}] {
-        p = pics[i];
-        background: url(p) 50% 50% no-repeat;
-        background-size: cover;
-    }
-
-for i in range(0, length(pics) - 1)
-    for k in range(0, length(pics) - 1)
-        s = '"' + (k + 1) + '"'
-        f = '"pic' + (k + 1) + '"'
-        #pic{i + 1}:checked {
-            ~ .gallery {
-                .gallery__wrapper[for={f}] {
-                    d = k - i
-                    tx = 100% * ((length(pics) - 1) / 2 - i)
-                    z = -10 * abs(d)
-                    if abs(d) >= 10 {
-                        if d > 0 {
-                            rk = 10 + 1 / d
-                        } else {
-                            rk = -10 + 1 / d
-                        }
-                    } else {
-                        rk = d
-                    }
-                    if d < 0 {
-                        r = 70deg + (5 * (rk + 1))
-                        t3x = -30% - (60 * d)
-                        t3z = 40px * d
-                    } else {
-                        r = -70deg + (5 * (rk - 1))
-                        t3x = 30% - (60 * d)
-                        t3z = -40px * d
-                    }
-                    if d == 0 {
-                        transform: translateX(tx) scale(1.1);
-                    } else {
-                        transform: translateX(tx) translate3D(t3x, 0, t3z) rotateY(r);
-                        z-index: z;
-                    }
-                }
+    transform-style: preserve-3d;
+    for i in range(0, length(pics) - 1) {
+        p = pics[i]
+        &__wrapper {
+            &_{i} {
+                height: 200px;
+                width: 250px;
+                min-width: 250px;
+                display: block;
+                perspective: 200px;
+                box-shadow: 0 10px 25px -5px rgba(50, 50, 50, .75);
+                transition-property: z-index, transform;
+                transition-duration: .3s, 1.5s;
+                background: url(p) no-repeat 50% 50%;
+                background-size: cover;
             }
         }
+
+    }
+}
+for i in range(0, length(pics) - 1) {
+    .input {
+        &_{i} {
+            display: none;
+        }
+    }
+}
+
+for i in range(0, length(pics) - 1)
+    for j in range(0, length(pics) - 1)
+        .input_{i}:checked ~ .gallery {
+            .gallery__wrapper {
+                &_{j} {
+                    d = j - i
+                    translX = 100% * ((length(pics) - 1) / 2 - i)
+                    zInd = -1 * abs(d)
+                    if abs(d) >= 10 {
+                        if d > 0 {
+                            rotCoef = 10 + 1 / d
+                        } else {
+                            rotCoef = -10 + 1 / d
+                        }
+                    } else {
+                        rotCoef = d
+                    }
+                    if d < 0 {
+                        rot = 70deg + (5 * (rotCoef + 1))
+                        transl3dX = -30% - (60 * d)
+                        transl3dZ = 40px * d
+                    } else {
+                        rot = -70deg + (5 * (rotCoef - 1))
+                        transl3dX = 30% - (60 * d)
+                        transl3dZ = -40px * d
+                    }
+                    if d == 0 {
+                        transform: translateX(translX) scale(1.1);
+                    } else {
+                        transform: translateX(translX) translate3D(transl3dX, 0, transl3dZ) rotateY(rot);
+                        z-index: zInd;
+                    }
+                }
+
+            }
+        }
+

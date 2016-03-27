@@ -11,8 +11,9 @@ html,
   align-items: center;
   justify-content: center;
   perspective: 800px;
+  transform-style: preserve-3d;
 }
-.gallery__wrapper {
+.gallery__wrapper_0 {
   height: 200px;
   width: 250px;
   min-width: 250px;
@@ -21,224 +22,288 @@ html,
   box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
   transition-property: z-index, transform;
   transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/luk.jpg") no-repeat 50% 50%;
+  background-size: cover;
 }
-.input {
+.gallery__wrapper_1 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/svekla.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_2 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/tikva.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_3 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/kabachok.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_4 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/pomidor.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_5 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/ogurec.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_6 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/perec.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.input_0 {
   display: none;
 }
-.gallery__wrapper[for="pic1"] {
-  background: url("http://udacaca.ru/images/stories/ovosh/luk2.jpg") 50% 50% no-repeat;
-  background-size: cover;
+.input_1 {
+  display: none;
 }
-.gallery__wrapper[for="pic2"] {
-  background: url("http://www.diuretiki.ru/userfiles/mochegonnye-ovoshchi-svekla.jpg") 50% 50% no-repeat;
-  background-size: cover;
+.input_2 {
+  display: none;
 }
-.gallery__wrapper[for="pic3"] {
-  background: url("http://img-fotki.yandex.ru/get/6721/121244854.85/0_b6194_e7036184_L.jpg") 50% 50% no-repeat;
-  background-size: cover;
+.input_3 {
+  display: none;
 }
-.gallery__wrapper[for="pic4"] {
-  background: url("http://img0.liveinternet.ru/images/attach/c/2//72/716/72716929_92_1.jpg") 50% 50% no-repeat;
-  background-size: cover;
+.input_4 {
+  display: none;
 }
-.gallery__wrapper[for="pic5"] {
-  background: url("http://irecommend.ru/sites/default/files/product-images/12233/1271824378_tomatoes-01.jpg") 50% 50% no-repeat;
-  background-size: cover;
+.input_5 {
+  display: none;
 }
-.gallery__wrapper[for="pic6"] {
-  background: url("http://atmagro.ru/wp-content/uploads/2013/04/ogurec_kurazh.jpg") 50% 50% no-repeat;
-  background-size: cover;
+.input_6 {
+  display: none;
 }
-.gallery__wrapper[for="pic7"] {
-  background: url("http://pixelbrush.ru/uploads/posts/2013-01/1359083518_03-31.jpg") 50% 50% no-repeat;
-  background-size: cover;
-}
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_0:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(300%) scale(1.1);
 }
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_0:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(300%) translate3D(-30%, 0, -40px) rotateY(-70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_0:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(300%) translate3D(-90%, 0, -80px) rotateY(-65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_0:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(300%) translate3D(-150%, 0, -120px) rotateY(-60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_0:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(300%) translate3D(-210%, 0, -160px) rotateY(-55deg);
-  z-index: -40;
+  z-index: -4;
 }
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_0:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(300%) translate3D(-270%, 0, -200px) rotateY(-50deg);
-  z-index: -50;
+  z-index: -5;
 }
-#pic1:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_0:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(300%) translate3D(-330%, 0, -240px) rotateY(-45deg);
-  z-index: -60;
+  z-index: -6;
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_1:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(200%) translate3D(30%, 0, -40px) rotateY(70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_1:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(200%) scale(1.1);
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_1:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(200%) translate3D(-30%, 0, -40px) rotateY(-70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_1:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(200%) translate3D(-90%, 0, -80px) rotateY(-65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_1:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(200%) translate3D(-150%, 0, -120px) rotateY(-60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_1:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(200%) translate3D(-210%, 0, -160px) rotateY(-55deg);
-  z-index: -40;
+  z-index: -4;
 }
-#pic2:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_1:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(200%) translate3D(-270%, 0, -200px) rotateY(-50deg);
-  z-index: -50;
+  z-index: -5;
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_2:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(100%) translate3D(90%, 0, -80px) rotateY(65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_2:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(100%) translate3D(30%, 0, -40px) rotateY(70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_2:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(100%) scale(1.1);
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_2:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(100%) translate3D(-30%, 0, -40px) rotateY(-70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_2:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(100%) translate3D(-90%, 0, -80px) rotateY(-65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_2:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(100%) translate3D(-150%, 0, -120px) rotateY(-60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic3:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_2:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(100%) translate3D(-210%, 0, -160px) rotateY(-55deg);
-  z-index: -40;
+  z-index: -4;
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_3:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(0%) translate3D(150%, 0, -120px) rotateY(60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_3:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(0%) translate3D(90%, 0, -80px) rotateY(65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_3:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(0%) translate3D(30%, 0, -40px) rotateY(70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_3:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(0%) scale(1.1);
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_3:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(0%) translate3D(-30%, 0, -40px) rotateY(-70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_3:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(0%) translate3D(-90%, 0, -80px) rotateY(-65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic4:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_3:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(0%) translate3D(-150%, 0, -120px) rotateY(-60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_4:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(-100%) translate3D(210%, 0, -160px) rotateY(55deg);
-  z-index: -40;
+  z-index: -4;
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_4:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(-100%) translate3D(150%, 0, -120px) rotateY(60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_4:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(-100%) translate3D(90%, 0, -80px) rotateY(65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_4:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(-100%) translate3D(30%, 0, -40px) rotateY(70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_4:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(-100%) scale(1.1);
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_4:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(-100%) translate3D(-30%, 0, -40px) rotateY(-70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic5:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_4:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(-100%) translate3D(-90%, 0, -80px) rotateY(-65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_5:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(-200%) translate3D(270%, 0, -200px) rotateY(50deg);
-  z-index: -50;
+  z-index: -5;
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_5:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(-200%) translate3D(210%, 0, -160px) rotateY(55deg);
-  z-index: -40;
+  z-index: -4;
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_5:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(-200%) translate3D(150%, 0, -120px) rotateY(60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_5:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(-200%) translate3D(90%, 0, -80px) rotateY(65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_5:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(-200%) translate3D(30%, 0, -40px) rotateY(70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_5:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(-200%) scale(1.1);
 }
-#pic6:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_5:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(-200%) translate3D(-30%, 0, -40px) rotateY(-70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic1"] {
+.input_6:checked ~ .gallery .gallery__wrapper_0 {
   transform: translateX(-300%) translate3D(330%, 0, -240px) rotateY(45deg);
-  z-index: -60;
+  z-index: -6;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic2"] {
+.input_6:checked ~ .gallery .gallery__wrapper_1 {
   transform: translateX(-300%) translate3D(270%, 0, -200px) rotateY(50deg);
-  z-index: -50;
+  z-index: -5;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic3"] {
+.input_6:checked ~ .gallery .gallery__wrapper_2 {
   transform: translateX(-300%) translate3D(210%, 0, -160px) rotateY(55deg);
-  z-index: -40;
+  z-index: -4;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic4"] {
+.input_6:checked ~ .gallery .gallery__wrapper_3 {
   transform: translateX(-300%) translate3D(150%, 0, -120px) rotateY(60deg);
-  z-index: -30;
+  z-index: -3;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic5"] {
+.input_6:checked ~ .gallery .gallery__wrapper_4 {
   transform: translateX(-300%) translate3D(90%, 0, -80px) rotateY(65deg);
-  z-index: -20;
+  z-index: -2;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic6"] {
+.input_6:checked ~ .gallery .gallery__wrapper_5 {
   transform: translateX(-300%) translate3D(30%, 0, -40px) rotateY(70deg);
-  z-index: -10;
+  z-index: -1;
 }
-#pic7:checked ~ .gallery .gallery__wrapper[for="pic7"] {
+.input_6:checked ~ .gallery .gallery__wrapper_6 {
   transform: translateX(-300%) scale(1.1);
 }
