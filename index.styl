@@ -1,5 +1,3 @@
-$number-photos = 7;
-
 body,
 html
 {
@@ -36,7 +34,7 @@ body
     perspective: 800px;
     transition: all .5s ease-in;
 
-    &_picture
+    &__picture
     {
         width: 200px;
         height: 135px;
@@ -50,11 +48,13 @@ body
         }
     }
 
+    $number-photos = 7;
+
     for $index in (1..$number-photos) {
         $translate = 800 - 200 * $index;
         $perspective-left = 10 + $index * 10;
         $perspective-right = 90 - $index * 10;
-        #picture-{$index}:checked ~ &
+        .pictures-gallery__control_index_{$index}:checked ~ &
         {
             transform: translateX(($translate)px);
             perspective-origin: ($perspective-left)% ($perspective-right)%;
@@ -76,7 +76,7 @@ body
                 $translate-x += 80;
                 $translate-z = -50;
             }
-            #picture-{$index-1}:checked ~ & &__picture-{$index-2}
+            .pictures-gallery__control_index_{$index-1}:checked ~ & &__picture-{$index-2}
             {
                 transform: translateX(($translate-x)px) translateZ(($translate-z)px) rotateY(($rotate)deg);
             }
