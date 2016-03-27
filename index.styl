@@ -1,0 +1,86 @@
+pics =  "./pictures/luk.jpg",
+        "./pictures/svekla.jpg",
+        "./pictures/tikva.jpg",
+        "./pictures/kabachok.jpg",
+        "./pictures/pomidor.jpg",
+        "./pictures/ogurec.jpg",
+        "./pictures/perec.jpg"
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.gallery {
+    @extends body
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    for i in range(0, length(pics) - 1) {
+        p = pics[i]
+        &__wrapper {
+            &_{i} {
+                height: 200px;
+                width: 250px;
+                min-width: 250px;
+                display: block;
+                perspective: 200px;
+                box-shadow: 0 10px 25px -5px rgba(50, 50, 50, .75);
+                transition-property: z-index, transform;
+                transition-duration: .3s, 1.5s;
+                background: url(p) no-repeat 50% 50%;
+                background-size: cover;
+            }
+        }
+
+    }
+}
+for i in range(0, length(pics) - 1) {
+    .input {
+        &_{i} {
+            display: none;
+        }
+    }
+}
+
+for i in range(0, length(pics) - 1)
+    for j in range(0, length(pics) - 1)
+        .input_{i}:checked ~ .gallery {
+            .gallery__wrapper {
+                &_{j} {
+                    d = j - i
+                    translX = 100% * ((length(pics) - 1) / 2 - i)
+                    zInd = -1 * abs(d)
+                    if abs(d) >= 10 {
+                        if d > 0 {
+                            rotCoef = 10 + 1 / d
+                        } else {
+                            rotCoef = -10 + 1 / d
+                        }
+                    } else {
+                        rotCoef = d
+                    }
+                    if d < 0 {
+                        rot = 70deg + (5 * (rotCoef + 1))
+                        transl3dX = -30% - (60 * d)
+                        transl3dZ = 40px * d
+                    } else {
+                        rot = -70deg + (5 * (rotCoef - 1))
+                        transl3dX = 30% - (60 * d)
+                        transl3dZ = -40px * d
+                    }
+                    if d == 0 {
+                        transform: translateX(translX) scale(1.1);
+                    } else {
+                        transform: translateX(translX) translate3D(transl3dX, 0, transl3dZ) rotateY(rot);
+                        z-index: zInd;
+                    }
+                }
+
+            }
+        }
+

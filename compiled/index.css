@@ -1,0 +1,309 @@
+body,
+html,
+.gallery {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+.gallery__wrapper_0 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/luk.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_1 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/svekla.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_2 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/tikva.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_3 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/kabachok.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_4 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/pomidor.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_5 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/ogurec.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.gallery__wrapper_6 {
+  height: 200px;
+  width: 250px;
+  min-width: 250px;
+  display: block;
+  perspective: 200px;
+  box-shadow: 0 10px 25px -5px rgba(50,50,50,0.75);
+  transition-property: z-index, transform;
+  transition-duration: 0.3s, 1.5s;
+  background: url("./pictures/perec.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+.input_0 {
+  display: none;
+}
+.input_1 {
+  display: none;
+}
+.input_2 {
+  display: none;
+}
+.input_3 {
+  display: none;
+}
+.input_4 {
+  display: none;
+}
+.input_5 {
+  display: none;
+}
+.input_6 {
+  display: none;
+}
+.input_0:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(300%) scale(1.1);
+}
+.input_0:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(300%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -1;
+}
+.input_0:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(300%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -2;
+}
+.input_0:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(300%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -3;
+}
+.input_0:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(300%) translate3D(-210%, 0, -160px) rotateY(-55deg);
+  z-index: -4;
+}
+.input_0:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(300%) translate3D(-270%, 0, -200px) rotateY(-50deg);
+  z-index: -5;
+}
+.input_0:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(300%) translate3D(-330%, 0, -240px) rotateY(-45deg);
+  z-index: -6;
+}
+.input_1:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(200%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -1;
+}
+.input_1:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(200%) scale(1.1);
+}
+.input_1:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(200%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -1;
+}
+.input_1:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(200%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -2;
+}
+.input_1:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(200%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -3;
+}
+.input_1:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(200%) translate3D(-210%, 0, -160px) rotateY(-55deg);
+  z-index: -4;
+}
+.input_1:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(200%) translate3D(-270%, 0, -200px) rotateY(-50deg);
+  z-index: -5;
+}
+.input_2:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(100%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -2;
+}
+.input_2:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(100%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -1;
+}
+.input_2:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(100%) scale(1.1);
+}
+.input_2:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(100%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -1;
+}
+.input_2:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(100%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -2;
+}
+.input_2:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(100%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -3;
+}
+.input_2:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(100%) translate3D(-210%, 0, -160px) rotateY(-55deg);
+  z-index: -4;
+}
+.input_3:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(0%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -3;
+}
+.input_3:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(0%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -2;
+}
+.input_3:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(0%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -1;
+}
+.input_3:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(0%) scale(1.1);
+}
+.input_3:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(0%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -1;
+}
+.input_3:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(0%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -2;
+}
+.input_3:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(0%) translate3D(-150%, 0, -120px) rotateY(-60deg);
+  z-index: -3;
+}
+.input_4:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(-100%) translate3D(210%, 0, -160px) rotateY(55deg);
+  z-index: -4;
+}
+.input_4:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(-100%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -3;
+}
+.input_4:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(-100%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -2;
+}
+.input_4:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(-100%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -1;
+}
+.input_4:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(-100%) scale(1.1);
+}
+.input_4:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(-100%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -1;
+}
+.input_4:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(-100%) translate3D(-90%, 0, -80px) rotateY(-65deg);
+  z-index: -2;
+}
+.input_5:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(-200%) translate3D(270%, 0, -200px) rotateY(50deg);
+  z-index: -5;
+}
+.input_5:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(-200%) translate3D(210%, 0, -160px) rotateY(55deg);
+  z-index: -4;
+}
+.input_5:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(-200%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -3;
+}
+.input_5:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(-200%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -2;
+}
+.input_5:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(-200%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -1;
+}
+.input_5:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(-200%) scale(1.1);
+}
+.input_5:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(-200%) translate3D(-30%, 0, -40px) rotateY(-70deg);
+  z-index: -1;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_0 {
+  transform: translateX(-300%) translate3D(330%, 0, -240px) rotateY(45deg);
+  z-index: -6;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_1 {
+  transform: translateX(-300%) translate3D(270%, 0, -200px) rotateY(50deg);
+  z-index: -5;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_2 {
+  transform: translateX(-300%) translate3D(210%, 0, -160px) rotateY(55deg);
+  z-index: -4;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_3 {
+  transform: translateX(-300%) translate3D(150%, 0, -120px) rotateY(60deg);
+  z-index: -3;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_4 {
+  transform: translateX(-300%) translate3D(90%, 0, -80px) rotateY(65deg);
+  z-index: -2;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_5 {
+  transform: translateX(-300%) translate3D(30%, 0, -40px) rotateY(70deg);
+  z-index: -1;
+}
+.input_6:checked ~ .gallery .gallery__wrapper_6 {
+  transform: translateX(-300%) scale(1.1);
+}
