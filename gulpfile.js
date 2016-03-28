@@ -7,6 +7,7 @@ gulp.task('one', function () {
     return gulp.src('index.styl')
         .pipe(stylus())
         .pipe( postcss([
+            require('postcss-color-rgba-fallback'),
             require('postcss-position'),
             require('postcss-size'),
             require('postcss-flexbox'),
