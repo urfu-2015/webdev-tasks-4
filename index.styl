@@ -3,7 +3,7 @@ $count_veg = 7
 
 html,
 body {
-    background: #e7e7e7
+    background: gray(0, 10%);
     font-family: 'Helvetica', sans-serif
     height: 100%
     line-height: 1.3em
@@ -24,7 +24,7 @@ body {
         width: 100%
     }
 
-    &__label {
+    &__label_pos {
         for $num in (1..$count_veg) {
             &_{$num} {
                 cursor: pointer
@@ -52,14 +52,14 @@ body {
         $shift = $margin_percent_delta * ($count_veg + 1 - $num)
         &__input_pos {
             &_{$num} {
-                display: none
+                display: disappear
                 &:checked ~ div {
                     margin-left: $shift
                 }
             }
         }
 
-        &__input_pos_{$num}:checked ~ div &__label {
+        &__input_pos_{$num}:checked ~ div &__label_pos {
             for $next_num in (1..$count_veg) {
                 $sub = $next_num - $num
                 $diff = abs($sub)

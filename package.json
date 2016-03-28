@@ -3,7 +3,13 @@
   "scripts": {
     "test": "npm run test-html && npm run test-css",
     "test-html": "mocha ./node_modules/html-tests/task-stub/test",
-    "test-css": "stylelint *.css"
+    "test-css": "stylelint *.css",
+    "build": "stylus index.styl --out ./index.css",
+    "autoprefixer": "postcss --use autoprefixer -c options.json index.css -o index.css",
+    "cssdeclsort": "cssdeclsort *.css",
+    "cssnano-color-hidden": "postcss --use cssnano --use postcss-color-gray --use postcss-hidden index.css -o index.css",
+    "postcss": "npm run autoprefixer && npm run cssdeclsort && npm run cssnano-color-hidden",
+    "start": "npm run build && npm run postcss"
   },
   "dependencies": {
     "html-tests": "https://github.com/urfu-2015/html-test-suite.git#stable",
@@ -14,7 +20,10 @@
   "devDependencies": {
     "autoprefixer": "^6.3.4",
     "css-declaration-sorter": "^1.2.1",
+    "cssnano": "^3.5.2",
     "postcss": "^5.0.19",
+    "postcss-color-gray": "^3.0.0",
+    "postcss-hidden": "^1.0.7",
     "stylus": "^0.54.2"
   }
 }
