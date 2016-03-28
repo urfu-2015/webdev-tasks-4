@@ -1,0 +1,84 @@
+$margin_percent_delta = 5%
+$count_veg = 7
+
+html,
+body {
+    background: gray(0, 10%);
+    font-family: 'Helvetica', sans-serif
+    height: 100%
+    line-height: 1.3em
+    margin: 0
+    overflow: hidden
+    padding: 0
+    width: 100%
+}
+
+.gallery {
+    &__images {
+        display: inline
+        height: 200px
+        margin-left: 5%
+        margin-top: 100px
+        transition: all 1s ease-out
+        transform-style: preserve-3d
+        width: 100%
+    }
+
+    &__label_pos {
+        for $num in (1..$count_veg) {
+            &_{$num} {
+                cursor: pointer
+                display: inline-flex
+                margin-left: -4%
+                margin-right: -4%
+                margin-top: 15%
+                max-width: 17%
+                position: relative
+                transition-duration: .5s
+                transition-property: transform
+                transition-timing-function: ease-in-out
+                z-index: 10
+            }
+        }
+    }
+
+    &__image {
+        box-shadow: 0 10px 10px rgba(0, 0, 0, .5)
+        max-height: 150px
+        width: 100%
+    }
+
+    for $num in (1..$count_veg) {
+        $shift = $margin_percent_delta * ($count_veg + 1 - $num)
+        &__input_pos {
+            &_{$num} {
+                display: disappear
+                &:checked ~ div {
+                    margin-left: $shift
+                }
+            }
+        }
+
+        &__input_pos_{$num}:checked ~ div &__label_pos {
+            for $next_num in (1..$count_veg) {
+                $sub = $next_num - $num
+                $diff = abs($sub)
+                $sign = $sub / $diff
+                $z_index = $count_veg - $diff
+                if $diff == 0 {
+                    $persp = 0
+                    $transl = 0
+                    $rot = 0
+                } else {
+                    $persp = 200 + 50 * $diff
+                    $transl = -1 * ($count_veg - $diff) * 10
+                    $rot = $sign * $transl
+                }
+                &_{$next_num} {
+                    z-index: $z_index
+                    transform: perspective($persp px) rotateY($rot deg) translateZ($transl px)
+                }
+            }
+        }
+    }
+}
