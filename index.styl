@@ -33,38 +33,39 @@ makeTransformScale($scale, $z)
     height 300px
     position relative
     perspective 1000px
-    &_container
-        position: absolute
-        left: 540px
-        width: 250px
-        height: 250px
-        transition-duration: 1s
     &_full-width
         width 100%
 
+.slides > label > div
+    position: absolute
+    left: 540px
+    width: 250px
+    height: 250px
+    transition-duration: 1s
+
 for $index in (1..$slidesCount)
     .slider__input{$index}
-        &:checked ~ section > label > .slides__slide{$index}
+        &:checked ~ .slides .slides__slide{$index}
             makeTransformScale(25deg, 7)
 
-for $index in (1..$slidesCount - 1)
-    for $step in (0..$slidesCount - 3)
+for $index in (1 .. $slidesCount - 1)
+    for $step in (0 .. $slidesCount - 3 )
         if $index + $step < $slidesCount + 1
             $temp_x = $startTranslateX + $stepTranslateX * $step
             $temp_y = $startTranslateY + $stepTranslateY * $step
             $z-index = $slidesCount - $step - 1
             .slider__input{$index}
-                &:checked ~ section > label > .slides__slide{$index + $step + 1}
+                &:checked ~ .slides .slides__slide{$index + $step + 1}
                     makeTransform($temp_x px, $temp_y deg, $z-index)
             .slider__input{$index + $step + 1}
-                &:checked ~ section > label > .slides__slide{$index}
+                &:checked ~ .slides .slides__slide{$index}
                     $temp_x *= -1
                     $temp_y *= -1
                     makeTransform($temp_x px, $temp_y deg, $z-index)
 
 .slider__input1
-    &:checked ~ section > label > .slides__slide7
+    &:checked ~ .slides .slides__slide7
         makeTransform(520px, -30deg, 1)
 .slider__input7
-    &:checked ~ section > label > .slides__slide1
+    &:checked ~ .slides .slides__slide1
         makeTransform(-520px, 30deg, 1)
