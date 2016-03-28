@@ -1,0 +1,64 @@
+body
+{
+  background: gray(200);
+  text-align: center;
+}
+
+main
+{
+  padding: 50px;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+
+article
+{
+  display: inline-block;
+  width: 75px;
+  transition: all 1s ease;
+}
+
+img
+{
+  width: 300px;
+  transform: translateX(-40%);
+  box-shadow: 0 0 5px #000;
+}
+
+input
+{
+  display: disappear;
+}
+
+set_photo($name, $translation_X, $translation_Z, $rotation) {
+  &__{$name}-photo
+  {
+    transform: translateX($translation_X px) translateZ($translation_Z) rotateY($rotation);
+  }
+}
+
+$photos = { 'first': 0px,
+  'second': 1px,
+  'third': 2px,
+  'fourth': 3px,
+  'fifth' : 4px,
+  'sixth': 5px,
+  'seventh': 6px};
+
+for $photo, $count in $photos {
+  $left_from_current = true;
+  #{$photo}:checked ~ main .gallery-photos {
+     for $another_photo in $photos {
+       if $left_from_current {
+         if $photo != $another_photo {
+           set_photo($another_photo,  225px - 75px * $count, 0, 30deg);
+         } else {
+           $left_from_current = false;
+           set_photo($another_photo, 225px - 75px * $count, 70px, 0);
+         }
+       } else {
+         set_photo($another_photo, 225px - 75px * $count, 0, -30deg);
+       }
+     }
+   }
+}

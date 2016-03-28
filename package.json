@@ -1,0 +1,29 @@
+{
+  "name": "webdev-tasks-4",
+  "version": "1.0.0",
+  "description": "Photogallery with preprocessors and postprocessors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dodo888/webdev-tasks-4.git"
+  },
+  "author": "Vladimir Smirnov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dodo888/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/Dodo888/webdev-tasks-4#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "css-declaration-sorter": "^1.2.1",
+    "cssnano": "^3.5.2",
+    "postcss": "^5.0.19",
+    "postcss-color-gray": "^3.0.0",
+    "postcss-hidden": "^1.0.7",
+    "postcss-sprites": "^3.1.0",
+    "stylus": "^0.54.2"
+  }
+}
