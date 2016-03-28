@@ -30,20 +30,20 @@ input
   display: disappear;
 }
 
-set_photo($name, $translationX, $translationZ, $rotation) {
+set_photo($name, $translation_X, $translation_Z, $rotation) {
   &__{$name}-photo
   {
-    transform: translateX($translationX px) translateZ($translationZ) rotateY($rotation);
+    transform: translateX($translation_X px) translateZ($translation_Z) rotateY($rotation);
   }
 }
 
 $photos = { 'first': 0px,
-'second': 1px,
-'third': 2px,
-'fourth': 3px,
-'fifth' : 4px,
-'sixth': 5px,
-'seventh': 6px};
+  'second': 1px,
+  'third': 2px,
+  'fourth': 3px,
+  'fifth' : 4px,
+  'sixth': 5px,
+  'seventh': 6px};
 
 for $photo, $count in $photos {
   $left_from_current = true;
