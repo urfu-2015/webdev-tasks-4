@@ -10,25 +10,9 @@ $scale = 80
 
     &__item {
         for $num1 in (1..$number_of_item) {
-            &_{$num1} {
-                background: #fff
-                height: 200px
-                width: 350px
-                overflow: hidden
-                transition-property: all
-                transition-duration: 1s
-                -webkit-box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)
-                -moz-box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)
-                box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)
-            }
-
-            &__radio_{$num1} {
-                display: none
-            }
-
             for $num2 in (1..$number_of_item) {
                 $translate = ($number_of_item - $num1 - $num2 + 1) * $scale
-                &__radio_{$num1}:checked ~ &_{$num2} {
+                &__radio_serial-num_{$num1}:checked ~ &_serial-num_{$num2} {
                     if $num2 < $num1 {
                         transform: translateX($translate px) rotateY(50deg)
                     } else if $num2 > $num1 {
@@ -44,7 +28,7 @@ $scale = 80
             width: 100%;
         }
 
-        &__lable: after {
+        &__lable::after {
             content: '';
             position: absolute;
             top: 0;
@@ -53,4 +37,18 @@ $scale = 80
             height: 200px;
         }
     }
+}
+
+.card {
+    background: #fff
+    height: 200px
+    width: 350px
+    overflow: hidden
+    transition-property: all
+    transition-duration: 1s
+    box-shadow: 0 10px 113px -20px rgba(64, 63, 64, .68)        
+}
+
+.invisible {
+    display: none
 }
