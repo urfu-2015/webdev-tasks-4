@@ -1,0 +1,56 @@
+body
+    background: #d8d8d8;
+
+.images
+    display: flex;
+    margin-top: 15%;
+    perspective: 200px;
+    transform-style: preserve-3d;
+
+.images__radio_invisible
+    display: none;
+
+.images__container
+    transition-property: transform;
+    transition-duration: 2s;
+
+.images__container__image
+    border: 2px solid #666;
+    width: 190px;
+    height: 190px;
+
+get_tr3d($start, $step, $nom, $curr)
+    if $nom < $curr
+        translate3d($start + $step * ($curr - $nom - 1), 0, -100px)    
+    else
+        translate3d($start + $step * ($nom - $curr - 1), 0, -100px)
+
+get_rotY($start, $step, $nom, $curr)
+    if $nom < $curr
+        rotateY($start - $step * ($curr - $nom - 1))
+    else
+        rotateY(-1 * $start + $step * ($nom - $curr - 1))
+        
+get_z-index($nom, $curr)
+    if $curr <= $nom
+        $count - $nom + 1
+    else
+        0
+
+$count = 7
+$tr3d_val = 300%
+$tr3d_step = -45
+$rotY_val = 60deg
+$rotY_step = 10 
+
+for $nom1 in (1..$count)
+    for  $nom2 in (1..$count)
+        .images__radio_fruit_{$nom1}:checked ~ .images__container__fruit_{$nom2}
+            if $nom2 == $nom1
+                transform: translate3d($tr3d_val, 0, 50px) rotateY(0)
+            else
+                transform: get_tr3d($tr3d_val, $tr3d_step, $nom2, $nom1) get_rotY($rotY_val, $rotY_step, $nom2, $nom1)
+            z-index: get_z-index($nom2, $nom1)
+    $tr3d_val = $tr3d_val - 100
+    $tr3d_step = $tr3d_step + 15
+    $rotY_val = $rotY_val + 5
