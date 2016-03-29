@@ -1,34 +1,23 @@
 body
     background: #d8d8d8;
 
-.invisible
-    display: none;
-
 .images
     display: flex;
     margin-top: 15%;
     perspective: 200px;
     transform-style: preserve-3d;
 
-.images_container
+.images__radio_invisible
+    display: none;
+
+.images__container
     transition-property: transform;
     transition-duration: 2s;
 
-.image
+.images__container__image
     border: 2px solid #666;
     width: 190px;
     height: 190px;
-
-$fruit = {
-    first: 1,
-    second: 2,
-    third: 3,
-    fourth: 4,
-    fifth: 5,
-    sixth: 6,
-    seventh: 7
-}
-$count = 7
 
 get_tr3d($start, $step, $nom, $curr)
     if $nom < $curr
@@ -48,14 +37,15 @@ get_z-index($nom, $curr)
     else
         0
 
+$count = 7
 $tr3d_val = 300%
 $tr3d_step = -45
 $rotY_val = 60deg
 $rotY_step = 10 
 
-for $name1, $nom1 in $fruit
-    for $name2, $nom2 in $fruit
-        .{$name1}-fruit-radio:checked ~ .images_{$name2}-fruit
+for $nom1 in (1..$count)
+    for  $nom2 in (1..$count)
+        .images__radio_fruit_{$nom1}:checked ~ .images__container__fruit_{$nom2}
             if $nom2 == $nom1
                 transform: translate3d($tr3d_val, 0, 50px) rotateY(0)
             else
