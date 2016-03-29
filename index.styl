@@ -10,6 +10,7 @@ $start_center_item = 4
 
 .items-box {
     size: $gallery_width 500px
+    min-width: 500px;
     box: center space-between
     perspective: 400px
     transform-style: preserve-3d
@@ -23,16 +24,13 @@ $start_center_item = 4
     position: relative 0
     transition: left 1s ease-out 0s, top 1s ease-in 0s, transform 1s ease-in-out 0s
 
-    img {
+    img
         width: 100%
-        height: 150px
         display: block
         box-shadow: 0 0 5px 5px rgba(0, 0, 0, .3)
-    }
 
-    &__control_invisible {
+    &__control
         display: none
-    }
 
     for $item in (1..$gallery_item_count)
         &__control:nth-child({$item}):checked ~ section &:nth-child({$item})
