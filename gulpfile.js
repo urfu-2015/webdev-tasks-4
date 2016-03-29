@@ -12,16 +12,20 @@ gulp.task('stylus', function () {
 });
 
 
-gulp.task('autoprefixer', function () {
-    var postcss      = require('gulp-postcss');
-    var sourcemaps   = require('gulp-sourcemaps');
+gulp.task('postcs', function () {
+    var postcss = require('gulp-postcss');
+    var sourcemaps = require('gulp-sourcemaps');
     var autoprefixer = require('autoprefixer');
     var nano = require('gulp-cssnano');
 
     return gulp.src('./style/*.css')
         .pipe(sourcemaps.init())
         .pipe(nano())
-        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(postcss([
+            autoprefixer({browsers: ['last 2 versions']}),
+            require('postcss-size'),
+            require('postcss-color-hex-alpha')
+        ]))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./style'));
 });

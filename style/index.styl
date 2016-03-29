@@ -4,10 +4,13 @@ my_transform(translate_x_percent = 100%, scale_x = .8, left = false)
   else
     transform translateX(translate_x_percent) rotateY(-30deg) scaleX(scale_x)
 
-$background-coloe = #FFF
+percentage($decimal)
+  $factor = $decimal - 1
+  ($factor * 50 + 100) %
+
+$background-color = #FFF
 
 .photo-radio
-.recipe-radio
   display none
 
 .page
@@ -20,156 +23,85 @@ $background-coloe = #FFF
   perspective: 200px;
 
 .vegetable
-  background: $background-coloe;
+  background: $background-color;
   margin: 0 auto;
   position: absolute;
   width: 150px;
   box-shadow: 0 5px 30px #808080;
   transition: transform 1.4s ease 0s, left 1.4s ease;
 
-  &__recipe-btn
-    border: 3px solid white;
-    border-radius: 50%;
-    padding: 20%;
-    margin: 0 auto;
-
 .img
-  width: 150px;
-  height: auto;
+  size 150px auto
 
-#photo
-  &-one ~ .photo-one .vegetable__recipe
-  &-two ~ .photo-two .vegetable__recipe
-  &-three ~ .photo-three .vegetable__recipe
-  &-four ~ .photo-four .vegetable__recipe
-  &-five ~ .photo-five .vegetable__recipe
-  &-six ~ .photo-six .vegetable__recipe
-  &-seven ~ .photo-seven .vegetable__recipe
-    display none
-
-  &-two:checked ~ .photo-two
-  &-three:checked ~ .photo-three
-  &-four:checked ~ .photo-four
-  &-five:checked ~ .photo-five
-  &-six:checked ~ .photo-six
-    transform scaleXY(1)
-    z-index 6
-
-  &-one:checked ~ .photo-one
-  &-seven:checked ~ .photo-seven
-    transform scaleXY(1)
-    z-index 7
-
-  &-one:checked ~ .photo-two
-    my_transform()
-    z-index 6
-
-  &-two:checked ~ .photo-three
-  &-three:checked ~ .photo-four
-  &-four:checked ~ .photo-five
-  &-five:checked ~ .photo-six
-  &-six:checked ~ .photo-seven
-    my_transform()
-    z-index 5
-
-  &-one:checked ~ .photo-three
-    my_transform(150%, .7)
-    z-index 5
-
-  &-two:checked ~ .photo-four
-  &-three:checked ~ .photo-five
-  &-four:checked ~ .photo-six
-  &-five:checked ~ .photo-seven
-    my_transform(150%, .7)
-    z-index 4
-
-  &-one:checked ~ .photo-four
-    my_transform(200%, .6)
-    z-index 4
+.vegetable_controller_photo_
+  $num = 1
+  for $index in (1..6)
+    &_{$num}:checked ~ vegetable_photo_{$num+$index}
+      my_transform(percentage($index), 1 - (0.1 * ($index) + 0.1))
+      z-index 7 - $index
 
 
-  &-two:checked ~ .photo-five
-  &-three:checked ~ .photo-six
-  &-four:checked ~ .photo-seven
-    my_transform(200%, .6)
-    z-index 3
+  for $num in (2..6)
+    &_{$num}:checked ~ .vegetable_photo_{$num}
+      transform scaleXY(1)
+      z-index 6
 
-  &-one:checked ~ .photo-five
-    my_transform(250%, .5)
-    z-index 3
+  for $num in 1 7
+    &_{$num}:checked ~ .vegetable_photo_{$num}
+      transform scaleXY(1)
+      z-index 7
 
+  for $num in (2..6)
+    &_{$num}:checked ~ vegetable_photo_{$num+1}
+      my_transform()
+      z-index 5
 
-  &-three:checked ~ .photo-seven
-  &-two:checked ~ .photo-six
-    my_transform(250%, .5)
-    z-index 2
+  for $num in (2..5)
+    &_{$num}:checked ~ vegetable_photo_{$num+2}
+      my_transform(150%, .7)
+      z-index 4
 
-  &-one:checked ~ .photo-six
-    my_transform(300%, .4)
-    z-index 2
+  for $num in (2..4)
+    &_{$num}:checked ~ vegetable_photo_{$num+3}
+      my_transform(200%, .6)
+      z-index 3
 
-  &-two:checked ~ .photo-seven
-    my_transform(300%, .4)
-    z-index 1
+  for $num in 2 3
+    &_{$num}:checked ~ vegetable_photo_{$num+4}
+      my_transform(250%, .5)
+      z-index 2
 
+  for $num in 2
+    &_{$num}:checked ~ vegetable_photo_{$num+5}
+      my_transform(300%, .4)
+      z-index 1
 
-  &-one:checked ~ .photo-seven
-    my_transform(350%, .3)
-    z-index 1
+  for $num in (1..6)
+    &_{$num+1}:checked ~ vegetable_photo_{$num}
+      my_transform(-100%, .8, true)
+      z-index 5
 
-  &-two:checked ~ .photo-one
-  &-three:checked ~ .photo-two
-  &-four:checked ~ .photo-three
-  &-five:checked ~ .photo-four
-  &-six:checked ~ .photo-five
-  &-seven:checked ~ .photo-six
-    my_transform(-100%, .8, true)
-    z-index 5
+  for $num in (1..5)
+    &_{$num+2}:checked ~ vegetable_photo_{$num}
+      my_transform(-150%, .7, true)
+      z-index 4
 
-  &-three:checked ~ .photo-one
-  &-four:checked ~ .photo-two
-  &-five:checked ~ .photo-three
-  &-six:checked ~ .photo-four
-  &-seven:checked ~ .photo-five
-    my_transform(-150%, .7, true)
-    z-index 4
+  for $num in (1..4)
+    &_{$num+3}:checked ~ vegetable_photo_{$num}
+      my_transform(-200%, .6, true)
+      z-index 3
 
-  &-four:checked ~ .photo-one
-  &-five:checked ~ .photo-two
-  &-six:checked ~ .photo-three
-  &-seven:checked ~ .photo-four
-    my_transform(-200%, .6, true)
-    z-index 3
+  for $num in (1..3)
+    &_{$num+4}:checked ~ vegetable_photo_{$num}
+      my_transform(-250%, .5, true)
+      z-index 2
 
-  &-five:checked ~ .photo-one
-  &-six:checked ~ .photo-two
-  &-seven:checked ~ .photo-three
-    my_transform(-250%, .5, true)
-    z-index 2
+  for $num in 1 2
+    &_{$num+5}:checked ~ vegetable_photo_{$num}
+      my_transform(-300%, .4, true)
+      z-index 1
 
-  &-six:checked ~ .photo-one
-  &-seven:checked ~ .photo-two
-    my_transform(-300%, .4, true)
-    z-index 1
-
-  &-seven:checked ~ .photo-one
-    my_transform(-350%, .3, true)
-    z-index 1
-
-  &-one:checked ~ .photo-one:hover .vegetable__recipe
-  &-two:checked ~ .photo-two:hover .vegetable__recipe
-  &-three:checked ~ .photo-three:hover .vegetable__recipe
-  &-four:checked ~ .photo-four:hover .vegetable__recipe
-  &-five:checked ~ .photo-five:hover .vegetable__recipe
-  &-six:checked ~ .photo-six:hover .vegetable__recipe
-  &-seven:checked ~ .photo-seven:hover .vegetable__recipe
-    position absolute
-    display flex
-    align-items center
-    justify-content center
-    color white
-    width 100%
-    height 100%
-    z-index 8
-    background rgba(80, 80, 80, .5)
-
+  for $num in 1
+    &_{$num+6}:checked ~ vegetable_photo_{$num}
+      my_transform(-350%, .3, true)
+      z-index 1

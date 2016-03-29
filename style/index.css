@@ -1,0 +1,219 @@
+.photo-radio {
+  display: none;
+}
+.page {
+  width: 100%;
+}
+.gallery {
+  position: relative;
+  margin: 200px auto;
+  width: 150px;
+  perspective: 200px;
+}
+.vegetable {
+  background: #fff;
+  margin: 0 auto;
+  position: absolute;
+  width: 150px;
+  box-shadow: 0 5px 30px #808080;
+  transition: transform 1.4s ease 0s, left 1.4s ease;
+}
+.img {
+  size: 150px auto;
+}
+.vegetable_controller_photo__1:checked ~ vegetable_photo_2 {
+  transform: translateX(100%) rotateY(-30deg) scaleX(0.8);
+  z-index: 6;
+}
+.vegetable_controller_photo__1:checked ~ vegetable_photo_3 {
+  transform: translateX(150%) rotateY(-30deg) scaleX(0.7);
+  z-index: 5;
+}
+.vegetable_controller_photo__1:checked ~ vegetable_photo_4 {
+  transform: translateX(200%) rotateY(-30deg) scaleX(0.6);
+  z-index: 4;
+}
+.vegetable_controller_photo__1:checked ~ vegetable_photo_5 {
+  transform: translateX(250%) rotateY(-30deg) scaleX(0.5);
+  z-index: 3;
+}
+.vegetable_controller_photo__1:checked ~ vegetable_photo_6 {
+  transform: translateX(300%) rotateY(-30deg) scaleX(0.4);
+  z-index: 2;
+}
+.vegetable_controller_photo__1:checked ~ vegetable_photo_7 {
+  transform: translateX(350%) rotateY(-30deg) scaleX(0.3);
+  z-index: 1;
+}
+.vegetable_controller_photo__2:checked ~ .vegetable_photo_2 {
+  transform: scaleXY(1);
+  z-index: 6;
+}
+.vegetable_controller_photo__3:checked ~ .vegetable_photo_3 {
+  transform: scaleXY(1);
+  z-index: 6;
+}
+.vegetable_controller_photo__4:checked ~ .vegetable_photo_4 {
+  transform: scaleXY(1);
+  z-index: 6;
+}
+.vegetable_controller_photo__5:checked ~ .vegetable_photo_5 {
+  transform: scaleXY(1);
+  z-index: 6;
+}
+.vegetable_controller_photo__6:checked ~ .vegetable_photo_6 {
+  transform: scaleXY(1);
+  z-index: 6;
+}
+.vegetable_controller_photo__1:checked ~ .vegetable_photo_1 {
+  transform: scaleXY(1);
+  z-index: 7;
+}
+.vegetable_controller_photo__7:checked ~ .vegetable_photo_7 {
+  transform: scaleXY(1);
+  z-index: 7;
+}
+.vegetable_controller_photo__2:checked ~ vegetable_photo_3 {
+  transform: translateX(100%) rotateY(-30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__3:checked ~ vegetable_photo_4 {
+  transform: translateX(100%) rotateY(-30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__4:checked ~ vegetable_photo_5 {
+  transform: translateX(100%) rotateY(-30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__5:checked ~ vegetable_photo_6 {
+  transform: translateX(100%) rotateY(-30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__6:checked ~ vegetable_photo_7 {
+  transform: translateX(100%) rotateY(-30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__2:checked ~ vegetable_photo_4 {
+  transform: translateX(150%) rotateY(-30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__3:checked ~ vegetable_photo_5 {
+  transform: translateX(150%) rotateY(-30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__4:checked ~ vegetable_photo_6 {
+  transform: translateX(150%) rotateY(-30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__5:checked ~ vegetable_photo_7 {
+  transform: translateX(150%) rotateY(-30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__2:checked ~ vegetable_photo_5 {
+  transform: translateX(200%) rotateY(-30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__3:checked ~ vegetable_photo_6 {
+  transform: translateX(200%) rotateY(-30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__4:checked ~ vegetable_photo_7 {
+  transform: translateX(200%) rotateY(-30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__2:checked ~ vegetable_photo_6 {
+  transform: translateX(250%) rotateY(-30deg) scaleX(0.5);
+  z-index: 2;
+}
+.vegetable_controller_photo__3:checked ~ vegetable_photo_7 {
+  transform: translateX(250%) rotateY(-30deg) scaleX(0.5);
+  z-index: 2;
+}
+.vegetable_controller_photo__2:checked ~ vegetable_photo_7 {
+  transform: translateX(300%) rotateY(-30deg) scaleX(0.4);
+  z-index: 1;
+}
+.vegetable_controller_photo__2:checked ~ vegetable_photo_1 {
+  transform: translateX(-100%) rotateY(30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__3:checked ~ vegetable_photo_2 {
+  transform: translateX(-100%) rotateY(30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__4:checked ~ vegetable_photo_3 {
+  transform: translateX(-100%) rotateY(30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__5:checked ~ vegetable_photo_4 {
+  transform: translateX(-100%) rotateY(30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__6:checked ~ vegetable_photo_5 {
+  transform: translateX(-100%) rotateY(30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__7:checked ~ vegetable_photo_6 {
+  transform: translateX(-100%) rotateY(30deg) scaleX(0.8);
+  z-index: 5;
+}
+.vegetable_controller_photo__3:checked ~ vegetable_photo_1 {
+  transform: translateX(-150%) rotateY(30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__4:checked ~ vegetable_photo_2 {
+  transform: translateX(-150%) rotateY(30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__5:checked ~ vegetable_photo_3 {
+  transform: translateX(-150%) rotateY(30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__6:checked ~ vegetable_photo_4 {
+  transform: translateX(-150%) rotateY(30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__7:checked ~ vegetable_photo_5 {
+  transform: translateX(-150%) rotateY(30deg) scaleX(0.7);
+  z-index: 4;
+}
+.vegetable_controller_photo__4:checked ~ vegetable_photo_1 {
+  transform: translateX(-200%) rotateY(30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__5:checked ~ vegetable_photo_2 {
+  transform: translateX(-200%) rotateY(30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__6:checked ~ vegetable_photo_3 {
+  transform: translateX(-200%) rotateY(30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__7:checked ~ vegetable_photo_4 {
+  transform: translateX(-200%) rotateY(30deg) scaleX(0.6);
+  z-index: 3;
+}
+.vegetable_controller_photo__5:checked ~ vegetable_photo_1 {
+  transform: translateX(-250%) rotateY(30deg) scaleX(0.5);
+  z-index: 2;
+}
+.vegetable_controller_photo__6:checked ~ vegetable_photo_2 {
+  transform: translateX(-250%) rotateY(30deg) scaleX(0.5);
+  z-index: 2;
+}
+.vegetable_controller_photo__7:checked ~ vegetable_photo_3 {
+  transform: translateX(-250%) rotateY(30deg) scaleX(0.5);
+  z-index: 2;
+}
+.vegetable_controller_photo__6:checked ~ vegetable_photo_1 {
+  transform: translateX(-300%) rotateY(30deg) scaleX(0.4);
+  z-index: 1;
+}
+.vegetable_controller_photo__7:checked ~ vegetable_photo_2 {
+  transform: translateX(-300%) rotateY(30deg) scaleX(0.4);
+  z-index: 1;
+}
+.vegetable_controller_photo__7:checked ~ vegetable_photo_1 {
+  transform: translateX(-350%) rotateY(30deg) scaleX(0.3);
+  z-index: 1;
+}
