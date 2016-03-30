@@ -44,12 +44,12 @@ makeShift($left, $deg, $z) {
         }
     }
 
-    for $i in (1..$count) {
+    for $i in range(1, $count) {
         $leftCenter = ($center - $i) * 14
         for $j in (1..$count) {
             $left = $leftCenter + ($i - $j) * 5
             $z = $count - abs($i - $j)
-            &__photo_{$i}:checked ~ &__block_{$j} {
+            &__photo_{$i}:checked ~ &__block_num_{$j} {
                 if $j > $i {
                     makeShift($left, -50deg, $z)
                 } else if $j < $i {
