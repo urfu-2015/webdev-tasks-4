@@ -1,9 +1,10 @@
 .box-3d
 {
-    width: 100%;
-    height: 100%;
     display: flex
     perspective: 300px;
+
+    width: 100%;
+    height: 100%;
 }
 
 input
@@ -24,19 +25,23 @@ makeShift($left, $deg, $z) {
 {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+
     width: 80%;
     height: 10em;
     margin: auto;
 
     &__block {
+        position: relative;
+
         width: 14%;
         height: 100%;
-        position: relative;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .7);
+
         transition: transform 2s ease-in-out, left 1.5s ease-in-out;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, .7);
 
         &__img {
             width: 100%;

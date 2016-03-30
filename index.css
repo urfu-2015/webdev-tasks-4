@@ -1,0 +1,275 @@
+.box-3d {
+  display: flex;
+  perspective: 300px;
+  width: 100%;
+  height: 100%;
+}
+input {
+  display: none;
+}
+.products {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 10em;
+  margin: auto;
+}
+.products__block {
+  position: relative;
+  width: 14%;
+  height: 100%;
+  transition: transform 2s ease-in-out, left 1.5s ease-in-out;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+.products__block__img {
+  width: 100%;
+  height: 100%;
+}
+.products__photo_1:checked ~ .products__block_num_1 {
+  left: 42%;
+  transform: rotateY(0);
+  z-index: 7;
+}
+.products__photo_1:checked ~ .products__block_num_2 {
+  left: 37%;
+  transform: rotateY(-50deg);
+  z-index: 6;
+}
+.products__photo_1:checked ~ .products__block_num_3 {
+  left: 32%;
+  transform: rotateY(-50deg);
+  z-index: 5;
+}
+.products__photo_1:checked ~ .products__block_num_4 {
+  left: 27%;
+  transform: rotateY(-50deg);
+  z-index: 4;
+}
+.products__photo_1:checked ~ .products__block_num_5 {
+  left: 22%;
+  transform: rotateY(-50deg);
+  z-index: 3;
+}
+.products__photo_1:checked ~ .products__block_num_6 {
+  left: 17%;
+  transform: rotateY(-50deg);
+  z-index: 2;
+}
+.products__photo_1:checked ~ .products__block_num_7 {
+  left: 12%;
+  transform: rotateY(-50deg);
+  z-index: 1;
+}
+.products__photo_2:checked ~ .products__block_num_1 {
+  left: 33%;
+  transform: rotateY(50deg);
+  z-index: 6;
+}
+.products__photo_2:checked ~ .products__block_num_2 {
+  left: 28%;
+  transform: rotateY(0);
+  z-index: 7;
+}
+.products__photo_2:checked ~ .products__block_num_3 {
+  left: 23%;
+  transform: rotateY(-50deg);
+  z-index: 6;
+}
+.products__photo_2:checked ~ .products__block_num_4 {
+  left: 18%;
+  transform: rotateY(-50deg);
+  z-index: 5;
+}
+.products__photo_2:checked ~ .products__block_num_5 {
+  left: 13%;
+  transform: rotateY(-50deg);
+  z-index: 4;
+}
+.products__photo_2:checked ~ .products__block_num_6 {
+  left: 8%;
+  transform: rotateY(-50deg);
+  z-index: 3;
+}
+.products__photo_2:checked ~ .products__block_num_7 {
+  left: 3%;
+  transform: rotateY(-50deg);
+  z-index: 2;
+}
+.products__photo_3:checked ~ .products__block_num_1 {
+  left: 24%;
+  transform: rotateY(50deg);
+  z-index: 5;
+}
+.products__photo_3:checked ~ .products__block_num_2 {
+  left: 19%;
+  transform: rotateY(50deg);
+  z-index: 6;
+}
+.products__photo_3:checked ~ .products__block_num_3 {
+  left: 14%;
+  transform: rotateY(0);
+  z-index: 7;
+}
+.products__photo_3:checked ~ .products__block_num_4 {
+  left: 9%;
+  transform: rotateY(-50deg);
+  z-index: 6;
+}
+.products__photo_3:checked ~ .products__block_num_5 {
+  left: 4%;
+  transform: rotateY(-50deg);
+  z-index: 5;
+}
+.products__photo_3:checked ~ .products__block_num_6 {
+  left: -1%;
+  transform: rotateY(-50deg);
+  z-index: 4;
+}
+.products__photo_3:checked ~ .products__block_num_7 {
+  left: -6%;
+  transform: rotateY(-50deg);
+  z-index: 3;
+}
+.products__photo_4:checked ~ .products__block_num_1 {
+  left: 15%;
+  transform: rotateY(50deg);
+  z-index: 4;
+}
+.products__photo_4:checked ~ .products__block_num_2 {
+  left: 10%;
+  transform: rotateY(50deg);
+  z-index: 5;
+}
+.products__photo_4:checked ~ .products__block_num_3 {
+  left: 5%;
+  transform: rotateY(50deg);
+  z-index: 6;
+}
+.products__photo_4:checked ~ .products__block_num_4 {
+  left: 0%;
+  transform: rotateY(0);
+  z-index: 7;
+}
+.products__photo_4:checked ~ .products__block_num_5 {
+  left: -5%;
+  transform: rotateY(-50deg);
+  z-index: 6;
+}
+.products__photo_4:checked ~ .products__block_num_6 {
+  left: -10%;
+  transform: rotateY(-50deg);
+  z-index: 5;
+}
+.products__photo_4:checked ~ .products__block_num_7 {
+  left: -15%;
+  transform: rotateY(-50deg);
+  z-index: 4;
+}
+.products__photo_5:checked ~ .products__block_num_1 {
+  left: 6%;
+  transform: rotateY(50deg);
+  z-index: 3;
+}
+.products__photo_5:checked ~ .products__block_num_2 {
+  left: 1%;
+  transform: rotateY(50deg);
+  z-index: 4;
+}
+.products__photo_5:checked ~ .products__block_num_3 {
+  left: -4%;
+  transform: rotateY(50deg);
+  z-index: 5;
+}
+.products__photo_5:checked ~ .products__block_num_4 {
+  left: -9%;
+  transform: rotateY(50deg);
+  z-index: 6;
+}
+.products__photo_5:checked ~ .products__block_num_5 {
+  left: -14%;
+  transform: rotateY(0);
+  z-index: 7;
+}
+.products__photo_5:checked ~ .products__block_num_6 {
+  left: -19%;
+  transform: rotateY(-50deg);
+  z-index: 6;
+}
+.products__photo_5:checked ~ .products__block_num_7 {
+  left: -24%;
+  transform: rotateY(-50deg);
+  z-index: 5;
+}
+.products__photo_6:checked ~ .products__block_num_1 {
+  left: -3%;
+  transform: rotateY(50deg);
+  z-index: 2;
+}
+.products__photo_6:checked ~ .products__block_num_2 {
+  left: -8%;
+  transform: rotateY(50deg);
+  z-index: 3;
+}
+.products__photo_6:checked ~ .products__block_num_3 {
+  left: -13%;
+  transform: rotateY(50deg);
+  z-index: 4;
+}
+.products__photo_6:checked ~ .products__block_num_4 {
+  left: -18%;
+  transform: rotateY(50deg);
+  z-index: 5;
+}
+.products__photo_6:checked ~ .products__block_num_5 {
+  left: -23%;
+  transform: rotateY(50deg);
+  z-index: 6;
+}
+.products__photo_6:checked ~ .products__block_num_6 {
+  left: -28%;
+  transform: rotateY(0);
+  z-index: 7;
+}
+.products__photo_6:checked ~ .products__block_num_7 {
+  left: -33%;
+  transform: rotateY(-50deg);
+  z-index: 6;
+}
+.products__photo_7:checked ~ .products__block_num_1 {
+  left: -12%;
+  transform: rotateY(50deg);
+  z-index: 1;
+}
+.products__photo_7:checked ~ .products__block_num_2 {
+  left: -17%;
+  transform: rotateY(50deg);
+  z-index: 2;
+}
+.products__photo_7:checked ~ .products__block_num_3 {
+  left: -22%;
+  transform: rotateY(50deg);
+  z-index: 3;
+}
+.products__photo_7:checked ~ .products__block_num_4 {
+  left: -27%;
+  transform: rotateY(50deg);
+  z-index: 4;
+}
+.products__photo_7:checked ~ .products__block_num_5 {
+  left: -32%;
+  transform: rotateY(50deg);
+  z-index: 5;
+}
+.products__photo_7:checked ~ .products__block_num_6 {
+  left: -37%;
+  transform: rotateY(50deg);
+  z-index: 6;
+}
+.products__photo_7:checked ~ .products__block_num_7 {
+  left: -42%;
+  transform: rotateY(0);
+  z-index: 7;
+}
