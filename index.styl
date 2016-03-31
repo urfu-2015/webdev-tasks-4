@@ -8,15 +8,17 @@ $startTranslateX = 170
 
 $slidesCount = 7
 
-makeTransform($translateX, $translateY, $z)
+makeTransform($translateX, $translateY, $z) {
     transform translateX($translateX) rotateY($translateY)
     z-index $z
+}
 
-makeTransformScale($scale, $z)
+makeTransformScale($scale, $z) {
     transform scale($scale)
     z-index $z
+}
 
-.slider
+.slider {
     margin 20px
     height 100%
     overflow hidden;
@@ -25,47 +27,62 @@ makeTransformScale($scale, $z)
     align-items center;
     justify-content center;
     for $index in (1..$slidesCount)
-        &__input{$index}
+        &__input {$index}
             display none
+}
 
-.slides
+.slides {
     width 1500px
     height 300px
     position relative
     perspective 1000px
     &_full-width
         width 100%
+}
 
-.slides > label > div
+.slides > label > div {
     position: absolute
     left: 540px
     width: 250px
     height: 250px
     transition-duration: 1s
+}
 
-for $index in (1..$slidesCount)
-    .slider__input{$index}
-        &:checked ~ .slides .slides__slide{$index}
+for $index in (1..$slidesCount) {
+    .slider__input{$index} {
+        &:checked ~ .slides .slides__slide{$index} {
             makeTransformScale(25deg, 7)
+        }
+    }
+}
 
-for $index in (1 .. $slidesCount - 1)
-    for $step in (0 .. $slidesCount - 3 )
-        if $index + $step < $slidesCount + 1
+for $index in (1 .. $slidesCount - 1) {
+    for $step in (0 .. $slidesCount - 3) {
+        if $index + $step < $slidesCount + 1 {
             $temp_x = $startTranslateX + $stepTranslateX * $step
             $temp_y = $startTranslateY + $stepTranslateY * $step
             $z-index = $slidesCount - $step - 1
-            .slider__input{$index}
-                &:checked ~ .slides .slides__slide{$index + $step + 1}
+            .slider__input{$index} {
+                &:checked ~ .slides .slides__slide{$index + $step + 1} {
                     makeTransform($temp_x px, $temp_y deg, $z-index)
-            .slider__input{$index + $step + 1}
-                &:checked ~ .slides .slides__slide{$index}
+                }
+            }
+            .slider__input{$index + $step + 1} {
+                &:checked ~ .slides .slides__slide{$index} {
                     $temp_x *= -1
                     $temp_y *= -1
                     makeTransform($temp_x px, $temp_y deg, $z-index)
+                }
+            }
+        }
+    }
+}
 
-.slider__input1
+.slider__input1 {
     &:checked ~ .slides .slides__slide7
         makeTransform(520px, -30deg, 1)
-.slider__input7
+}
+.slider__input7 {
     &:checked ~ .slides .slides__slide1
         makeTransform(-520px, 30deg, 1)
+}
