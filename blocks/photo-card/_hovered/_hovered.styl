@@ -1,0 +1,33 @@
+$col_list = json('../../../data.json', {hash: true})['photo-card']
+
+.photo-card
+  &__image
+    &_hover
+      &::before
+        ~/__effect-box &
+        {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          bottom: 30px;
+          left: 30px;
+
+          content: '';
+          transition: opacity .35s, transform .35s;
+          transform: scale3d(1.4, 1.4, 1);
+
+          opacity: 0;
+          border: 1px solid #fff;
+          box-shadow: 0 0 0 30px rgba(0, 0, 0, .2);
+        }
+
+for $col in range(0, (length($col_list)) - 1)
+{
+  .input-{$col}:checked ~ .gallery figure.image-{$col}:hover figcaption::before
+  {
+    transform: scale3d(1, 1, 1);
+
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .2);
+  }
+}

@@ -1,0 +1,23 @@
+$col_list = json('../../data.json', {hash: true})['photo-card']
+
+.gallery
+{
+  display: flex;
+
+  width: 900px;
+
+  user-select: none;
+  transition-duration: 1s;
+
+  justify-content: center;
+  align-items: center;
+}
+
+for $col in range(0, (length($col_list)) - 1)
+{
+  .input-{$col}:checked ~ .gallery
+  {
+    margin-left: (floor(length($col_list) / 2) - $col) * 140 * 1px;
+  }
+}
+

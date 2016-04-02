@@ -1,0 +1,20 @@
+<div class="photo-card">
+    <figure class="photo-card__effect-box image-{{@index}}">
+        <label for="image-{{@index}}">
+            <img class="photo-card__image" src="{{src}}" alt="{{alt}}" title="{{title}}">
+            <figcaption class="photo-card__image_hover">
+                <label for="open-btn-{{@index}}" class="photo-card__open-btn">Рецепт</label>
+            </figcaption>
+        </label>
+        <div class="photo-card__backside">
+            <div class="photo-card__content">
+                <label for="close-btn-{{@index}}">
+                    <img class="photo-card__close-btn" src="../images/cross.png">
+                </label>
+                <h1>{{recipe-name}}</h1>
+                <hr>
+                {{> recipe}}
+            </div>
+        </div>
+    </figure>
+</div>

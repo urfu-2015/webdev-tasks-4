@@ -1,0 +1,35 @@
+$col_list = json('../../../data.json', {hash: true})['photo-card']
+
+figure label.photo-card
+  &__open-btn
+  {
+    font-size: 14px;
+    line-height: 150px;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+
+    display: none;
+
+    cursor: pointer;
+    transition: opacity .35s, transform .35s;
+    text-align: center;
+    text-transform: uppercase;
+
+    opacity: 0;
+  }
+
+for $col in range(0, (length($col_list)) - 1)
+{
+  .input-{$col}:checked ~ .gallery figure.image-{$col}:hover label.photo-card__open-btn
+  {
+    display: inline-block;
+
+    transform: scale3d(1, 1, 1);
+
+    opacity: 1;
+  }
+}

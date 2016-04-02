@@ -1,0 +1,18 @@
+<div class="recipe">
+    <div class="recipe__ingredients">
+        <h2>Ингредиенты</h2>
+        <ul>
+            {{#each ingredients}}
+                <li><strong>{{name}}</strong> <em>({{amount}})</em></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="recipe__instructions">
+        <h2>Инструкция</h2>
+        <ul>
+            {{#each instructions}}
+                <li>{{step}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

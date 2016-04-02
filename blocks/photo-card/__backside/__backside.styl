@@ -1,0 +1,70 @@
+$col_list = json('../../../data.json', {hash: true})['photo-card']
+
+.photo-card
+  &__backside
+  {
+    position: absolute;
+    display: none;
+  }
+
+for $col in range(0, (length($col_list)) - 1)
+{
+  .open-input-{$col}:checked ~ .gallery figure.image-{$col} .photo-card__backside
+  {
+    position: absolute;
+    z-index: 1000;
+    top: -46vh;
+    right: -50vw;
+    bottom: -46vh;
+    left: -50vw;
+
+    display: block;
+
+    animation: rotationOpenSecondPart 2s linear;
+
+    background-color: rgba(0, 0, 0, .2);
+  }
+}
+
+set_animation_properties($scale, $color)
+  z-index: 1000;
+  transform: scale($scale);
+  opacity: 1;
+  background-color: rgba(0, 0, 0, $color);
+
+set_perspective_opacity()
+  opacity: 0;
+  perspective: 1000px;
+
+@keyframes rotationOpenSecondPart
+{
+  0%
+  {
+    set_perspective_opacity()
+  }
+  50%
+  {
+    z-index: 1000;
+    set_perspective_opacity()
+  }
+  51%
+  {
+    set_animation_properties(.3, 0)
+  }
+  70%
+  {
+    set_animation_properties(.7, 0)
+  }
+  80%
+  {
+    set_animation_properties(.8, 0)
+  }
+  90%
+  {
+    set_animation_properties(.9, .1)
+  }
+  100%
+  {
+    set_animation_properties(1, .2)
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "preprocessors-and-bem",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victoria-Vladimirova/webdev-tasks-4.git"
+  },
+  "author": "Victoria Vladimirova",
+  "bugs": {
+    "url": "https://github.com/Victoria-Vladimirova/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/Victoria-Vladimirova/webdev-tasks-4#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-static-handlebars": "^1.2.0",
+    "gulp-stylus": "^2.3.1",
+    "handlebars": "^4.0.5",
+    "postcss-autoreset": "^1.1.5",
+    "postcss-merge-rules": "^2.0.6",
+    "gulp-cssnano": "^2.1.1",
+    "postcss-color-short": "^0.2.2",
+    "postcss-short-color": "^1.0.0",
+    "postcss-size": "^1.0.0"
+  }
+}
