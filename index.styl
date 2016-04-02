@@ -1,4 +1,4 @@
-$background-color = #ddd
+$background-color = #d
 
 $stepTranslateY = 10
 $startTranslateY = -60
@@ -17,6 +17,9 @@ makeTransformScale($scale, $z) {
     transform scale($scale)
     z-index $z
 }
+img {
+    width 100%;
+}
 
 .slider {
     margin 20px
@@ -26,21 +29,20 @@ makeTransformScale($scale, $z) {
     display flex
     align-items center;
     justify-content center;
-    for $index in (1..$slidesCount)
-        &__input {$index}
-            display none
+    for $index in (1..$slidesCount) {
+        &__control-input{$index} {
+            display disappear
+        }
+    }
+    &__slides {
+        width 1500px
+        height 300px
+        position relative
+        perspective 1000px
+    }
 }
 
-.slides {
-    width 1500px
-    height 300px
-    position relative
-    perspective 1000px
-    &_full-width
-        width 100%
-}
-
-.slides > label > div {
+.slider__slides > label > div {
     position: absolute
     left: 540px
     width: 250px
@@ -49,40 +51,42 @@ makeTransformScale($scale, $z) {
 }
 
 for $index in (1..$slidesCount) {
-    .slider__input{$index} {
-        &:checked ~ .slides .slides__slide{$index} {
+    .slider__control-input{$index} {
+        &:checked ~ .slider__slides .slides_slide{$index} {
             makeTransformScale(25deg, 7)
         }
     }
 }
 
-for $index in (1 .. $slidesCount - 1) {
+for $index in (1 .. $slidesCount - 1) { /* Повороты для каждого слайда */
     for $step in (0 .. $slidesCount - 3) {
         if $index + $step < $slidesCount + 1 {
-            $temp_x = $startTranslateX + $stepTranslateX * $step
-            $temp_y = $startTranslateY + $stepTranslateY * $step
+            $translateX = $startTranslateX + $stepTranslateX * $step
+            $translateY = $startTranslateY + $stepTranslateY * $step
             $z-index = $slidesCount - $step - 1
-            .slider__input{$index} {
-                &:checked ~ .slides .slides__slide{$index + $step + 1} {
-                    makeTransform($temp_x px, $temp_y deg, $z-index)
+            .slider__control-input{$index} {
+                &:checked ~ .slider__slides .slides_slide{$index + $step + 1} {
+                    makeTransform($translateX px, $translateY deg, $z-index)
                 }
             }
-            .slider__input{$index + $step + 1} {
-                &:checked ~ .slides .slides__slide{$index} {
-                    $temp_x *= -1
-                    $temp_y *= -1
-                    makeTransform($temp_x px, $temp_y deg, $z-index)
+            .slider__control-input{$index + $step + 1} {
+                &:checked ~ .slider__slides .slides_slide{$index} {
+                    $translateX *= -1
+                    $translateY *= -1
+                    makeTransform($translateX px,$translateY deg, $z-index)
                 }
             }
         }
     }
 }
 
-.slider__input1 {
-    &:checked ~ .slides .slides__slide7
+.slider__control-input1 {
+    &:checked ~ .slider__slides .slides_slide7 {
         makeTransform(520px, -30deg, 1)
+    }
 }
-.slider__input7 {
-    &:checked ~ .slides .slides__slide1
+.slider__control-input7 {
+    &:checked ~ .slider__slides .slides_slide1 {
         makeTransform(-520px, 30deg, 1)
+    }
 }

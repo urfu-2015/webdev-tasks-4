@@ -13,6 +13,14 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-stylus": "^2.3.1"
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-postcss": "^6.1.0",
+    "gulp-stylus": "^2.3.1",
+    "postcss": "^5.0.19",
+    "postcss-color-short": "^0.2.2",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-for": "^2.0.1",
+    "postcss-hidden": "^1.0.7"
   }
 }
