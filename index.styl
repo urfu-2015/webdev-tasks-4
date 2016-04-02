@@ -1,0 +1,92 @@
+$background-color = #d
+
+$stepTranslateY = 10
+$startTranslateY = -60
+
+$stepTranslateX = 70
+$startTranslateX = 170
+
+$slidesCount = 7
+
+makeTransform($translateX, $translateY, $z) {
+    transform translateX($translateX) rotateY($translateY)
+    z-index $z
+}
+
+makeTransformScale($scale, $z) {
+    transform scale($scale)
+    z-index $z
+}
+img {
+    width 100%;
+}
+
+.slider {
+    margin 20px
+    height 100%
+    overflow hidden;
+    background-color $background-color
+    display flex
+    align-items center;
+    justify-content center;
+    for $index in (1..$slidesCount) {
+        &__control-input{$index} {
+            display disappear
+        }
+    }
+    &__slides {
+        width 1500px
+        height 300px
+        position relative
+        perspective 1000px
+    }
+}
+
+.slider__slides > label > div {
+    position: absolute
+    left: 540px
+    width: 250px
+    height: 250px
+    transition-duration: 1s
+}
+
+for $index in (1..$slidesCount) {
+    .slider__control-input{$index} {
+        &:checked ~ .slider__slides .slides_slide{$index} {
+            makeTransformScale(25deg, 7)
+        }
+    }
+}
+
+for $index in (1 .. $slidesCount - 1) { /* Повороты для каждого слайда */
+    for $step in (0 .. $slidesCount - 3) {
+        if $index + $step < $slidesCount + 1 {
+            $translateX = $startTranslateX + $stepTranslateX * $step
+            $translateY = $startTranslateY + $stepTranslateY * $step
+            $z-index = $slidesCount - $step - 1
+            .slider__control-input{$index} {
+                &:checked ~ .slider__slides .slides_slide{$index + $step + 1} {
+                    makeTransform($translateX px, $translateY deg, $z-index)
+                }
+            }
+            .slider__control-input{$index + $step + 1} {
+                &:checked ~ .slider__slides .slides_slide{$index} {
+                    $translateX *= -1
+                    $translateY *= -1
+                    makeTransform($translateX px,$translateY deg, $z-index)
+                }
+            }
+        }
+    }
+}
+
+.slider__control-input1 {
+    &:checked ~ .slider__slides .slides_slide7 {
+        makeTransform(520px, -30deg, 1)
+    }
+}
+.slider__control-input7 {
+    &:checked ~ .slider__slides .slides_slide1 {
+        makeTransform(-520px, 30deg, 1)
+    }
+}
