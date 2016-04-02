@@ -13,17 +13,11 @@ $carousel_number_of_items = 7;
 
 $carousel_height = 150px;
 
-@import "__item/carousel__item.styl";
 @import "__radio/carousel__radio.styl";
+@import "__items-container/carousel__items-container.styl";
+@import "__item/carousel__item.styl";
 
 $image-container__image_width = $carousel__item_width;
 $image-container__image_height = $carousel_height;
 
 @import "blocks/image-container/image-container.styl"
-
-.carousel {
-    width: $carousel_width;
-    height: $carousel_height;
-    position: relative;
-    perspective: 800px;
-}

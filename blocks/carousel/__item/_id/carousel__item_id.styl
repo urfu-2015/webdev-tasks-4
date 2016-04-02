@@ -6,7 +6,7 @@ $rotate_step = 5deg;
 for $checked_id in (1..$carousel_number_of_items) {
     for $item_id in (1..$carousel_number_of_items) {
         $step = $checked_id - $item_id;
-        #carousel__radio_id_{$checked_id}:checked ~ .carousel .carousel__item_id_{$item_id} {
+        #carousel__radio_id_{$checked_id}:checked ~ .carousel__items-container .carousel__item_id_{$item_id} {
             if $step == 0 {
                 transform: scale(1.2);
                 z-index: $carousel_number_of_items;
