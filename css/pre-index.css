@@ -1,0 +1,256 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel__radio {
+  display: none;
+}
+.carousel__items-container {
+  width: 1400px;
+  height: 150px;
+  position: relative;
+  perspective: 800px;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: translateX(-170px) rotateY(55deg);
+  z-index: 6;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: translateX(-240px) rotateY(50deg);
+  z-index: 5;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: translateX(-310px) rotateY(45deg);
+  z-index: 4;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: translateX(-380px) rotateY(40deg);
+  z-index: 3;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: translateX(-450px) rotateY(35deg);
+  z-index: 2;
+}
+#carousel__radio_id_1:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: translateX(-520px) rotateY(30deg);
+  z-index: 1;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: translateX(170px) rotateY(-55deg);
+  z-index: 6;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: translateX(-170px) rotateY(55deg);
+  z-index: 6;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: translateX(-240px) rotateY(50deg);
+  z-index: 5;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: translateX(-310px) rotateY(45deg);
+  z-index: 4;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: translateX(-380px) rotateY(40deg);
+  z-index: 3;
+}
+#carousel__radio_id_2:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: translateX(-450px) rotateY(35deg);
+  z-index: 2;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: translateX(240px) rotateY(-50deg);
+  z-index: 5;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: translateX(170px) rotateY(-55deg);
+  z-index: 6;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: translateX(-170px) rotateY(55deg);
+  z-index: 6;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: translateX(-240px) rotateY(50deg);
+  z-index: 5;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: translateX(-310px) rotateY(45deg);
+  z-index: 4;
+}
+#carousel__radio_id_3:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: translateX(-380px) rotateY(40deg);
+  z-index: 3;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: translateX(310px) rotateY(-45deg);
+  z-index: 4;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: translateX(240px) rotateY(-50deg);
+  z-index: 5;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: translateX(170px) rotateY(-55deg);
+  z-index: 6;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: translateX(-170px) rotateY(55deg);
+  z-index: 6;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: translateX(-240px) rotateY(50deg);
+  z-index: 5;
+}
+#carousel__radio_id_4:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: translateX(-310px) rotateY(45deg);
+  z-index: 4;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: translateX(380px) rotateY(-40deg);
+  z-index: 3;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: translateX(310px) rotateY(-45deg);
+  z-index: 4;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: translateX(240px) rotateY(-50deg);
+  z-index: 5;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: translateX(170px) rotateY(-55deg);
+  z-index: 6;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: translateX(-170px) rotateY(55deg);
+  z-index: 6;
+}
+#carousel__radio_id_5:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: translateX(-240px) rotateY(50deg);
+  z-index: 5;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: translateX(450px) rotateY(-35deg);
+  z-index: 2;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: translateX(380px) rotateY(-40deg);
+  z-index: 3;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: translateX(310px) rotateY(-45deg);
+  z-index: 4;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: translateX(240px) rotateY(-50deg);
+  z-index: 5;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: translateX(170px) rotateY(-55deg);
+  z-index: 6;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+#carousel__radio_id_6:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: translateX(-170px) rotateY(55deg);
+  z-index: 6;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_1 {
+  transform: translateX(520px) rotateY(-30deg);
+  z-index: 1;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_2 {
+  transform: translateX(450px) rotateY(-35deg);
+  z-index: 2;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_3 {
+  transform: translateX(380px) rotateY(-40deg);
+  z-index: 3;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_4 {
+  transform: translateX(310px) rotateY(-45deg);
+  z-index: 4;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_5 {
+  transform: translateX(240px) rotateY(-50deg);
+  z-index: 5;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_6 {
+  transform: translateX(170px) rotateY(-55deg);
+  z-index: 6;
+}
+#carousel__radio_id_7:checked ~ .carousel__items-container .carousel__item_id_7 {
+  transform: scale(1.2);
+  z-index: 7;
+}
+.carousel__item {
+  position: absolute;
+  left: 600px;
+  width: 200px;
+  max-height: 150px;
+  box-shadow: 0 5px 10px #ccc;
+  transition: all 0.5s;
+  will-change: transform;
+}
+.image-container__image_name_beet {
+  background: url("../images/beet.jpg");
+}
+.image-container__image_name_carrot {
+  background: url("../images/carrot.jpg");
+}
+.image-container__image_name_cucumber {
+  background: url("../images/cucumber.jpg");
+}
+.image-container__image_name_mellon {
+  background: url("../images/mellon.jpg");
+}
+.image-container__image_name_onion {
+  background: url("../images/onion.jpg");
+}
+.image-container__image_name_squash {
+  background: url("../images/squash.jpg");
+}
+.image-container__image_name_tomato {
+  background: url("../images/tomato.jpg");
+}
+.image-container__image {
+  width: 200px;
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+.image-container {
+  width: 200px;
+  height: 150px;
+}

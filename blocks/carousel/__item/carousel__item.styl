@@ -1,0 +1,15 @@
+$carousel__item_width = $carousel_width / $carousel_number_of_items;
+$carousel__item_left = $carousel_width / 2 - $carousel__item_width / 2;
+
+@import "_id/carousel__item_id.styl"
+
+.carousel__item
+{
+    position: absolute;
+    left: $carousel__item_left;
+    width: $carousel__item_width;
+    max-height: $carousel_height;
+    box-shadow: 0 5px 10px #ccc;
+    transition: all .5s;
+    will-change: transform;
+}

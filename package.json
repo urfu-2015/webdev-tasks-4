@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "npm run test-html && npm run test-css",
+    "test-html": "mocha ./node_modules/html-tests/task-stub/test",
+    "test-css": "stylelint *.css",
+    "stylus": "stylus index.styl --out ./css/pre-index.css",
+    "postcss": "postcss -c postcss-conf.json",
+    "build": "npm run stylus && npm run postcss"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.3.4",
+    "cssnano": "3.5.2",
+    "html-tests": "https://github.com/urfu-2015/html-test-suite.git#stable",
+    "mocha": "2.3.3",
+    "postcss": "5.0.19",
+    "postcss-cachebuster": "^0.1.2",
+    "postcss-cli": "2.5.1",
+    "postcss-merge-rules": "2.0.6",
+    "postcss-will-change": "1.1.0",
+    "should": "7.1.0",
+    "stylelint": "2.0.0",
+    "stylus": "0.54.2"
+  }
+}

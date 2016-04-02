@@ -1,0 +1,15 @@
+{
+    "use": [
+        "postcss-will-change",
+        "postcss-merge-rules",
+        "postcss-cachebuster",
+        "autoprefixer",
+        "cssnano"
+    ],
+    "input": "./css/pre-index.css",
+    "output": "./css/index.css",
+    "local-plugins": true,
+    "autoprefixer": {
+        "browsers": "> 5%"
+    }
+}
