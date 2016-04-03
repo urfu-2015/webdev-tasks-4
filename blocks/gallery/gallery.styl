@@ -3,10 +3,6 @@
     height: 80%
     width: 80%
     
-    @import "__selector/gallery__selector.styl"
-    @import "../carousel/carousel.styl"
-    
-    
     for $slide_num in (1..$slides_num) {
         &__selector:nth-child({$slide_num}):checked ~ &__carousel &__carousel__slide:nth-child({$slide_num}) {
             z-index: $slides_num + 1
@@ -27,3 +23,6 @@
     }
     
 }
+
+@import "slide.styl"
+@import "gallery__selector.styl"
