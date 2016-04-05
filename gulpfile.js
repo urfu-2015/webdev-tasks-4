@@ -7,7 +7,6 @@ var colormin = require('postcss-colormin');
 var mergeRules = require('postcss-merge-rules');
 var reduceTransforms = require('postcss-reduce-transforms');
 var path = require('path');
-var resolveDependents = require('gulp-resolve-dependents');
 
 var postcssPlugins = [
     autoprefixer(),
@@ -17,23 +16,8 @@ var postcssPlugins = [
     reduceTransforms()
 ];
 
-function stylusResolver(filePath, fileContents) {
-    var match, result = [],
-        pattern = /@import "(.+?)"/mg;
-    while ((match = pattern.exec(fileContents)) !== null) {
-        result.push(path.resolve(path.dirname(filePath), match[1]));
-    }
-    console.log(result);
-    return result;
-}
-
 gulp.task('default', function () {
   return gulp.src('./index.styl')
-    .pipe(resolveDependents({
-        files: './blocks/**/*.styl',
-        resolver: stylusResolver,
-        basePath: './blocks/**/'
-    }))
     .pipe(stylus())
     .pipe(postcss(postcssPlugins))
     .pipe(gulp.dest('./'));

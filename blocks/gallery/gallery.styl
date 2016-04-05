@@ -1,7 +1,7 @@
 ﻿.gallery {
     position: relative
     height: 80%
-    width: 80%
+    width: 80%    
     
     for $slide_num in (1..$slides_num) {
         &__selector:nth-child({$slide_num}):checked ~ &__carousel &__carousel__slide:nth-child({$slide_num}) {
@@ -24,5 +24,5 @@
     
 }
 
-@import "slide.styl"
-@import "gallery__selector.styl"
+@import "__selector/gallery__selector.styl"
+@import "../carousel/carousel.styl"
