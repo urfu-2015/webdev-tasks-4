@@ -1,0 +1,13 @@
+.gallery__carousel {
+    perspective: 700px
+    transform-style: preserve-3d
+    
+    $percentage = 100 / $slides_num
+    for $slide_num in (1..$slides_num) {
+        &__slide:nth-child({$slide_num}) {
+            left: (($slide_num - 1) * $percentage)%
+        }
+    }
+}
+
+@import "../slide/slide.styl"

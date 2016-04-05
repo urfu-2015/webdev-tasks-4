@@ -1,0 +1,28 @@
+﻿.gallery {
+    position: relative
+    height: 80%
+    width: 80%    
+    
+    for $slide_num in (1..$slides_num) {
+        &__selector:nth-child({$slide_num}):checked ~ &__carousel &__carousel__slide:nth-child({$slide_num}) {
+            z-index: $slides_num + 1
+            transform: scale(1.1)
+        }
+    }
+    for $slide_num in (1..$slides_num) {
+        for $second_slide_num in (1..$slides_num) {
+            $degree = ($second_slide_num - $slide_num) * -4
+            &__selector:nth-child({$slide_num}):checked ~ &__carousel &__carousel__slide:nth-child({$second_slide_num}) {
+                if ($slide_num != $second_slide_num) {
+                    $subtraction = $second_slide_num - $slide_num
+                    z-index = $slide_num - abs($subtraction)
+                    transform: rotate3d(0, 1, 0, $degree deg)
+                }
+            }
+        }
+    }
+    
+}
+
+@import "__selector/gallery__selector.styl"
+@import "../carousel/carousel.styl"
