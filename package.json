@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "dependencies": {
+    "jscs": "2.2.1"
+  },
+  "scripts": {
+      "stylus": "stylus blocks"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.2"
+  }
+}

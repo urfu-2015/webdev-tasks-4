@@ -1,0 +1,52 @@
+.slider__label
+  display block
+  position relative
+  height 100%
+  width 200px
+  background-color #fff
+  box-shadow 2px 2px 5px #c8c8c8
+  transition-property transform
+  transition-timing-function linear
+  transition-duration 1s
+  cursor pointer
+
+$num-of-photos = 7
+$shadow-color = #c8c8c8
+for $num in (1 .. $num-of-photos)
+  $photo = 'photo-' + $num
+  #photo-{$num}:checked ~ .slider .slider__label[for=\'{$photo}\']
+    transform translateZ(50px)
+    box-shadow 2px 2px 5px $shadow-color, -2px 0 5px $shadow-color
+
+$angles = {}
+for $key in (1 .. 7)
+  $angles[$key] = range(1, 7)
+/*
+5 — разница в градусах между соседними фото
+максимальное допустимое число фото в ряду — 13
+*/
+$min-angle = 15
+for $checked-num in (1 .. $num-of-photos)
+  for $i in (1 .. $num-of-photos)
+    if $checked-num == $i
+      $angles[$checked-num][$checked-num] = 0
+      // выше диагонали, до середины включительно
+    else if $checked-num <= ceil($num-of-photos / 2) && $checked-num < $i
+      $angles[$checked-num][$i] = $min-angle + ($num-of-photos - $i) * 5
+      // ниже диагонали, до середины включительно
+    else if $checked-num <= ceil($num-of-photos / 2) && $checked-num > $i
+      $angles[$checked-num][$i] = $min-angle + ($num-of-photos - $checked-num - $checked-num + $i) * 5
+    else
+      $angles[$checked-num][$i] = $angles[$num-of-photos - $checked-num + 1][$num-of-photos - $i + 1]
+
+for $i in (1 .. $num-of-photos)
+  for $j in (1 .. $num-of-photos)
+    if $i < $j
+      $angles[$i][$j] = $angles[$i][$j] * (-1)
+
+for $i in (1 .. $num-of-photos)
+  for $j in (1 .. $num-of-photos)
+    $photo = 'photo-' + $j
+    if $i != $j
+      #photo-{$i}:checked ~ .slider .slider__label[for=\'{$photo}\']
+        transform: rotateY(unit($angles[$i][$j], deg))
