@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.3.1",
+    "stylus": "^0.54.2"
+  },
+  "name": "babushkas-gallery",
+  "description": "Решение задачи к лекции препроцессоры и BEM",
+  "version": "1.0.2",
+  "main": "compile.js",
+  "devDependencies": {
+    "jscs": "^2.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jscs .",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valeriyan/webdev-tasks-4.git"
+  },
+  "author": "Valeriyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Valeriyan/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/Valeriyan/webdev-tasks-4#readme"
+}
