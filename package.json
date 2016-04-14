@@ -1,0 +1,31 @@
+{
+  "name": "webdev-tasks-4",
+  "version": "1.0.0",
+  "description": "Восьмая задача первого семестра с использованием препроцессоров и БЭМ",
+  "main": "index.html",
+  "scripts": {
+    "lint": "jscs .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anna-Smith/webdev-tasks-4.git"
+  },
+  "keywords": [
+    "task4",
+    "bem",
+    "stylus"
+  ],
+  "author": "Anna.Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anna-Smith/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/Anna-Smith/webdev-tasks-4#readme",
+  "dependencies": {
+    "jscs": "^2.11.0"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.2"
+  }
+}

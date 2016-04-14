@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+$count = 7;
+$imgWidth = 100vw / $count;
+$imgHeight = $imgWidth * 0.75;
+$screenCenter = 50vw - $imgWidth / 2;
+$offsetImg = 50vw / $count;
+
+.gallery-3D {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  perspective: 800px;
+
+  &__img-container {
+    display: block;
+    height: $imgHeight;
+    width: $imgWidth;
+    perspective: 200px;
+    transform-style: preserve-3d;
+    transition-property: z-index, transform;
+    transition-duration: .1s, 1.5s;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+  }
+
+  &__radio-control {
+    display: none;
+  }
+
+  &__img {
+    height: $imgHeight;
+    width: $imgWidth;
+    object-fit: cover;
+  }
+}
+
+// миксин, перемещает картинку и поворачивает на 60deg
+setImgProperties($start, $end, $sign) {
+  $zIndex = $sign == 0 ? 0 : -1;
+  for $otherId in ($start..$end) {
+    // по центру + смещение
+    $offsetX = $screenCenter - ($otherId - 1) * $imgWidth + $sign * $offsetImg * $zIndex;
+    ~ .gallery-3D__img-container_c_{$otherId} {
+      z-index: $zIndex;
+      transform: translateX($offsetX) rotateY($sign * 60deg);
+    }
+    $zIndex -= 1;
+  }
+}
+
+for $checkedId in (1..$count) {
+  #c{$checkedId}:checked {
+    setImgProperties($checkedId, $checkedId, 0);
+    // картинки справа от выбранной
+    if ($checkedId < $count) {
+      setImgProperties($checkedId + 1, $count, -1);
+    }
+    // картинки слева от выбранной
+    if ($checkedId > 1) {
+      setImgProperties($checkedId - 1, 1, 1);
+    }
+  }
+}
