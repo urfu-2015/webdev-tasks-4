@@ -26,7 +26,6 @@
     "jscs": "^2.11.0"
   },
   "devDependencies": {
-    "nib": "^1.1.0",
     "stylus": "^0.54.2"
   }
 }

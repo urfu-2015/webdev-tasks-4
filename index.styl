@@ -33,7 +33,7 @@ $offsetImg = 50vw / $count;
     display: none;
   }
 
-  img {
+  &__img {
     height: $imgHeight;
     width: $imgWidth;
     object-fit: cover;
@@ -42,7 +42,7 @@ $offsetImg = 50vw / $count;
 
 // миксин, перемещает картинку и поворачивает на 60deg
 setImgProperties($start, $end, $sign) {
-  $zIndex = -1;
+  $zIndex = $sign == 0 ? 0 : -1;
   for $otherId in ($start..$end) {
     // по центру + смещение
     $offsetX = $screenCenter - ($otherId - 1) * $imgWidth + $sign * $offsetImg * $zIndex;
@@ -56,13 +56,7 @@ setImgProperties($start, $end, $sign) {
 
 for $checkedId in (1..$count) {
   #c{$checkedId}:checked {
-    $zIndex = 0;
-    // размещение выбранной картинки по центру
-    $offsetX = $screenCenter - ($checkedId - 1) * $imgWidth;
-    ~ .gallery-3D__img-container_c_{$checkedId} {
-      z-index: $zIndex;
-      transform: translateX($offsetX);
-    }
+    setImgProperties($checkedId, $checkedId, 0);
     // картинки справа от выбранной
     if ($checkedId < $count) {
       setImgProperties($checkedId + 1, $count, -1);
