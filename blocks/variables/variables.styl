@@ -1,0 +1,150 @@
+vendors = official;
+$vars = json('data/data.json', { hash: true, leave-strings: true });
+
+for $num in $vars {
+  if ($vegetables is defined) {
+    push($vegetables, $vars[$num].vegetable);
+  }
+  else {
+    $vegetables = $vars[$num].vegetable;
+  }
+}
+
+$length = length($vegetables);
+$angleLimitMin = 15deg;
+$angleLimitMax = 40deg;
+$angleStep = 5deg;
+
+$offsetStep = 5%;
+
+$elemWidth = 300px;
+$elemCenterIndex = ceil($length / 2) - 1;
+$elemCenter = $vegetables[$elemCenterIndex];
+
+createSelectors(arr, before = null, after = null, withKey = false) {
+  $result = '';
+  for $key in arr {
+    if (before) {
+      $result += before;
+    }
+    $result += $key;
+    if (after) {
+      $result += after;
+    }
+    if withKey {
+      $result += '[for=' + \' + $key + \' + ']';
+    }
+    $result += ',';
+  }
+  return $result
+}
+
+setVegetablesTransform($screenWidth) {
+  $distBetweenElems = 100% * $elemWidth / $screenWidth;
+  $distFromCenterElem = 0;
+  $isOdd = $length % 2;
+  unless ($isOdd) {
+    $distFromCenterElem = $distBetweenElems / 2;
+  }
+
+  @media (max-width: $screenWidth) {
+    for $item in $vegetables {
+      #{$item}:checked ~ .slider {
+        $index = index($vegetables, $item);
+        $x = ($elemCenterIndex - $index) * $distBetweenElems;
+        unless ($isOdd) {
+          if ($elemCenterIndex == $index) {
+            $x = $distFromCenterElem;
+          } else {
+            $x += $distFromCenterElem;
+          }
+        }
+        transform: translateX($x);
+      }
+    }
+  }
+}
+
+setKeyframes() {
+  $rotX = -85deg;
+  $translateY = -50%;
+  $translateZ = 250px;
+  for $keyframe in showRecipe closeRecipe {
+    @keyframes {$keyframe} {
+      for $i in 40% 60% 100% {
+        {$i} {
+          unless ($i == 40%) {
+            $translateZ = 300px;
+          }
+          if ($i == 60%) {
+            $rotX = -125deg
+          }
+          else if ($i == 100%) {
+            $translateY = 0%;
+            $rotX = -180deg;
+          }
+          transform: perspective(800px) translate3d(0, $translateY, $translateZ) rotateX($rotX);
+        }
+      }
+    }
+  }
+}
+
+setAnimation() {
+  for $veg1 in $vegetables {
+    $index1 = index($vegetables, $veg1);
+    for $veg2 in $vegetables {
+      if ($veg1 != $veg2) {
+        $index2 = index($vegetables, $veg2);
+        $indexDiff = $index1 - $index2;
+        $offset = ($indexDiff * $offsetStep * 2) + ($indexDiff > 0 ? $offsetStep * -1 : $offsetStep);
+        $anglePart1 = ($indexDiff > 0 ? 1 - $indexDiff : ($indexDiff + 1) * -1) * $angleStep;
+        $angle = $anglePart1 + ($indexDiff > 0 ? $angleLimitMax : $angleLimitMax * -1);
+        if (abs($angle) < $angleLimitMin) {
+          $angle = $angle > 0 ? $angleLimitMin : $angleLimitMin * -1;
+        }
+        #{$veg1}:checked ~ .slider > .slider__item_name_{$veg2} {
+           left: $offset;
+           transform: perspective(800px) translateZ(-100px) rotateY($angle);
+        }
+      }
+    }
+  }
+}
+
+{selector(createSelectors($vegetables, '#', ':checked ~ .slider > .slider__item', true), '> .vegetable:hover')} {
+  cursor: default;
+}
+
+{selector(createSelectors($vegetables, '#', ':checked ~ .slider > .slider__item', true), '> .vegetable:hover > .vegetable__img')} {
+  filter: grayscale(100%) blur(3px);
+}
+
+{selector(createSelectors($vegetables, '#', ':checked ~ .slider > .slider__item', true), '> .vegetable:hover > .vegetable__link')} {
+  transform: translate(-50%, -50%) scale(1);
+  cursor: pointer;
+}
+
+{selector(createSelectors($vegetables, '#modal-open-', ':checked ~ .modal-overlay'))} {
+  visibility: visible;
+  opacity: 1;
+}
+
+{selector(createSelectors($vegetables, '#modal-open-', ':checked ~ .slider__item', true))} {
+  animation: showRecipe 1s linear forwards;
+}
+
+{selector(createSelectors($vegetables, '#modal-close-', ':checked ~ .slider__item', true))} {
+  animation: closeRecipe 1s linear reverse;
+}
+
+setKeyframes();
+setVegetablesTransform(1920px);
+setVegetablesTransform(1200px);
+setVegetablesTransform(800px);
+
+{selector(createSelectors($vegetables, '#', ':checked ~ .slider > .slider__item', true))} {
+  left: 0;
+}
+
+setAnimation();
