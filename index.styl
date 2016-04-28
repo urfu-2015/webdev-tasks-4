@@ -1,10 +1,12 @@
 html,
-body
+body,
+.gallery
 {
   height: 100%;
+  margin: 0;
 }
 
-body
+.gallery
 {
   display: flex;
   justify-content: center;
@@ -15,7 +17,8 @@ body
   overflow: hidden;
 }
 
-input
+.gallery__radio,
+.gallery__checkbox
 {
   display: none;
 }
@@ -164,7 +167,7 @@ for $checked_item in (1..$item_count) {
     background-size: contain;
   }
 
-  &__receipt_title
+  &__title
   {
     font-size: 50px;
     color: #999;
