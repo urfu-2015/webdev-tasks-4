@@ -19,13 +19,13 @@ function skip() {
     return thru.obj();
 }
 
-var project = bem({
+let project = bem({
     bemconfig: {
         'blocks': { scheme: 'nested' }
     }
 });
 
-var bundle = project.bundle({
+let bundle = project.bundle({
     path: 'bundles/index',
     decl: 'index.bemdecl.js'
 });

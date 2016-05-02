@@ -3,11 +3,11 @@
 const path = require('path');
 const config = require('./config');
 
-var bundles = config.bem.bundles,
-    bundlesTemplates = {};
+const bundles = config.bem.bundles;
+let bundlesTemplates = {};
 
 bundles.forEach(function(bundle) {
-    var pathToBundle = path.resolve('./build/bundles', bundle),
+    let pathToBundle = path.resolve('./build/bundles', bundle),
         BEMTREE = require(path.join(pathToBundle, `${bundle}.bemtree.js`)),
         BEMHTML = require(path.join(pathToBundle, `${bundle}.bemhtml.js`));
 
@@ -18,7 +18,7 @@ bundles.forEach(function(bundle) {
 });
 
 function render(req, res, data, context) {
-    var bemtreeCtx = {
+    let bemtreeCtx = {
         block: 'root',
         context: context,
         data: data

@@ -9,9 +9,9 @@ const collectionName = 'vegetables';
 const fs = require('fs');
 const path = require('path');
 
-var singletonMongo = (function() {
+const singletonMongo = (function() {
 
-    var Mongo = function() {
+    let Mongo = function() {
         this.db = null;
         this.collection = null;
     };
@@ -30,8 +30,8 @@ var singletonMongo = (function() {
 
     Mongo.prototype.getVegetables = function() {
         return co(function *() {
-            var res = yield this.collection.find().toArray();
-            var isFileExists = yield new Promise((resolve, reject) => {
+            const res = yield this.collection.find().toArray();
+            const isFileExists = yield new Promise((resolve, reject) => {
                 fs.stat(path.join(__dirname, '../data/data.json'), (err, stats) => {
                     if (!err && stats.size > 0) {
                         resolve(true);
@@ -52,7 +52,7 @@ var singletonMongo = (function() {
         }.bind(this));
     };
 
-    var instance;
+    let instance;
     return {
         getInstance: function() {
             if (!instance) {
