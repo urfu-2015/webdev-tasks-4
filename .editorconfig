@@ -1,0 +1,12 @@
+root = true
+
+[*]
+charset = utf-8
+end-of-line = lf
+indent-size = 4
+indent-style = space
+insert-final-new-line = true
+trim-trailing-whitespace = true
+
+[*.md]
+trim-trailing-whitespace = false

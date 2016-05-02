@@ -1,0 +1,40 @@
+.vegetable__link
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  background-color: #0e83cd;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0972b4;
+  transition: transform .5s ease-in-out, box-shadow .3s ease-in-out;
+
+  &::before {
+    content: attr(data-hover);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+  }
+  &:hover {
+    box-shadow: 0 0 0 5px #fff;
+
+    &::before
+    {
+      max-width: 100%;
+    }
+  }
+}

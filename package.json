@@ -1,0 +1,52 @@
+{
+  "name": "webdev-tasks-4",
+  "version": "1.0.0",
+  "description": "bem",
+  "main": "server/app.js",
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp",
+    "start": "npm run gulp && node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DudaGod/webdev-tasks-4.git"
+  },
+  "author": "Dmitriy Dudkevich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DudaGod/webdev-tasks-4/issues"
+  },
+  "homepage": "https://github.com/DudaGod/webdev-tasks-4#readme",
+  "devDependencies": {
+    "@bem/gulp": "0.0.5",
+    "autoprefixer": "6.3.6",
+    "co": "4.6.0",
+    "errorhandler": "1.4.3",
+    "glob": "7.0.3",
+    "gulp": "3.9.1",
+    "gulp-bem": "1.0.2",
+    "gulp-bem-xjst": "1.0.0",
+    "gulp-concat": "2.6.0",
+    "gulp-csscomb": "3.0.7",
+    "gulp-csso": "2.0.0",
+    "gulp-merge": "0.1.1",
+    "gulp-postcss": "6.1.0",
+    "gulp-rename": "1.2.2",
+    "gulp-stylus": "2.3.1",
+    "gulp-util": "3.0.7",
+    "mocha": "2.3.3",
+    "postcss-color-rgba-fallback": "2.2.0",
+    "postcss-font-magician": "1.4.0",
+    "postcss-import": "8.1.0",
+    "postcss-opacity": "3.0.0",
+    "should": "7.1.0",
+    "stream-to-array": "2.3.0",
+    "stylus": "0.54.2",
+    "through2": "2.0.1"
+  },
+  "dependencies": {
+    "body-parser": "1.15.0",
+    "express": "4.13.4",
+    "mongodb": "2.1.16"
+  }
+}

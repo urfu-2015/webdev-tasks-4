@@ -1,0 +1,3 @@
+block('recipe')(
+    tag()('article')
+);

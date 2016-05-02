@@ -1,0 +1,1093 @@
+@font-face
+{
+    font-family: "Noto Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Noto Sans Italic"),local(NotoSans-Italic),url(//fonts.gstatic.com/s/notosans/v6/ByLA_FLEa-16SpQuTcQn4GfQcKutQXcIrRfyR5jdjY8.eot?#) format("eot"),url(//fonts.gstatic.com/s/notosans/v6/ByLA_FLEa-16SpQuTcQn4I4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2"),url(//fonts.gstatic.com/s/notosans/v6/ByLA_FLEa-16SpQuTcQn4IbN6UDyHWBl620a-IRfuBk.woff) format("woff");
+}
+@font-face
+{
+    font-family: "Noto Sans";
+    font-style: italic;
+    font-weight: 700;
+    src: local("Noto Sans Bold Italic"),local(NotoSans-BoldItalic),url(//fonts.gstatic.com/s/notosans/v6/9Z3uUWMRR7crzm1TjRicDrFt29aCHKT7otDW9l62Aag.eot?#) format("eot"),url(//fonts.gstatic.com/s/notosans/v6/9Z3uUWMRR7crzm1TjRicDolIZu-HDpmDIZMigmsroc4.woff2) format("woff2"),url(//fonts.gstatic.com/s/notosans/v6/9Z3uUWMRR7crzm1TjRicDjqR_3kx9_hJXbbyU8S6IN0.woff) format("woff");
+}
+@font-face
+{
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Noto Sans"),local(NotoSans),url(//fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nPY6323mHUZFJMgTvxaG2iE.eot?#) format("eot"),url(//fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2"),url(//fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nD8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+@font-face
+{
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Noto Sans Bold"),local(NotoSans-Bold),url(//fonts.gstatic.com/s/notosans/v6/PIbvSEyHEdL91QLOQRnZ13Z2MAKAc2x4R1uOSeegc5U.eot?#) format("eot"),url(//fonts.gstatic.com/s/notosans/v6/PIbvSEyHEdL91QLOQRnZ1-gdm0LZdjqr5-oayXSOefg.woff2) format("woff2"),url(//fonts.gstatic.com/s/notosans/v6/PIbvSEyHEdL91QLOQRnZ13hCUOGz7vYGh680lGh-uXM.woff) format("woff");
+}
+html
+{
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after
+{
+    box-sizing: inherit;
+}
+.page
+{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+
+    display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    color: #000;
+    background-image: -webkit-linear-gradient(left, rgba(200,0,0,.5) 50%, transparent 50%), -webkit-linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+    background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%), linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+    background-size: 50px 50px;
+
+    -webkit-box-pack: center;
+
+    -webkit-justify-content: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+}
+#cabbage:checked ~ .slider > .slider__item[for='cabbage'] > .vegetable:hover,
+#corn:checked ~ .slider > .slider__item[for='corn'] > .vegetable:hover,
+#garlic:checked ~ .slider > .slider__item[for='garlic'] > .vegetable:hover,
+#pepper:checked ~ .slider > .slider__item[for='pepper'] > .vegetable:hover,
+#potato:checked ~ .slider > .slider__item[for='potato'] > .vegetable:hover,
+#pumpkin:checked ~ .slider > .slider__item[for='pumpkin'] > .vegetable:hover,
+#tomatoes:checked ~ .slider > .slider__item[for='tomatoes'] > .vegetable:hover
+{
+    cursor: default;
+}
+#cabbage:checked ~ .slider > .slider__item[for='cabbage'] > .vegetable:hover > .vegetable__img,
+#corn:checked ~ .slider > .slider__item[for='corn'] > .vegetable:hover > .vegetable__img,
+#garlic:checked ~ .slider > .slider__item[for='garlic'] > .vegetable:hover > .vegetable__img,
+#pepper:checked ~ .slider > .slider__item[for='pepper'] > .vegetable:hover > .vegetable__img,
+#potato:checked ~ .slider > .slider__item[for='potato'] > .vegetable:hover > .vegetable__img,
+#pumpkin:checked ~ .slider > .slider__item[for='pumpkin'] > .vegetable:hover > .vegetable__img,
+#tomatoes:checked ~ .slider > .slider__item[for='tomatoes'] > .vegetable:hover > .vegetable__img
+{
+    -webkit-filter: grayscale(100%) blur(3px);
+            filter: grayscale(100%) blur(3px);
+}
+#cabbage:checked ~ .slider > .slider__item[for='cabbage'] > .vegetable:hover > .vegetable__link,
+#corn:checked ~ .slider > .slider__item[for='corn'] > .vegetable:hover > .vegetable__link,
+#garlic:checked ~ .slider > .slider__item[for='garlic'] > .vegetable:hover > .vegetable__link,
+#pepper:checked ~ .slider > .slider__item[for='pepper'] > .vegetable:hover > .vegetable__link,
+#potato:checked ~ .slider > .slider__item[for='potato'] > .vegetable:hover > .vegetable__link,
+#pumpkin:checked ~ .slider > .slider__item[for='pumpkin'] > .vegetable:hover > .vegetable__link,
+#tomatoes:checked ~ .slider > .slider__item[for='tomatoes'] > .vegetable:hover > .vegetable__link
+{
+    cursor: pointer;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+}
+#modal-open-cabbage:checked ~ .modal-overlay,
+#modal-open-corn:checked ~ .modal-overlay,
+#modal-open-garlic:checked ~ .modal-overlay,
+#modal-open-pepper:checked ~ .modal-overlay,
+#modal-open-potato:checked ~ .modal-overlay,
+#modal-open-pumpkin:checked ~ .modal-overlay,
+#modal-open-tomatoes:checked ~ .modal-overlay
+{
+    visibility: visible;
+
+    opacity: 1;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+#modal-open-cabbage:checked ~ .slider__item[for='cabbage'],
+#modal-open-corn:checked ~ .slider__item[for='corn'],
+#modal-open-garlic:checked ~ .slider__item[for='garlic'],
+#modal-open-pepper:checked ~ .slider__item[for='pepper'],
+#modal-open-potato:checked ~ .slider__item[for='potato'],
+#modal-open-pumpkin:checked ~ .slider__item[for='pumpkin'],
+#modal-open-tomatoes:checked ~ .slider__item[for='tomatoes']
+{
+    -webkit-animation: showRecipe 1s linear forwards;
+            animation: showRecipe 1s linear forwards;
+}
+#modal-close-cabbage:checked ~ .slider__item[for='cabbage'],
+#modal-close-corn:checked ~ .slider__item[for='corn'],
+#modal-close-garlic:checked ~ .slider__item[for='garlic'],
+#modal-close-pepper:checked ~ .slider__item[for='pepper'],
+#modal-close-potato:checked ~ .slider__item[for='potato'],
+#modal-close-pumpkin:checked ~ .slider__item[for='pumpkin'],
+#modal-close-tomatoes:checked ~ .slider__item[for='tomatoes']
+{
+    -webkit-animation: closeRecipe 1s linear reverse;
+            animation: closeRecipe 1s linear reverse;
+}
+@-webkit-keyframes showRecipe
+{
+    40%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+                transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+    }
+    60%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+                transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+    }
+    100%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+                transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+    }
+}
+@keyframes showRecipe
+{
+    40%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+                transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+    }
+    60%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+                transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+    }
+    100%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+                transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+    }
+}
+@-webkit-keyframes closeRecipe
+{
+    40%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+                transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+    }
+    60%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+                transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+    }
+    100%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+                transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+    }
+}
+@keyframes closeRecipe
+{
+    40%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+                transform: perspective(800px) translate3d(0, -50%, 250px) rotateX(-85deg);
+    }
+    60%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+                transform: perspective(800px) translate3d(0, -50%, 300px) rotateX(-125deg);
+    }
+    100%
+    {
+        -webkit-transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+                transform: perspective(800px) translate3d(0, 0%, 300px) rotateX(-180deg);
+    }
+}
+@media (max-width: 1920px)
+{
+    #cabbage:checked ~ .slider
+    {
+        -webkit-transform: translateX(46.875%);
+                transform: translateX(46.875%);
+    }
+    #corn:checked ~ .slider
+    {
+        -webkit-transform: translateX(31.25%);
+                transform: translateX(31.25%);
+    }
+    #garlic:checked ~ .slider
+    {
+        -webkit-transform: translateX(15.625%);
+                transform: translateX(15.625%);
+    }
+    #pepper:checked ~ .slider
+    {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+    #potato:checked ~ .slider
+    {
+        -webkit-transform: translateX(-15.625%);
+                transform: translateX(-15.625%);
+    }
+    #pumpkin:checked ~ .slider
+    {
+        -webkit-transform: translateX(-31.25%);
+                transform: translateX(-31.25%);
+    }
+    #tomatoes:checked ~ .slider
+    {
+        -webkit-transform: translateX(-46.875%);
+                transform: translateX(-46.875%);
+    }
+}
+@media (max-width: 1200px)
+{
+    #cabbage:checked ~ .slider
+    {
+        -webkit-transform: translateX(75%);
+                transform: translateX(75%);
+    }
+    #corn:checked ~ .slider
+    {
+        -webkit-transform: translateX(50%);
+                transform: translateX(50%);
+    }
+    #garlic:checked ~ .slider
+    {
+        -webkit-transform: translateX(25%);
+                transform: translateX(25%);
+    }
+    #pepper:checked ~ .slider
+    {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+    #potato:checked ~ .slider
+    {
+        -webkit-transform: translateX(-25%);
+                transform: translateX(-25%);
+    }
+    #pumpkin:checked ~ .slider
+    {
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+    }
+    #tomatoes:checked ~ .slider
+    {
+        -webkit-transform: translateX(-75%);
+                transform: translateX(-75%);
+    }
+}
+@media (max-width: 800px)
+{
+    #cabbage:checked ~ .slider
+    {
+        -webkit-transform: translateX(112.5%);
+                transform: translateX(112.5%);
+    }
+    #corn:checked ~ .slider
+    {
+        -webkit-transform: translateX(75%);
+                transform: translateX(75%);
+    }
+    #garlic:checked ~ .slider
+    {
+        -webkit-transform: translateX(37.5%);
+                transform: translateX(37.5%);
+    }
+    #pepper:checked ~ .slider
+    {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+    #potato:checked ~ .slider
+    {
+        -webkit-transform: translateX(-37.5%);
+                transform: translateX(-37.5%);
+    }
+    #pumpkin:checked ~ .slider
+    {
+        -webkit-transform: translateX(-75%);
+                transform: translateX(-75%);
+    }
+    #tomatoes:checked ~ .slider
+    {
+        -webkit-transform: translateX(-112.5%);
+                transform: translateX(-112.5%);
+    }
+}
+#cabbage:checked ~ .slider > .slider__item[for='cabbage'],
+#corn:checked ~ .slider > .slider__item[for='corn'],
+#garlic:checked ~ .slider > .slider__item[for='garlic'],
+#pepper:checked ~ .slider > .slider__item[for='pepper'],
+#potato:checked ~ .slider > .slider__item[for='potato'],
+#pumpkin:checked ~ .slider > .slider__item[for='pumpkin'],
+#tomatoes:checked ~ .slider > .slider__item[for='tomatoes']
+{
+    left: 0;
+}
+#cabbage:checked ~ .slider > .slider__item_name_corn
+{
+    left: -5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+}
+#cabbage:checked ~ .slider > .slider__item_name_garlic
+{
+    left: -15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+}
+#cabbage:checked ~ .slider > .slider__item_name_pepper
+{
+    left: -25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+}
+#cabbage:checked ~ .slider > .slider__item_name_potato
+{
+    left: -35%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-25deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-25deg);
+}
+#cabbage:checked ~ .slider > .slider__item_name_pumpkin
+{
+    left: -45%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-20deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-20deg);
+}
+#cabbage:checked ~ .slider > .slider__item_name_tomatoes
+{
+    left: -55%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-15deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-15deg);
+}
+#corn:checked ~ .slider > .slider__item_name_cabbage
+{
+    left: 5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+}
+#corn:checked ~ .slider > .slider__item_name_garlic
+{
+    left: -5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+}
+#corn:checked ~ .slider > .slider__item_name_pepper
+{
+    left: -15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+}
+#corn:checked ~ .slider > .slider__item_name_potato
+{
+    left: -25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+}
+#corn:checked ~ .slider > .slider__item_name_pumpkin
+{
+    left: -35%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-25deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-25deg);
+}
+#corn:checked ~ .slider > .slider__item_name_tomatoes
+{
+    left: -45%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-20deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-20deg);
+}
+#garlic:checked ~ .slider > .slider__item_name_cabbage
+{
+    left: 15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+}
+#garlic:checked ~ .slider > .slider__item_name_corn
+{
+    left: 5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+}
+#garlic:checked ~ .slider > .slider__item_name_pepper
+{
+    left: -5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+}
+#garlic:checked ~ .slider > .slider__item_name_potato
+{
+    left: -15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+}
+#garlic:checked ~ .slider > .slider__item_name_pumpkin
+{
+    left: -25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+}
+#garlic:checked ~ .slider > .slider__item_name_tomatoes
+{
+    left: -35%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-25deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-25deg);
+}
+#pepper:checked ~ .slider > .slider__item_name_cabbage
+{
+    left: 25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+}
+#pepper:checked ~ .slider > .slider__item_name_corn
+{
+    left: 15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+}
+#pepper:checked ~ .slider > .slider__item_name_garlic
+{
+    left: 5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+}
+#pepper:checked ~ .slider > .slider__item_name_potato
+{
+    left: -5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+}
+#pepper:checked ~ .slider > .slider__item_name_pumpkin
+{
+    left: -15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+}
+#pepper:checked ~ .slider > .slider__item_name_tomatoes
+{
+    left: -25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-30deg);
+}
+#potato:checked ~ .slider > .slider__item_name_cabbage
+{
+    left: 35%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(25deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(25deg);
+}
+#potato:checked ~ .slider > .slider__item_name_corn
+{
+    left: 25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+}
+#potato:checked ~ .slider > .slider__item_name_garlic
+{
+    left: 15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+}
+#potato:checked ~ .slider > .slider__item_name_pepper
+{
+    left: 5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+}
+#potato:checked ~ .slider > .slider__item_name_pumpkin
+{
+    left: -5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+}
+#potato:checked ~ .slider > .slider__item_name_tomatoes
+{
+    left: -15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-35deg);
+}
+#pumpkin:checked ~ .slider > .slider__item_name_cabbage
+{
+    left: 45%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(20deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(20deg);
+}
+#pumpkin:checked ~ .slider > .slider__item_name_corn
+{
+    left: 35%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(25deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(25deg);
+}
+#pumpkin:checked ~ .slider > .slider__item_name_garlic
+{
+    left: 25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+}
+#pumpkin:checked ~ .slider > .slider__item_name_pepper
+{
+    left: 15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+}
+#pumpkin:checked ~ .slider > .slider__item_name_potato
+{
+    left: 5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+}
+#pumpkin:checked ~ .slider > .slider__item_name_tomatoes
+{
+    left: -5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(-40deg);
+}
+#tomatoes:checked ~ .slider > .slider__item_name_cabbage
+{
+    left: 55%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(15deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(15deg);
+}
+#tomatoes:checked ~ .slider > .slider__item_name_corn
+{
+    left: 45%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(20deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(20deg);
+}
+#tomatoes:checked ~ .slider > .slider__item_name_garlic
+{
+    left: 35%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(25deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(25deg);
+}
+#tomatoes:checked ~ .slider > .slider__item_name_pepper
+{
+    left: 25%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(30deg);
+}
+#tomatoes:checked ~ .slider > .slider__item_name_potato
+{
+    left: 15%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(35deg);
+}
+#tomatoes:checked ~ .slider > .slider__item_name_pumpkin
+{
+    left: 5%;
+
+    -webkit-transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+
+            transform: perspective(800px) translateZ(-100px) rotateY(40deg);
+}
+.wrapper
+{
+    position: relative;
+
+    display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    overflow: hidden;
+
+    -webkit-box-flex: 1;
+
+    -webkit-flex: 1 1 100%;
+
+        -ms-flex: 1 1 100%;
+
+            flex: 1 1 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.radio_view_hidden
+{
+    display: none;
+}
+.slider
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    min-height: 100vh;
+
+    -webkit-transition: all .8s ease-in-out;
+
+    transition: all .8s ease-in-out;
+
+    -webkit-box-flex: 1;
+
+    -webkit-flex: 1 0 100%;
+
+        -ms-flex: 1 0 100%;
+
+            flex: 1 0 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.slider__item
+{
+    position: relative;
+    z-index: 1;
+
+    height: 250px;
+
+    -webkit-transition: all 1s ease-in-out;
+
+    transition: all 1s ease-in-out;
+    -webkit-transform: perspective(800px);
+            transform: perspective(800px);
+
+    -webkit-transform-style: preserve-3d;
+
+            transform-style: preserve-3d;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 300px;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px;
+}
+.vegetable
+{
+    position: absolute;
+
+    display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+
+    background-color: #fff;
+    box-shadow: 0 3px 25px rgba(0,0,0,.5);
+
+    -webkit-box-pack: center;
+
+    -webkit-justify-content: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.vegetable__img
+{
+    max-width: 250px;
+    max-height: 200px;
+
+    -webkit-transition: -webkit-filter .5s ease-in-out;
+
+    transition: -webkit-filter .5s ease-in-out;
+
+    transition: filter .5s ease-in-out;
+
+    transition: filter .5s ease-in-out, -webkit-filter .5s ease-in-out;
+}
+.vegetable__link
+{
+    font-size: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    overflow: hidden;
+
+    width: 180px;
+    height: 180px;
+
+    -webkit-transition: box-shadow .3s ease-in-out, -webkit-transform .5s ease-in-out;
+
+    transition: box-shadow .3s ease-in-out, -webkit-transform .5s ease-in-out;
+
+    transition: transform .5s ease-in-out, box-shadow .3s ease-in-out;
+
+    transition: transform .5s ease-in-out, box-shadow .3s ease-in-out, -webkit-transform .5s ease-in-out;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #0972b4;
+    border-radius: 50%;
+    background-color: #0e83cd;
+
+    -webkit-box-pack: center;
+
+    -webkit-justify-content: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.vegetable__link::before
+{
+    position: absolute;
+    top: 50%;
+
+    overflow: hidden;
+
+    max-width: 0;
+
+    content: attr(data-hover);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+.vegetable__link:hover
+{
+    box-shadow: 0 0 0 5px #fff;
+}
+.vegetable__link:hover::before
+{
+    max-width: 100%;
+}
+.recipe
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    width: 150%;
+    height: auto;
+    padding: 20px;
+
+    -webkit-transform: perspective(800px) translate3d(-50%, -50%, -10px) rotateX(-180deg);
+
+            transform: perspective(800px) translate3d(-50%, -50%, -10px) rotateX(-180deg);
+
+    background-color: #fff;
+
+    -webkit-backface-visibility: hidden;
+
+            backface-visibility: hidden;
+}
+.recipe__close
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    transition: -webkit-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+.recipe__close:hover
+{
+    -webkit-transform: rotate(180deg) scale(1.5);
+            transform: rotate(180deg) scale(1.5);
+}
+.recipe__close::before,
+.recipe__close::after
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 28px;
+    height: 3px;
+
+    content: '';
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+
+    border: 1px solid #747571;
+    border-radius: 2px;
+    background-color: #898b86;
+}
+.recipe__close::after
+{
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+}
+.recipe__title
+{
+    font-size: 18px;
+    font-weight: normal;
+
+    margin: 0;
+    padding-bottom: 5px;
+
+    color: #b5b5b5;
+    border-bottom: 2px solid #b5b5b5;
+}
+.recipe__main
+{
+    font-size: 12px;
+
+    display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -webkit-box-pack: justify;
+
+    -webkit-justify-content: space-between;
+
+        -ms-flex-pack: justify;
+
+            justify-content: space-between;
+}
+.recipe__ingredients
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    margin-right: 20px;
+
+    -webkit-box-flex: 0;
+
+    -webkit-flex: 0 0 100px;
+
+        -ms-flex: 0 0 100px;
+
+            flex: 0 0 100px;
+}
+.recipe__ingredient
+{
+    margin: 5px 0 0;
+}
+.recipe__ingredient:first-child
+{
+    margin-top: 15px;
+}
+.recipe__ingredient-name
+{
+    font-weight: bold;
+}
+.recipe__instruction
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    -webkit-box-flex: 1;
+
+    -webkit-flex: 1 1 300px;
+
+        -ms-flex: 1 1 300px;
+
+            flex: 1 1 300px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.recipe__instruction-title
+{
+    margin: 15px 0 0;
+
+    color: #ba0000;
+}
+.recipe__instruction-list
+{
+    margin: 10px 0 0;
+    padding: 0;
+
+    list-style-position: inside;
+}
+.recipe__instruction-footer
+{
+    font-size: 10px;
+
+    margin-top: 15px;
+    padding-top: 5px;
+
+    color: #a4a4a4;
+    border-top: 1px solid #000;
+}
+.modal-overlay
+{
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    visibility: hidden;
+
+    width: 300%;
+    height: 100%;
+
+    -webkit-transition: all .5s ease-in-out .2s;
+
+    transition: all .5s ease-in-out .2s;
+
+    opacity: 0;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    background-color: #000000;
+    background-color: rgba(0,0,0,.5);
+}
