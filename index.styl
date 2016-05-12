@@ -1,6 +1,10 @@
+$item_count = 7;
+$center = 680px;
+$height = 250px;
+$width = 250px;
+
 html,
-body,
-.gallery
+body
 {
   height: 100%;
   margin: 0;
@@ -10,11 +14,28 @@ body,
 {
   display: flex;
   justify-content: center;
+  height: 100%;
+  margin: 0;
   align-items: center;
   background: #ddd;
   perspective: 1000px;
   font-family: arial;
   overflow: hidden;
+
+  &__receipt
+  {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    background: #fff;
+    z-index: 15;
+    transform: scale(0) rotateX(180deg);
+  }
 }
 
 .gallery__radio,
@@ -25,31 +46,31 @@ body,
 
 .item
 {
-  height: 250px;
-  width: 250px;
+  height: $height;
+  width: $width;
   background: #fff;
   box-shadow: #555 0 0 25px;
   transition-duration: .5s;
 
   &__img
   {
-    max-height: 250px;
-    max-width: 250px;
+    max-height: $height;
+    max-width: $width;
   }
 
   &__receipt-label
   {
     display: none;
     position: relative;
-    margin-top: -250px;
-    height: 250px;
-    width: 250px;
+    margin-top: - $height;
+    height: $height;
+    width: $width;
   }
 
   &__onhover-bg
   {
-   height: 250px;
-   width: 250px;
+   height: $height;
+   width: $width;
    background-color: #000;
    opacity: .3;
   }
@@ -77,40 +98,33 @@ body,
     font-weight: bold;
   }
 
-
+  &__img-label
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height;
+    width: $width;
+  }
 }
-
-.item__img-label,
-.receipt__close
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  width: 250px;
-}
-
-$item_count = 7
-$center = 680px;
 
 for $checked_item in (1..$item_count) {
   for $item in (1..$item_count) {
     $diff = $checked_item - $item;
-    $middle = 4
+    $middle = ($item_count + $item_count % 2) / 2;
     if ($diff == 0) {
       #in{$item}:checked ~ #pic{$item} {
-        transform: translateX(250px * ($middle - $item))
+        transform: translateX($width * ($middle - $item))
         z-index: 14;
       }
     } else {
       #in{$checked_item}:checked ~ #pic{$item} {
-        $middle_diff = $middle - $item;
         if ($diff > 0) {
-          $translateX = 250 * ($middle - $item + 1 - $diff) + $diff * 150 - 100
+          $translateX = $width * ($middle - $item + 1 - $diff) + $diff * 150 - 100
           transform: rotateY((40 - 5 * ($diff - 1))deg) translate3d(($translateX)px, 0, -300px);
           z-index: 14 - $diff;
         } else {
-          transform: rotateY((-40 + 5 * ($diff + 1))deg) translate3d((250 * ($middle - $item) - 50)px, 0, -300px);
+          transform: rotateY((-40 + 5 * ($diff + 1))deg) translate3d(($width * ($middle - $item) - 50)px, 0, -300px);
           z-index: 14 + $diff;
         }
       }
@@ -134,18 +148,6 @@ for $checked_item in (1..$item_count) {
 
 .receipt
 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  height: 500px;
-  width: 500px;
-  background: #fff;
-  z-index: 15;
-  transform: scale(0) rotateX(180deg);
-
   &__text
   {
     position: absolute;
@@ -173,15 +175,27 @@ for $checked_item in (1..$item_count) {
     color: #999;
     border-bottom: 5px solid #888;
   }
+
+  &__close
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+  }
 }
 
-.component
+.components
 {
   display: inline-block;
   width: 190px;
   margin-top: 10px;
   vertical-align: top;
+}
 
+.component
+{
   &__name
   {
     font-weight: bold;
@@ -233,7 +247,7 @@ for $item in (1..$item_count) {
   {
     display: block;
   }
-  #receipt{$item}In:checked ~ #receipt{$item}
+  #receipt{$item}In:checked ~ .receipt_num_{$item}
   {
     display: block;
     transform: scale(1) rotateX(360deg);
@@ -245,6 +259,6 @@ for $item in (1..$item_count) {
   }
   #receipt{$item}In:checked ~ #pic{$item}
   {
-    transform: translateX(250px * ($middle - $item))
+    transform: translateX($width * ($middle - $item))
   }
 }
