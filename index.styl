@@ -3,6 +3,8 @@ $center = 680px;
 $height = 250px;
 $width = 250px;
 
+$z_index = 2 * $item_count;
+
 html,
 body
 {
@@ -109,23 +111,23 @@ body
 }
 
 for $checked_item in (1..$item_count) {
+  $middle = ($item_count + $item_count % 2) / 2;
   for $item in (1..$item_count) {
     $diff = $checked_item - $item;
-    $middle = ($item_count + $item_count % 2) / 2;
     if ($diff == 0) {
       #in{$item}:checked ~ #pic{$item} {
         transform: translateX($width * ($middle - $item))
-        z-index: 14;
+        z-index: $z_index;
       }
     } else {
       #in{$checked_item}:checked ~ #pic{$item} {
         if ($diff > 0) {
           $translateX = $width * ($middle - $item + 1 - $diff) + $diff * 150 - 100
           transform: rotateY((40 - 5 * ($diff - 1))deg) translate3d(($translateX)px, 0, -300px);
-          z-index: 14 - $diff;
+          z-index: $z_index - $diff;
         } else {
           transform: rotateY((-40 + 5 * ($diff + 1))deg) translate3d(($width * ($middle - $item) - 50)px, 0, -300px);
-          z-index: 14 + $diff;
+          z-index: $z_index + $diff;
         }
       }
     }
@@ -143,7 +145,7 @@ for $checked_item in (1..$item_count) {
   margin-left: -500000px;
   background: #000;
   opacity: .5;
-  z-index: 13;
+  z-index: $z_index - 1;
 }
 
 .receipt
