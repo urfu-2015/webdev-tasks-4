@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>айБабулька</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="gallery">
+    <input class="gallery__radio" id="in1" name="slider" type="radio">
+    <input class="gallery__radio" id="in2" name="slider" type="radio">
+    <input class="gallery__radio" id="in3" name="slider" type="radio">
+    <input class="gallery__radio" id="in4" name="slider" type="radio" checked>
+    <input class="gallery__radio" id="in5" name="slider" type="radio">
+    <input class="gallery__radio" id="in6" name="slider" type="radio">
+    <input class="gallery__radio" id="in7" name="slider" type="radio">
+    <input class="gallery__checkbox" id="receipt1In" type="checkbox">
+    <input class="gallery__checkbox" id="receipt2In" type="checkbox">
+    <input class="gallery__checkbox" id="receipt3In" type="checkbox">
+    <input class="gallery__checkbox" id="receipt4In" type="checkbox">
+    <input class="gallery__checkbox" id="receipt5In" type="checkbox">
+    <input class="gallery__checkbox" id="receipt6In" type="checkbox">
+    <input class="gallery__checkbox" id="receipt7In" type="checkbox">
+    <div class="item" id="pic1">
+        <label class="item__img-label" for="in1">
+            <img class="item__img" src="http://foodmarkets.ru/upload/gallery/794/UkNL59ZS.jpg" alt="Помидор">
+        </label>
+        <label for="receipt1In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_1">
+        <div class="receipt__text">
+            <header class="receipt__title">Салат из огурцов</header>
+            <div class="components">
+                <p class="components__component">
+                    <span class="component__name">Огурцы</span>
+                    <span class="component__count">3 штуки</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Помидоры</span>
+                    <span class="component__count">2 штуки</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Сметана</span>
+                    <span class="component__count">3 столовые ложки</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Соль</span>
+                    <span class="component__count">по вкусу</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Огурцы порезать</li>
+                <li>Помидоры порезать</li>
+                <li>Закинуть все в тарелку</li>
+                <li>Заправить сметаной, посолить, перемешать</li>
+                <li>Вы великолепны</li>
+            </ol>
+            <div class="rem">Я начал с 7го рецепта, фантазия на исходе</div>
+        </div>
+        <label for="receipt1In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="item" id="pic2">
+        <label class="item__img-label" for="in2">
+            <img class="item__img" src="http://kumovya.com/uploads/posts/2013-02/1361270177_kapusta.jpg"
+                 alt="Капуста">
+        </label>
+        <label for="receipt2In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_2">
+        <div class="receipt__text">
+            <header class="receipt__title">Голубцы</header>
+            <div class="components">
+                <p class="components__component">
+                    <span class="component__name">Капуста</span>
+                    <span class="component__count">1 штуки</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Фарш</span>
+                    <span class="component__count">1 кг</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Соль</span>
+                    <span class="component__count">по вкусу</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Фарш посолить</li>
+                <li>Отломить лист капусты</li>
+                <li>Положить в него фарш</li>
+                <li>Завернуть его</li>
+                <li>Потушить</li>
+            </ol>
+            <div class="rem">Не забудьте сделать фотку в инстаграмм</div>
+        </div>
+        <label for="receipt2In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="item" id="pic3">
+        <label class="item__img-label" for="in3">
+            <img class="item__img" src="http://neboley.com.ua/img/news/3[127034](300x225).jpeg" alt="Баклажан">
+        </label>
+        <label for="receipt3In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_3">
+        <div class="receipt__text">
+            <header class="receipt__title">Салат из баклажан "правильный"</header>
+            <div class="components">
+                <p  class="components__component">
+                    <span class="component__name">Баклажан</span>
+                    <span class="component__count">1 штука</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Огурцы</span>
+                    <span class="component__count">3 штуки</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Помидоры</span>
+                    <span class="component__count">2 штуки</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Сметана</span>
+                    <span class="component__count">3 столовые ложки</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Соль</span>
+                    <span class="component__count">по вкусу</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Баклажаны выкинуть</li>
+                <li>Огурцы порезать</li>
+                <li>Помидоры порезать</li>
+                <li>Закинуть все в тарелку</li>
+                <li>Заправить сметаной, посолить, перемешать</li>
+                <li>Вы великолепны</li>
+            </ol>
+            <div class="rem">Можно зафаршировать их, но я тут вам не повар</div>
+        </div>
+        <label for="receipt3In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="item" id="pic4">
+        <label class="item__img-label" for="in4">
+            <img class="item__img" src="http://fromhelga.ru/wp-content/uploads/2013/05/1200.jpg" alt="Огурец">
+        </label>
+        <label for="receipt4In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_4">
+        <div class="receipt__text">
+            <header class="receipt__title">Салат из огурцов</header>
+            <div class="components">
+                <p  class="components__component">
+                    <span class="component__name">Огурцы</span>
+                    <span class="component__count">3 штуки</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Помидоры</span>
+                    <span class="component__count">2 штуки</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Сметана</span>
+                    <span class="component__count">3 столовые ложки</span>
+                </p>
+                <p  class="components__component">
+                    <span class="component__name">Соль</span>
+                    <span class="component__count">по вкусу</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Огурцы порезать</li>
+                <li>Помидоры порезать</li>
+                <li>Закинуть все в тарелку</li>
+                <li>Заправить сметаной, посолить, перемешать</li>
+                <li>Вы великолепны</li>
+            </ol>
+            <div class="rem">Быстро, вкусно, навсегда</div>
+        </div>
+        <label for="receipt4In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="item" id="pic5">
+        <label class="item__img-label" for="in5">
+            <img class="item__img" src="http://s1v1.irc.lv/files/1/0/0/75/CXkL2IL8.jpeg" alt="Перец">
+        </label>
+        <label for="receipt5In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_5">
+        <div class="receipt__text">
+            <header class="receipt__title">Слезы друзей</header>
+            <div class="components">
+                <p class="components__component">
+                    <span class="component__name">Острый перец чили</span>
+                    <span class="component__count">5 штук</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Друг</span>
+                    <span class="component__count">1 штука</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Костюм хим-защиты</span>
+                    <span class="component__count">1 штука</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Надеть хим-защиту</li>
+                <li>Растереть перец в порошок</li>
+                <li>Подсыпать другу</li>
+                <li>Избегать дыхания дракона</li>
+                <li>Бежать</li>
+            </ol>
+            <div class="rem">Жестоко, опасно, только для самых смелых</div>
+        </div>
+        <label for="receipt5In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="item" id="pic6">
+        <label class="item__img-label" for="in6">
+            <img class="item__img" src="http://infosmi.net/images/stories/articles/2013/Zdorovie/11-2013/06/luk.jpg"
+                 alt="Лук">
+        </label>
+        <label for="receipt6In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_6">
+        <div class="receipt__text">
+            <header class="receipt__title">Слезы врагов</header>
+            <div class="components">
+                <p class="components__component">
+                    <span class="component__name">Лук</span>
+                    <span class="component__count">по настроению</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Враг</span>
+                    <span class="component__count">1 штуки</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Заставить врага чистить лук</li>
+                <li>Наслаждаться его слезами</li>
+            </ol>
+            <div class="rem">Тот, кто достоин, не заставит тебя плакать</div>
+        </div>
+        <label for="receipt6In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="item" id="pic7">
+        <label class="item__img-label" for="in7">
+            <img class="item__img" src="http://dermalatlas.ru/wp-content/uploads/2015/02/allergija-na-morkov.jpg"
+                 alt="Морковь">
+        </label>
+        <label for="receipt7In">
+            <div class="item__receipt-label">
+                <div class="item__onhover-bg"></div>
+                <div class="item__receipt"><span class="item__receipt-title">Рецепт</span></div>
+            </div>
+        </label>
+    </div>
+    <div class="gallery__receipt receipt_num_7">
+        <div class="receipt__text">
+            <header class="receipt__title">Тертая морковь</header>
+            <div class="components">
+                <p class="components__component">
+                    <span class="component__name">Морковь</span>
+                    <span class="component__count">3 штуки</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Сметана</span>
+                    <span class="component__count">1 столовая ложка</span>
+                </p>
+                <p class="components__component">
+                    <span class="component__name">Сахар</span>
+                    <span class="component__count">по вкусу</span>
+                </p>
+            </div>
+            <ol class="instruction">
+                <li>Морковь потереть</li>
+                <li>Закинуть все в тарелку</li>
+                <li>Заправить сметаной, засыпать сахаром, перемешать</li>
+                <li>Вы великолепны</li>
+            </ol>
+            <div class="rem">Говорят, полезно для глаз</div>
+        </div>
+        <label for="receipt7In">
+            <div class="receipt__close"></div>
+        </label>
+    </div>
+    <div class="shadow"></div>
+</div>
+</body>
+</html>
