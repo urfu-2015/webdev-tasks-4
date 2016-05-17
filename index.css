@@ -9,245 +9,245 @@ body {
   transform-style: preserve-3d;
   transition: all 1s ease-out;
 }
-.slider__label_1 {
+.slider__label_position_1 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label_2 {
+.slider__label_position_2 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label_3 {
+.slider__label_position_3 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label_4 {
+.slider__label_position_4 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label_5 {
+.slider__label_position_5 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label_6 {
+.slider__label_position_6 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label_7 {
+.slider__label_position_7 {
   display: inline-block;
   position: relative;
   transition: transform 0.7s ease;
   width: 125px;
 }
-.slider__label__veg_image {
+.slider__image {
   box-shadow: 0 3px 3px #9995ae;
   height: 175px;
 }
 .input_radio_1 {
   display: none;
 }
-.input_radio_1:checked ~ .slider .slider__label_1 {
+.input_radio_1:checked ~ .slider .slider__label_position_1 {
   z-index: 10;
   transform: translateX(278.57142857142856px);
 }
-.input_radio_1:checked ~ .slider .slider__label_1 {
+.input_radio_1:checked ~ .slider .slider__label_position_1 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }
-.input_radio_1:checked ~ .slider .slider__label_2 {
+.input_radio_1:checked ~ .slider .slider__label_position_2 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_1:checked ~ .slider .slider__label_3 {
+.input_radio_1:checked ~ .slider .slider__label_position_3 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_1:checked ~ .slider .slider__label_4 {
+.input_radio_1:checked ~ .slider .slider__label_position_4 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_1:checked ~ .slider .slider__label_5 {
+.input_radio_1:checked ~ .slider .slider__label_position_5 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_1:checked ~ .slider .slider__label_6 {
+.input_radio_1:checked ~ .slider .slider__label_position_6 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_1:checked ~ .slider .slider__label_7 {
+.input_radio_1:checked ~ .slider .slider__label_position_7 {
   transform: translateX(278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
 .input_radio_2 {
   display: none;
 }
-.input_radio_2:checked ~ .slider .slider__label_2 {
+.input_radio_2:checked ~ .slider .slider__label_position_2 {
   z-index: 10;
   transform: translateX(167.14285714285714px);
 }
-.input_radio_2:checked ~ .slider .slider__label_1 {
+.input_radio_2:checked ~ .slider .slider__label_position_1 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_2:checked ~ .slider .slider__label_2 {
+.input_radio_2:checked ~ .slider .slider__label_position_2 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }
-.input_radio_2:checked ~ .slider .slider__label_3 {
+.input_radio_2:checked ~ .slider .slider__label_position_3 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_2:checked ~ .slider .slider__label_4 {
+.input_radio_2:checked ~ .slider .slider__label_position_4 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_2:checked ~ .slider .slider__label_5 {
+.input_radio_2:checked ~ .slider .slider__label_position_5 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_2:checked ~ .slider .slider__label_6 {
+.input_radio_2:checked ~ .slider .slider__label_position_6 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_2:checked ~ .slider .slider__label_7 {
+.input_radio_2:checked ~ .slider .slider__label_position_7 {
   transform: translateX(167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
 .input_radio_3 {
   display: none;
 }
-.input_radio_3:checked ~ .slider .slider__label_3 {
+.input_radio_3:checked ~ .slider .slider__label_position_3 {
   z-index: 10;
   transform: translateX(55.714285714285715px);
 }
-.input_radio_3:checked ~ .slider .slider__label_1 {
+.input_radio_3:checked ~ .slider .slider__label_position_1 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_3:checked ~ .slider .slider__label_2 {
+.input_radio_3:checked ~ .slider .slider__label_position_2 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_3:checked ~ .slider .slider__label_3 {
+.input_radio_3:checked ~ .slider .slider__label_position_3 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }
-.input_radio_3:checked ~ .slider .slider__label_4 {
+.input_radio_3:checked ~ .slider .slider__label_position_4 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_3:checked ~ .slider .slider__label_5 {
+.input_radio_3:checked ~ .slider .slider__label_position_5 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_3:checked ~ .slider .slider__label_6 {
+.input_radio_3:checked ~ .slider .slider__label_position_6 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_3:checked ~ .slider .slider__label_7 {
+.input_radio_3:checked ~ .slider .slider__label_position_7 {
   transform: translateX(55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
 .input_radio_4 {
   display: none;
 }
-.input_radio_4:checked ~ .slider .slider__label_4 {
+.input_radio_4:checked ~ .slider .slider__label_position_4 {
   z-index: 10;
   transform: translateX(-55.714285714285715px);
 }
-.input_radio_4:checked ~ .slider .slider__label_1 {
+.input_radio_4:checked ~ .slider .slider__label_position_1 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_4:checked ~ .slider .slider__label_2 {
+.input_radio_4:checked ~ .slider .slider__label_position_2 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_4:checked ~ .slider .slider__label_3 {
+.input_radio_4:checked ~ .slider .slider__label_position_3 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_4:checked ~ .slider .slider__label_4 {
+.input_radio_4:checked ~ .slider .slider__label_position_4 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }
-.input_radio_4:checked ~ .slider .slider__label_5 {
+.input_radio_4:checked ~ .slider .slider__label_position_5 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_4:checked ~ .slider .slider__label_6 {
+.input_radio_4:checked ~ .slider .slider__label_position_6 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_4:checked ~ .slider .slider__label_7 {
+.input_radio_4:checked ~ .slider .slider__label_position_7 {
   transform: translateX(-55.714285714285715px) translateZ(-20px) rotateY(-5deg);
 }
 .input_radio_5 {
   display: none;
 }
-.input_radio_5:checked ~ .slider .slider__label_5 {
+.input_radio_5:checked ~ .slider .slider__label_position_5 {
   z-index: 10;
   transform: translateX(-167.14285714285714px);
 }
-.input_radio_5:checked ~ .slider .slider__label_1 {
+.input_radio_5:checked ~ .slider .slider__label_position_1 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_5:checked ~ .slider .slider__label_2 {
+.input_radio_5:checked ~ .slider .slider__label_position_2 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_5:checked ~ .slider .slider__label_3 {
+.input_radio_5:checked ~ .slider .slider__label_position_3 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_5:checked ~ .slider .slider__label_4 {
+.input_radio_5:checked ~ .slider .slider__label_position_4 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_5:checked ~ .slider .slider__label_5 {
+.input_radio_5:checked ~ .slider .slider__label_position_5 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }
-.input_radio_5:checked ~ .slider .slider__label_6 {
+.input_radio_5:checked ~ .slider .slider__label_position_6 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
-.input_radio_5:checked ~ .slider .slider__label_7 {
+.input_radio_5:checked ~ .slider .slider__label_position_7 {
   transform: translateX(-167.14285714285714px) translateZ(-20px) rotateY(-5deg);
 }
 .input_radio_6 {
   display: none;
 }
-.input_radio_6:checked ~ .slider .slider__label_6 {
+.input_radio_6:checked ~ .slider .slider__label_position_6 {
   z-index: 10;
   transform: translateX(-278.57142857142856px);
 }
-.input_radio_6:checked ~ .slider .slider__label_1 {
+.input_radio_6:checked ~ .slider .slider__label_position_1 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_6:checked ~ .slider .slider__label_2 {
+.input_radio_6:checked ~ .slider .slider__label_position_2 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_6:checked ~ .slider .slider__label_3 {
+.input_radio_6:checked ~ .slider .slider__label_position_3 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_6:checked ~ .slider .slider__label_4 {
+.input_radio_6:checked ~ .slider .slider__label_position_4 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_6:checked ~ .slider .slider__label_5 {
+.input_radio_6:checked ~ .slider .slider__label_position_5 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_6:checked ~ .slider .slider__label_6 {
+.input_radio_6:checked ~ .slider .slider__label_position_6 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }
-.input_radio_6:checked ~ .slider .slider__label_7 {
+.input_radio_6:checked ~ .slider .slider__label_position_7 {
   transform: translateX(-278.57142857142856px) translateZ(-20px) rotateY(-5deg);
 }
 .input_radio_7 {
   display: none;
 }
-.input_radio_7:checked ~ .slider .slider__label_7 {
+.input_radio_7:checked ~ .slider .slider__label_position_7 {
   z-index: 10;
   transform: translateX(-390px);
 }
-.input_radio_7:checked ~ .slider .slider__label_1 {
+.input_radio_7:checked ~ .slider .slider__label_position_1 {
   transform: translateX(-390px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_7:checked ~ .slider .slider__label_2 {
+.input_radio_7:checked ~ .slider .slider__label_position_2 {
   transform: translateX(-390px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_7:checked ~ .slider .slider__label_3 {
+.input_radio_7:checked ~ .slider .slider__label_position_3 {
   transform: translateX(-390px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_7:checked ~ .slider .slider__label_4 {
+.input_radio_7:checked ~ .slider .slider__label_position_4 {
   transform: translateX(-390px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_7:checked ~ .slider .slider__label_5 {
+.input_radio_7:checked ~ .slider .slider__label_position_5 {
   transform: translateX(-390px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_7:checked ~ .slider .slider__label_6 {
+.input_radio_7:checked ~ .slider .slider__label_position_6 {
   transform: translateX(-390px) translateZ(-20px) rotateY(5deg);
 }
-.input_radio_7:checked ~ .slider .slider__label_7 {
+.input_radio_7:checked ~ .slider .slider__label_position_7 {
   transform: translateX(-390px) translateZ(-20px) rotateY($rotate_coefficient deg);
 }

@@ -14,31 +14,29 @@ body
     transform: perspective(125px)
     transform-style: preserve-3d
     transition: all 1s ease-out
-    &__label
+    &__label_position
         for $index in (1..$cards_count)
             &_{$index}
                 display: inline-block
                 position: relative
                 transition: transform .7s ease
                 width: 125px
-        &__veg_image
-            box-shadow: 0 3px 3px $shadow_color
-            height: 175px
-
-
+    &__image
+        box-shadow: 0 3px 3px $shadow_color
+        height: 175px
 
 for $index in (1..$cards_count)
     .input_radio_{$index}
         display: none
         $sign = 1
         $translate_coefficient = $sign * (780 / $cards_count) * (($cards_count / 2) - $index)
-        &:checked ~ .slider .slider__label_{$index}
+        &:checked ~ .slider .slider__label_position_{$index}
             z-index: 10
             if $index >= $cards_count / 2
                 $sign = -1
             transform: translateX($translate_coefficient px)
         for $num in (1..$cards_count)
-            &:checked ~ .slider .slider__label_{$num}
+            &:checked ~ .slider .slider__label_position_{$num}
                 if $index < $num
                     $rotate_coefficient = -5
                 if $index > $num
